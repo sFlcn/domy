@@ -1,0 +1,11 @@
+node_modules/
+build/
+tmp/
+.DS_Store
+._*
+.idea
+.vscode
+*.log
+*.psd
+npm-debug.*
+Thumbs.db

@@ -1,0 +1,117 @@
+{
+  "name": "domy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "domycompany webpage",
+  "scripts": {
+    "clean": "rm -r build/*",
+    "test": "stylelint \"source/sass/**/*.scss\" && pug-lint source/pug/*.pug",
+    "build": "gulp build",
+    "start": "gulp"
+  },
+  "author": "sFlcn",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
+    "csso": "^5.0.5",
+    "del": "^7.0.0",
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "postcss-csso": "^6.0.1",
+    "pug-lint": "^2.7.0",
+    "sass": "^1.62.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard-scss": "^9.0.0"
+  },
+  "browserslist": [
+    "> 0.2%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": "^18.14.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "airbnb-base"
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-use-before-define": [
+        "error",
+        {
+          "functions": false
+        }
+      ]
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+      "color-hex-length": "long",
+      "no-duplicate-selectors": true,
+      "selector-attribute-quotes": "always",
+      "declaration-no-important": true,
+      "property-no-vendor-prefix": true,
+      "value-no-vendor-prefix": true,
+      "function-url-quotes": "always",
+      "font-family-name-quotes": "always-unless-keyword",
+      "at-rule-no-vendor-prefix": true,
+      "selector-no-vendor-prefix": true,
+      "media-feature-name-no-vendor-prefix": true,
+      "selector-class-pattern": ".*",
+      "value-keyword-case": [
+        "lower",
+        {
+          "camelCaseSvgKeywords": true
+        }
+      ]
+    }
+  },
+  "pugLintConfig": {
+    "validateExtensions": true,
+    "validateDivTags": true,
+    "validateAttributeSeparator": {
+      "separator": ", ",
+      "multiLineSeparator": ",\n "
+    },
+    "validateAttributeQuoteMarks": "\"",
+    "requireSpecificAttributes": [
+      {
+        "img": [
+          "src",
+          "alt"
+        ]
+      }
+    ],
+    "requireSpaceAfterCodeOperator": true,
+    "requireLowerCaseTags": true,
+    "requireClassLiteralsBeforeIdLiterals": true,
+    "requireClassLiteralsBeforeAttributes": true,
+    "disallowTrailingSpaces": true,
+    "disallowSpacesInsideAttributeBrackets": true,
+    "disallowLegacyMixinCall": true,
+    "disallowDuplicateAttributes": true
+  }
+}
