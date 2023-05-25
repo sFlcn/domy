@@ -1,0 +1,39 @@
+-
+  const servicesArray = [
+    {
+      offerName: "Дома в наличии",
+      offerDescr: "У нас всегда есть в наличии самые популярные проекты. Наличие и количество уточняйте в отделе продаж",
+      offerCss: "houses",
+    },
+    {
+      offerName: "Модульные дома любой сложности",
+      offerCss: "difficulty",
+    },
+    {
+      offerName: "Сопровождение строительства",
+      offerDescr: "Наши специалисты помогут подобрать подрядчика на установку септика, бурение скважины, монтаж забора, выполнение работ по благоустройству",
+      offerCss: "escort",
+    },
+    {
+      offerName: "Собственное производство",
+      offerCss: "prod",
+    },
+    {
+      offerName: "Архитектурное бюро",
+      offerCss: "arch",
+    },
+    {
+      offerName: "Гарантия 10 лет",
+      offerCss: "guarantee",
+    },
+  ]
+
+section.offer
+  .wrapper
+    h2.offer__title Мы предлагаем вам
+    .offer__list
+      each item in servicesArray
+        dl(class= ("offer__item offer__item--" + item.offerCss))
+          .offer__container
+            dt.offer__name= item.offerName
+            dd.offer__descr= item.offerDescr

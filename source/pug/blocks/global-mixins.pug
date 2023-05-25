@@ -1,0 +1,9 @@
+mixin pictureJpgWebp(file, width, height, altText, cssClass)
+  picture
+    source(type="image/webp", srcset= `./img/${file}?as=webp`)
+    img(class= cssClass, src= `./img/${file}`, width=width, height=height, alt= altText)
+
+mixin simpleButton(text, additionalClassesArray, href)
+  - const cssClass = 'button ' + additionalClassesArray.join(' ');
+  - const linkHref = href ? href : '#';
+  a(class= cssClass, href= linkHref)= text

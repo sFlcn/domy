@@ -1,0 +1,28 @@
+include global-constants.pug
+include global-mixins.pug
+
+block variables
+  - let logoHref = currentPage === 'index' ? false : './index.pug';
+
+doctype html
+html.page(lang="ru", dir="ltr")
+  head
+    block head
+      meta(charset="utf-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+      meta(name="description", content="Компания DOMY — возводим модульные дома для дач, баз отдыха и туристических компаний. Наше производство находится в городе Хотьково Московской области. Приобретение дома — это легко!")
+      title #{pageTitle}
+      link(rel="stylesheet", href="/css/style-min.css")
+      link(rel="shortcut icon", href="favicon.png", type="image/png")
+
+  body.page__body
+    include page-header.pug
+
+    block main
+
+    include page-footer.pug
+
+    block popups
+
+    block scripts
+      script(type="module", src="/js/script-min.js")

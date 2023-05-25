@@ -1,0 +1,129 @@
+.main-promo {
+  position: relative;
+  color: $palette-brightcontrast;
+  background-color: $palette-prime;
+}
+
+.main-promo .wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.main-promo__container-left {
+  min-width: 39%;
+  z-index: 2;
+}
+
+.main-promo__title {
+  @include font-title-main;
+
+  max-width: 400px;
+  margin: 148px auto 36px 8px;
+}
+
+.main-promo__text-box {
+  margin: 0 10px 234px;
+
+  @include font-primary;
+}
+
+.main-promo__features-list {
+  margin: 0 0 34px;
+  padding: 0;
+  list-style-image: url("data:image/svg+xml,%3Csvg width='6' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2.5' cy='2.5' r='2.5' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.main-promo__features-item {
+  margin: 10px 0;
+}
+
+.main-promo__button {
+  width: 43%;
+  padding: 10px;
+  border: 1px solid $palette-darkcontrast;
+  background-color: $palette-accent;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.main-promo__container-pseudo-right {
+  flex-grow: 1;
+}
+
+.main-promo__container-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 61%;
+}
+
+.main-promo__slider {
+  position: relative;
+  display: block;
+  line-height: 0;
+}
+
+.main-promo__slider-list {
+  @include list;
+}
+
+.main-promo__slider-item {
+  min-height: 770px;
+}
+
+.main-promo__slider-item:nth-child(1) {
+  background: linear-gradient(10deg, #9FAB55, #AE8641, #4D583A);
+}
+
+.main-promo__slider-image {
+  height: 770px;
+  object-fit: cover;
+}
+
+.main-promo__slider-controls {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  bottom: 5%;
+  right: 13%;
+
+  @include list;
+}
+
+.main-promo__slider-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  line-height: 0;
+}
+
+.main-promo__slider-button--r {
+  transform: rotate(180deg);
+}
+
+.main-promo__container-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 19%;
+  min-height: 482px;
+  transform:translate(-64%, -46%);
+  padding: 35px 67px 38px;
+  color: $palette-darkcontrast;
+  background-color: $palette-secondary;
+  border-radius: 120px 0;
+}
+
+.promo-description__link {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 60px 10px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $palette-brightcontrast;
+  text-transform: uppercase;
+  background: $palette-prime url("../img/arrow-b.svg") no-repeat center right 75px;
+}

@@ -1,0 +1,77 @@
+.offer {
+  background-color: $palette-secondary;
+  color: $palette-darkcontrast;
+  padding: 150px 0;
+}
+
+.offer__title {
+  @include font-title-middle;
+
+  margin: 0 0 70px;
+}
+
+.offer__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.offer__item {
+  margin: 0;
+  padding: 110px 0 0;
+  width: 225px;
+  text-align: center;
+  background: url("../img/domy-icons-houses.svg") no-repeat center 3px;
+}
+
+.offer__item--houses {
+  background-image: url("../img/domy-icons-houses.svg");
+}
+
+.offer__item--difficulty {
+  background-image: url("../img/domy-icons-difficulty.svg");
+}
+
+.offer__item--escort {
+  background-image: url("../img/domy-icons-escort.svg");
+}
+
+.offer__item--prod {
+  background-image: url("../img/domy-icons-prod.svg");
+}
+
+.offer__item--arch {
+  background-image: url("../img/domy-icons-arch.svg");
+}
+
+.offer__item--guarantee {
+  background-image: url("../img/domy-icons-guarantee.svg");
+}
+
+.offer__container {
+  padding: 0 20px;
+}
+
+.offer__name {
+  @include font-primary;
+
+  margin-bottom: 15px;
+}
+
+.offer__descr {
+  @include font-primary($size: 14px, $line-height: 16px);
+
+  margin: 0;
+  opacity: 0.5;
+}
+
+.offer__item--houses .offer__descr {
+  padding: 0 5px;
+}
+
+.offer__item--houses .offer__name,
+.offer__item--arch .offer__name,
+.offer__item--guarantee .offer__name {
+  padding: 0 35px;
+}
+

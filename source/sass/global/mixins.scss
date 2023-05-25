@@ -1,0 +1,42 @@
+@mixin font-primary($size: 16px, $line-height: 19px, $weight: 300, $color: inherit) {
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-style: normal;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin font-title-main($size: 64px, $line-height: 68px, $weight: 800, $color: inherit) {
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-style: normal;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin font-title-middle($size: 50px, $line-height: 55px, $weight: 800, $color: inherit) {
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-style: normal;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin wrapper {
+  margin: auto;
+  padding: 0 10px;
+
+  @media (min-width: $desktop-content) {
+    max-width: $desktop-content;
+    padding: 0;
+  }
+}

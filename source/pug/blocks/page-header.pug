@@ -1,0 +1,45 @@
+-
+  let mainNav = [
+    PAGES.index,
+    PAGES.company,
+    { name: "Для бизнеса" },
+    { name: "Условия" },
+  ];
+  mainNav[0].navSubPages = [ PAGES['30m'], PAGES['45m'], PAGES['60m'], PAGES['70m'], PAGES['80m'], PAGES['110m'], PAGES['bath'] ];
+  mainNav[1].navSubPages = [ PAGES.technology, PAGES.faq, PAGES.contacts];
+  mainNav[2].navSubPages = [ PAGES.investors, PAGES.suppliers];
+  mainNav[3].navSubPages = [ PAGES.credit, PAGES.shipping];
+
+mixin siteNavSubItem({ name, pageHref })
+  li(class= pageHref !== currentPage ? 'site-nav__sub-item' : 'site-nav__sub-item site-nav__sub-item--current')
+    a.site-nav__sub-link(href= pageHref === currentPage ? false : pageHref + ".html")= name
+
+
+mixin siteNavItem({ name, pageHref, navSubPages })
+  li(class= pageHref !== currentPage ? 'site-nav__item' : 'site-nav__item site-nav__item--active')
+    if ((pageHref) && (pageHref !== currentPage))
+      a.site-nav__link(href= pageHref + ".html")
+        span= name
+    else
+      a.site-nav__link(href="##", onclick="return false")
+        span= name
+    if navSubPages
+      ul.header__sub-menu.site-nav__sub-list
+        each subItem in navSubPages
+          +siteNavSubItem(subItem)
+
+
+header.header
+  .wrapper
+    //- logoHref генерируется в page-layout.pug
+    a.header__logo(href=logoHref)
+      img.domy-logo(src="./img/domy-logo.svg", width="86", height="26", alt="логотип DOMY.")
+    nav.header__nav.site-nav
+      ul.site-nav__list
+        each item in mainNav
+          +siteNavItem(item)
+    .header__container
+      .header__phone
+        a.header__tel(href="tel:+74951828188") +7 (495) 182 81 88
+        p.header__tel-time Ежедневно с 9:00 до 21:00
+      button.header__callback.button.callback-button Заказать звонок

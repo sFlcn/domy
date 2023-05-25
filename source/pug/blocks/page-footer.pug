@@ -1,0 +1,49 @@
+-
+  let footerNav = [
+    PAGES.index,
+    PAGES.investors,
+    PAGES.company,
+    PAGES.suppliers,
+    PAGES.technology,
+    PAGES.credit,
+    PAGES.faq,
+    PAGES.shipping,
+    PAGES.contacts,
+  ];
+
+mixin socialLinkItem({ name, cssClass, href })
+  li.socials__item
+    a(class=`socials__link socials__link--${cssClass}`, href= href)
+      span.visuallyhidden= name
+
+mixin footerNavItem({ name, pageHref })
+  li(class= pageHref !== currentPage ? 'footer-nav__item' : 'footer-nav__item footer-nav__item--active')
+    if ((pageHref) && (pageHref !== currentPage))
+      a.footer-nav__link(href=pageHref + ".html")= name
+    else
+      a.footer-nav__link(href="##", onclick="return false")= name
+
+footer.footer
+  .wrapper
+    //- logoHref генерируется в page-layout.pug
+    a.footer__logo(href=logoHref)
+      img.domy-logo(src="./img/domy-logo.svg", width="86", height="26", alt="логотип DOMY.")
+    a.footer__tel(href="tel:+74951828188") +7 (495) 182 81 88
+    .footer__container
+      .footer__about
+        address.footer__adress
+          p.footer__office-adress Офис:
+            span г.&nbsp;Москва, ул.&nbsp;Войкова, д.&nbsp;4 с1
+          p.footer__manufacturing-adress Производство:
+            span г.&nbsp;Хотьково, ул.&nbsp;Заводская, д.&nbsp;1 Ежедневно&nbsp;с&nbsp;9:00&nbsp;до&nbsp;21:00
+        a.footer__email(href="mailto:domycompany@ya.ru") domycompany@ya.ru
+      ul.footer__nav.footer-nav
+        each item in footerNav
+          +footerNavItem(item)
+      ul.footer__socials.socials__list
+          each item in SOCIAL_LINKS
+            +socialLinkItem(item)
+    p.footer__copyrights
+      |Дизайн: Lisinica
+      br
+      |Веб-разработка: sFlcn

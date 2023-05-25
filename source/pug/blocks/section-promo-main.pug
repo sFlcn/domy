@@ -1,0 +1,78 @@
+-
+  const promoTableData = {
+    href: "70m",
+    about1: "Габариты дома",
+    about2: "11,20 × 9,50 м",
+    data: [
+      { name: "Гостиная",
+        value: "14,4",
+        underline: true
+      },
+      { name: "Спальня 1",
+        value: "8,7",
+      },
+      { name: "Спальня 2",
+        value: "10,2",
+      },
+      { name: "Спальня 3",
+        value: "11,6",
+        underline: true,
+      },
+      { name: "Кухня",
+        value: "14,4",
+        underline: true,
+      },
+      { name: "Санузел 1",
+        value: "1,4",
+      },
+      { name: "Санузел 2",
+        value: "8,9",
+        underline: true,
+      },
+      { name: "Терраса",
+        value: "24,4",
+      },
+      { name: "Срок изготовления",
+        value : "25 дней",
+        summary: true,
+      },
+    ],
+  }
+
+section.main-promo
+  .wrapper
+    .main-promo__container-left
+      h2.main-promo__title Мы строим модульные дома
+      .main-promo__text-box
+        ul.main-promo__features-list
+          li.main-promo__features-item с отделкой и коммуникациями
+          li.main-promo__features-item для круглогодичного проживания
+          li.main-promo__features-item доставка по регионам России
+        button.main-promo__button.button Получить консультацию
+    .main-promo__container-pseudo-right
+  .main-promo__container-right
+    .main-promo__slider.slider
+      ul.main-promo__slider-list
+        li.main-promo__slider-item
+          img.main-promo__slider-image.slider__image(src="./img/main-slider-img1.jpg", width="100%", height="auto", alt="Фото модульного дома на фоне леса.")
+      ul.main-promo__slider-controls.slider__controls
+        li.slider__prev
+          button.main-promo__slider-button.slider__button--prev
+            img(src="./img/slider-button.svg", width="86px", height="86px", alt="предыдущий слайд")
+        li.slider__next
+          button.main-promo__slider-button.main-promo__slider-button--r.slider__button--next
+            img(src="./img/slider-button.svg", width="86px", height="86px", alt="следующий слайд")
+  .main-promo__container-center.promo-description
+    h3.promo-description__title
+      span 70
+      span=" "
+      span м²
+    p.promo-description__about= promoTableData.about1
+      span.promo-description__about-more= promoTableData.about2
+    dl.promo-description__specifications
+      each item in promoTableData.data
+        dl.promo-description__box(class= (item.underline === true) ? "promo-description__box--indented" : (item.summary === true) ? "promo-description__box--summary" : "")
+          dt.promo-description__parameter= item.name
+          dd.promo-description__value= item.value
+    a.promo-description__link.button(href= promoTableData.href + ".html") Cмотреть планировку
+

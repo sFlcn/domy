@@ -1,0 +1,59 @@
+.features {
+  background-color: $palette-brightcontrast;
+}
+
+.features__list {
+  @include list;
+
+  padding: 100px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.features__item {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  padding: 17px 0 8px;
+  box-sizing: border-box;
+  width: 210px;
+  height: 195px;
+  transform: translateX(-5px);
+  background: transparent url("../img/brun1.svg") no-repeat center;
+}
+
+.features__term {
+  @include font-title-main;
+
+  position: relative;
+  z-index: 1;
+}
+
+.features__descr {
+  position: relative;
+  margin: 0;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.features__item:nth-of-type(1) .features__term,
+.features__item:nth-of-type(1) .features__descr {
+  transform: translateX(23px);
+}
+
+.features__item:nth-of-type(2n) {
+  width: 190px;
+  transform: translateX(55px);
+  background: transparent url("../img/brun2.svg") no-repeat -5px -3px;
+}
+
+.features__item:nth-of-type(3n) {
+  width: 288px;
+  transform: translateX(50px);
+  background: transparent url("../img/brun3.svg") no-repeat  40px -2px;
+}
+
+.features__item:nth-of-type(2) .features__term {
+  transform: translateX(-35px)
+}

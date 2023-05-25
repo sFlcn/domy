@@ -1,0 +1,18 @@
+.footer-nav {
+  @include font-primary($color: $palette-back);
+
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.footer-nav__item {
+  flex-basis: 49%;
+}
+
+.footer-nav__link {
+  display: inline-block;
+  padding: 10px;
+}

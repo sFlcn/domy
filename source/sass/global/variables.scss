@@ -1,0 +1,25 @@
+// Colors
+// color-binding
+$taup: #5A5655;
+$beige: #E7E4DF;
+$gray: #999999;
+$yellow: #FFF000;
+
+// layout variables
+$palette-prime: $taup;
+$palette-secondary: $beige;
+$palette-accent: $yellow;
+$palette-back: $gray;
+$palette-darkcontrast: #000000;
+$palette-brightcontrast: #ffffff;
+
+// Content
+// Viewports
+$mobile-width: 360px;
+$small-desktop-width: 1200px;
+$desktop-width: 1920px;
+
+// content
+$mobile-content: $mobile-width - 20; // 340
+$small-desktop-content: $small-desktop-width - 100; // 1100
+$desktop-content: $desktop-width - 320; // 1600

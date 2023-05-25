@@ -1,0 +1,78 @@
+.header {
+  padding-top: 38px;
+  color: $palette-darkcontrast;
+  background-color: $palette-brightcontrast;
+}
+
+.header .wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header__logo {
+  margin: 3px 0;
+}
+
+.header__nav {
+  flex-basis: 60%;
+  margin: 6px 5px 58px;
+}
+
+.header__sub-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  max-width: 54%;
+  min-width: 30%;
+  bottom: 23px;
+  z-index: 100;
+  transform: translateX(-25%);
+}
+
+.header__container {
+  max-width: 31%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header__phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 11px 5px;
+}
+
+.header__tel {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 7px;
+}
+
+.header__tel-time {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.header__callback {
+  width: 41%;
+  margin: 2px 0;
+  padding: 11px 9px 9px;
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  background-color: $palette-accent;
+  border: 1px solid $palette-darkcontrast;
+  border-radius: 5px;
+}
