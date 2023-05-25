@@ -11,6 +11,8 @@ import terser from 'gulp-terser';
 import babel from 'gulp-babel';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import sharpResponsive from 'gulp-sharp-responsive';
 
 const sass = gulpSass(dartSass);
 
@@ -30,10 +32,14 @@ const paths = {
     watch: 'source/js/**/*.js',
     dest: 'build/js/',
   },
+  images: {
+    src: 'source/img/*.png',
+    dest: 'build/img',
+  },
   resources: {
     src: [
       'source/fonts/*.{woff2,woff}',
-      'source/img/**/*.{jpg,png,svg}',
+      'source/img/**/*.{jpg,svg}',
     ],
     dest: 'build/',
   },
@@ -97,6 +103,20 @@ const copyResources = (done) => {
   done();
 };
 
+const images = (done) => {
+  gulp.src(paths.images.src)
+    .pipe(sharpResponsive({
+      formats: [
+        { format: 'jpeg', rename: { suffix: '@1x' }, width: (metadata) => metadata.width * 0.5 },
+        { format: 'jpeg', rename: { suffix: '@2x' } },
+        { format: 'webp', rename: { suffix: '@1x' }, width: (metadata) => metadata.width * 0.5 },
+        { format: 'webp', rename: { suffix: '@2x' } },
+      ],
+    }))
+    .pipe(gulp.dest(paths.images.dest));
+  done();
+};
+
 const reload = (done) => {
   sync.reload();
   done();
@@ -130,8 +150,9 @@ const server = (done) => {
 // BUILD
 export const build = gulp.series(
   cleanDirs,
+  copyResources,
   gulp.parallel(
-    copyResources,
+    images,
     styles,
     scripts,
     pug,
@@ -141,8 +162,9 @@ export const build = gulp.series(
 // Default
 export default gulp.series(
   cleanDirs,
+  copyResources,
   gulp.parallel(
-    copyResources,
+    images,
     styles,
     scripts,
     pug,
