@@ -108,10 +108,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  max-width: 19%;
+  min-width: 18.5%;
   min-height: 482px;
   transform:translate(-64%, -46%);
-  padding: 35px 67px 38px;
+  padding: 32px 76px 39px 69px;
   color: $palette-darkcontrast;
   background-color: $palette-secondary;
   border-radius: 120px 0;
@@ -125,5 +125,5 @@
   font-size: 14px;
   color: $palette-brightcontrast;
   text-transform: uppercase;
-  background: $palette-prime url("../img/arrow-b.svg") no-repeat center right 75px;
+  background: $palette-prime url("../img/arrow-b.svg") no-repeat center right 68px;
 }

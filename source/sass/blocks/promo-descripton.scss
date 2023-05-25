@@ -1,15 +1,20 @@
 .promo-description {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: space-between;
-  align-items: flex-start;
-  align-content: flex-start;
+}
+
+.promo-description__header-block {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 0 0 15px;
 }
 
 .promo-description__title {
-  margin: 0 0 21px;
-
   @include font-title-middle;
+
+  margin: 0;
 }
 
 .promo-description__title span:first-of-type {
@@ -22,7 +27,7 @@
 
 .promo-description__about {
   margin: 0;
-  padding: 11px 0;
+  padding: 12px 0 10px;
   font-size: 14px;
 }
 
@@ -35,21 +40,22 @@
 
 .promo-description__specifications {
   width: 100%;
-  margin: 0 0 36px;
+  margin: 0 0 37px;
 }
 
 .promo-description__box {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin: 0;
   padding: 0;
   font-size: 14px;
   vertical-align: baseline;
 
   &--indented {
-    padding-bottom: 4px;
+    padding-bottom: 5.25px;
     border-bottom: 1px solid;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
   &--summary {
@@ -59,10 +65,15 @@
   }
 }
 
+.promo-description__box--summary .promo-description__parameter {
+  align-self: flex-end;
+}
+
 .promo-description__value {
   padding: 5.5px;
   font-size: 16px;
   font-weight: 800;
+  transform: translateX(5px);
 
   .promo-description__box--summary & {
     border-radius: 10px 0;

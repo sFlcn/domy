@@ -63,15 +63,16 @@ section.main-promo
           button.main-promo__slider-button.main-promo__slider-button--r.slider__button--next
             img(src="./img/slider-button.svg", width="86px", height="86px", alt="следующий слайд")
   .main-promo__container-center.promo-description
-    h3.promo-description__title
-      span 70
-      span=" "
-      span м²
-    p.promo-description__about= promoTableData.about1
-      span.promo-description__about-more= promoTableData.about2
+    .promo-description__header-block
+      h3.promo-description__title
+        span 70
+        span=" "
+        span м²
+      p.promo-description__about= promoTableData.about1
+        span.promo-description__about-more= promoTableData.about2
     dl.promo-description__specifications
       each item in promoTableData.data
-        dl.promo-description__box(class= (item.underline === true) ? "promo-description__box--indented" : (item.summary === true) ? "promo-description__box--summary" : "")
+        .promo-description__box(class= (item.underline === true) ? "promo-description__box--indented" : (item.summary === true) ? "promo-description__box--summary" : "")
           dt.promo-description__parameter= item.name
           dd.promo-description__value= item.value
     a.promo-description__link.button(href= promoTableData.href + ".html") Cмотреть планировку
