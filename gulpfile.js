@@ -29,7 +29,7 @@ const paths = {
   },
   scripts: {
     src: 'source/js/script.js',
-    watch: 'source/js/**/*.js',
+    watch: 'source/js/script.js',
     dest: 'build/js/',
   },
   images: {

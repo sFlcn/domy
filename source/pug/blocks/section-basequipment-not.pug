@@ -1,0 +1,31 @@
+-
+  const equipmentNotData = [
+    {
+      name: "Фундамент",
+      content: "Эксперты компании DOMY рекомендуют свайно-винтовой тип фундамента для модульных домов",
+    },
+    {
+      name: "Монтаж дома на участке",
+      content: "В случае удаленности участка, где будет проводиться монтаж дома, более чем на 200 км от МКАД стоимость монтажа дома рассчитывается индивидуально",
+    },
+    {
+      name: "Доставка",
+      content: "Рассчитывается индивидуально",
+    },
+    {
+      name: "Мебель",
+    },
+  ]
+
+section.basequipment-not
+  .wrapper
+    h2.basequipment__title Не входят в базовую комплектацию:
+    .basequipment__categories-roster.basequipment__categories-roster--single
+      .basequipment__category.basequipment__category--not
+        ul.basequipment__category-list
+          each item in equipmentNotData
+            li(class= item.content ? "basequipment__item" : "basequipment__item basequipment__item--empty")
+              button.button.accordion-button.basequipment__item-name(type="button")= item.name
+              .basequipment__item-content.accordion-content
+                if item.content
+                  p= item.content

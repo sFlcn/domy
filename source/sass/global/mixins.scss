@@ -1,4 +1,4 @@
-@mixin font-primary($size: 16px, $line-height: 19px, $weight: 300, $color: inherit) {
+@mixin font-primary($size: 16px, $line-height: unset, $weight: 300, $color: inherit) {
   font-family: "Gilroy", "Arial", sans-serif;
   font-style: normal;
   font-size: $size;
@@ -17,6 +17,15 @@
 }
 
 @mixin font-title-middle($size: 50px, $line-height: 55px, $weight: 800, $color: inherit) {
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-style: normal;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin font-title-small($size: 18px, $line-height: initial, $weight: 800, $color: inherit) {
   font-family: "Gilroy", "Arial", sans-serif;
   font-style: normal;
   font-size: $size;

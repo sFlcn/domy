@@ -1,0 +1,98 @@
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.form__fieldset {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  margin: 0 0 17px;
+  border: 0;
+}
+
+.form__simple-input {
+  margin-bottom: 18px;
+  padding: 14px 1px 16px;
+  background-color: inherit;
+  border: 0;
+  border-bottom: 0.5px solid rgba($palette-darkcontrast, .5);
+  @include font-primary($size: 16px, $line-height: 18px, $color: $palette-prime);
+
+  &:invalid {
+    border-bottom: 0.5px transparent;
+    box-shadow: 0 2px 1px -1px rgba(red, 0.5);
+  }
+
+  &:placeholder-shown:invalid {
+    border-bottom: 0.5px solid $palette-prime;
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: 0;
+    border-bottom: 0.5px solid $palette-prime;
+    box-shadow: 0 1px 0 0 $palette-darkcontrast;
+  }
+}
+
+.form__simple-input::placeholder {
+  color: rgba($palette-prime, 0.5);
+  font-size: 14px;
+}
+
+// .form input[type="tel"] {
+//   letter-spacing: .06em;
+// }
+
+.form__privacy {
+  position: relative;
+  display: flex;
+}
+
+.form__privacy-checkbox {
+  left: 11px;
+  top: 20px;
+}
+
+.form__privacy-label {
+  position: relative;
+  margin: 0 0 25px;
+  padding: 10px 0 10px 25px;
+  font-size: 9px;
+  line-height: 120%;
+}
+
+.form__privacy-label::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 0;
+  top: 50%;
+  border: 1px solid $palette-prime;
+  transform: translateY(-50%);
+  background: transparent url("../img/check.svg") no-repeat center -50px;
+  background-size: 1000%;
+  transition: background-size 0.3s, background-position 0.4s;
+}
+
+.form__privacy-checkbox:checked+.form__privacy-label:before {
+  background-size: 100%;
+  background-position: center;
+}
+
+.form__privacy-link {
+  text-decoration: none;
+}
+
+.form__submit {
+  padding: 11.5px 10px 10.5px;
+  border: 1px solid $palette-darkcontrast;
+  border-radius: 5px;
+  background-color: $palette-accent;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+}

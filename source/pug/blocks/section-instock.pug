@@ -1,0 +1,43 @@
+-
+  const instockData = [
+    {
+      name: "30 м²",
+      price: "1 410 000 ₽",
+      imageName: "in-stock-30m",
+      alt: "фото дома 30 м²",
+    },
+    {
+      name: "70",
+      specialSpan: "м²",
+      price: "3 440 000 ₽",
+      alt: "фото дома 70 м²",
+      imageName: "in-stock-70m",
+    },
+    {
+      name: "Баня",
+      price: "1 150 000 ₽",
+      imageName: "in-stock-bath",
+      alt: "фото бани",
+    },
+  ]
+
+section.instock
+  .wrapper
+    h2.instock__title У нас есть дома в наличии
+    ul.instock__list
+      each item in instockData
+        li.instock__item
+          figure.instock__item-figure
+            +pictureJpgWebp(item.imageName, 500, 343, item.alt, "instock__item-image")
+            figcaption.instock__item-caption
+              if (item.specialSpan)
+                h3.instock__item-name
+                  span= item.name
+                  span= " "
+                  span= item.specialSpan
+              else
+                h3.instock__item-name= item.name
+              .instock__item-under
+                .instock__item-underline
+                p.instock__item-price= item.price
+

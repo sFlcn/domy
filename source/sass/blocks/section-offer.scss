@@ -1,7 +1,7 @@
 .offer {
   background-color: $palette-secondary;
   color: $palette-darkcontrast;
-  padding: 150px 0;
+  padding: 142px 0 150px;
 }
 
 .offer__title {
@@ -37,11 +37,11 @@
 }
 
 .offer__item--prod {
-  background-image: url("../img/domy-icons-prod.svg");
+  background-image: url("../img/domy-icons-production.svg");
 }
 
 .offer__item--arch {
-  background-image: url("../img/domy-icons-arch.svg");
+  background-image: url("../img/domy-icons-architect.svg");
 }
 
 .offer__item--guarantee {
