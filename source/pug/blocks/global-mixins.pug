@@ -1,7 +1,12 @@
-mixin pictureJpgWebp(filename, width, height, altText, cssClass)
+mixin pictureJpgWebp(filename, width, height, altText, cssClass, lazy)
   picture
     source(type="image/webp", srcset= `./img/${filename}@1x.webp 1x,./img/${filename}@2x.webp 2x`)
-    img(class= cssClass, src= `./img/${filename}@1x.jpeg`, srcset=`./img/${filename}@2x.jpeg 2x`, width=width, height=height, alt= altText)
+    img(class= cssClass, src= `./img/${filename}@1x.jpeg`, srcset=`./img/${filename}@2x.jpeg 2x`, width=width, height=height, alt= altText loading=lazy)
+
+mixin picturePngWebp(filename, width, height, altText, cssClass, lazy)
+  picture
+    source(type="image/webp", srcset= `./img/${filename}@1x.webp 1x,./img/${filename}@2x.webp 2x`)
+    img(class= cssClass, src= `./img/${filename}@1x.png`, srcset=`./img/${filename}@2x.png 2x`, width=width, height=height, alt= altText loading=lazy)
 
 mixin simpleButton(text, additionalClassesArray, href)
   - const cssClass = 'button ' + additionalClassesArray.join(' ');

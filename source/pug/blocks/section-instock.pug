@@ -28,7 +28,7 @@ section.instock
       each item in instockData
         li.instock__item
           figure.instock__item-figure
-            +pictureJpgWebp(item.imageName, 500, 343, item.alt, "instock__item-image")
+            +pictureJpgWebp(item.imageName, 500, 343, item.alt, "instock__item-image", "lazy")
             figcaption.instock__item-caption
               if (item.specialSpan)
                 h3.instock__item-name

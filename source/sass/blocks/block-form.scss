@@ -13,16 +13,17 @@
 }
 
 .form__simple-input {
+  @include font-primary($size: 16px, $line-height: 18px, $color: $palette-prime);
+
   margin-bottom: 18px;
   padding: 14px 1px 16px;
   background-color: inherit;
   border: 0;
   border-bottom: 0.5px solid rgba($palette-darkcontrast, .5);
-  @include font-primary($size: 16px, $line-height: 18px, $color: $palette-prime);
 
   &:invalid {
     border-bottom: 0.5px transparent;
-    box-shadow: 0 2px 1px -1px rgba(red, 0.5);
+    box-shadow: 0 2px 1px -1px rgba(255 127 127);
   }
 
   &:placeholder-shown:invalid {
@@ -30,11 +31,13 @@
     box-shadow: none;
   }
 
+  /* stylelint-disable */
   &:focus {
     outline: 0;
     border-bottom: 0.5px solid $palette-prime;
     box-shadow: 0 1px 0 0 $palette-darkcontrast;
   }
+  /* stylelint-enable */
 }
 
 .form__simple-input::placeholder {
@@ -78,7 +81,7 @@
   transition: background-size 0.3s, background-position 0.4s;
 }
 
-.form__privacy-checkbox:checked+.form__privacy-label:before {
+.form__privacy-checkbox:checked+.form__privacy-label::before {
   background-size: 100%;
   background-position: center;
 }

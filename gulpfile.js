@@ -36,6 +36,10 @@ const paths = {
     src: 'source/img/*.png',
     dest: 'build/img',
   },
+  imagesLoseless: {
+    src: 'source/img-loseless/*.png',
+    dest: 'build/img',
+  },
   resources: {
     src: [
       'source/fonts/*.{woff2,woff}',
@@ -103,14 +107,55 @@ const copyResources = (done) => {
   done();
 };
 
+const imagesLoseless = (done) => {
+  gulp.src(paths.imagesLoseless.src)
+    .pipe(sharpResponsive({
+      formats: [
+        { format: 'png', rename: { suffix: '@1x' }, width: (metadata) => metadata.width * 0.5 },
+        { format: 'png', rename: { suffix: '@2x' } },
+        {
+          format: 'webp',
+          rename: { suffix: '@1x' },
+          webpOptions: { lossless: true },
+          width: (metadata) => metadata.width * 0.5,
+        },
+        {
+          format: 'webp',
+          rename: { suffix: '@2x' },
+          webpOptions: { lossless: true },
+        },
+      ],
+    }))
+    .pipe(gulp.dest(paths.imagesLoseless.dest));
+  done();
+};
+
 const images = (done) => {
   gulp.src(paths.images.src)
     .pipe(sharpResponsive({
       formats: [
-        { format: 'jpeg', rename: { suffix: '@1x' }, width: (metadata) => metadata.width * 0.5 },
-        { format: 'jpeg', rename: { suffix: '@2x' } },
-        { format: 'webp', rename: { suffix: '@1x' }, width: (metadata) => metadata.width * 0.5 },
-        { format: 'webp', rename: { suffix: '@2x' } },
+        {
+          format: 'jpeg',
+          rename: { suffix: '@1x' },
+          jpegOptions: { progressive: true },
+          width: (metadata) => metadata.width * 0.5,
+        },
+        {
+          format: 'jpeg',
+          jpegOptions: { progressive: true },
+          rename: { suffix: '@2x' },
+        },
+        {
+          format: 'webp',
+          rename: { suffix: '@1x' },
+          webpOptions: { lossless: false },
+          width: (metadata) => metadata.width * 0.5,
+        },
+        {
+          format: 'webp',
+          rename: { suffix: '@2x' },
+          webpOptions: { lossless: false },
+        },
       ],
     }))
     .pipe(gulp.dest(paths.images.dest));
@@ -153,6 +198,7 @@ export const build = gulp.series(
   copyResources,
   gulp.parallel(
     images,
+    imagesLoseless,
     styles,
     scripts,
     pug,
@@ -165,6 +211,7 @@ export default gulp.series(
   copyResources,
   gulp.parallel(
     images,
+    imagesLoseless,
     styles,
     scripts,
     pug,

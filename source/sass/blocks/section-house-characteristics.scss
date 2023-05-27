@@ -1,0 +1,23 @@
+.house-characteristics {
+  @include font-primary;
+
+  padding: 142px 0 150px;
+  background-color: $palette-secondary;
+}
+
+.house-characteristics .wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.house-characteristics__title {
+  @include font-title-middle;
+
+  margin: 0 0 62px;
+  flex-basis: 100%;
+}
+
+.house-characteristics__description {
+  flex-basis: 31.25%;
+}

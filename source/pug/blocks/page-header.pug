@@ -30,16 +30,17 @@ mixin siteNavItem({ name, pageHref, navSubPages })
 
 
 header.header
-  .wrapper
-    //- logoHref генерируется в page-layout.pug
-    a.header__logo(href=logoHref)
-      img.domy-logo(src="./img/domy-logo.svg", width="86", height="26", alt="логотип DOMY.")
-    nav.header__nav.site-nav
-      ul.site-nav__list
-        each item in mainNav
-          +siteNavItem(item)
-    .header__container
-      .header__phone
-        a.header__tel(href="tel:+74951828188") +7 (495) 182 81 88
-        p.header__tel-time Ежедневно с 9:00 до 21:00
-      button.header__callback.button.callback-button Заказать звонок
+  .header__fixed-container
+    .wrapper
+      //- logoHref генерируется в page-layout.pug
+      a.header__logo(href=logoHref)
+        img.domy-logo(src="./img/domy-logo.svg", width="86", height="26", alt="логотип DOMY.")
+      nav.header__nav.site-nav
+        ul.site-nav__list
+          each item in mainNav
+            +siteNavItem(item)
+      .header__container
+        .header__phone
+          a.header__tel(href="tel:+74951828188") +7 (495) 182 81 88
+          p.header__tel-time Ежедневно с 9:00 до 21:00
+        button.header__callback.button.callback-button Заказать звонок

@@ -6,14 +6,14 @@
       placeholder: "Ваше имя",
     },
     {
-      inputName: "form-email",
+      inputName: "form-cntctml",
       inputType: "email",
       label: "Электронная почта",
-      placeholder: "E-mail*",
+      placeholder: "E-mаil*",
       isRequired: true,
     },
     {
-      inputName: "form-tel",
+      inputName: "form-cntctfn",
       inputType: "tel",
       label: "Телефон",
       placeholder: "Телефон: +7 ",
@@ -26,10 +26,14 @@ section.order
     .order__container
       form.order__form.form(action="https://echo.htmlacademy.ru", method="post", autocomplete="off")
         fieldset.order__fieldset.form__fieldset
+          //- honey-pot for spam-bots ↓↓↓↓↓
+          input.h#email(type="tel", name="email", placeholder="email", style="display: none")
+          input.h#phone(type="tel", name="phone", placeholder="телефон", style="display: none")
+          //- honey-pot for spam-bots ↑↑↑↑↑
           each item in WRITEUS_FORM
             +formInput(item)(class="form__simple-input")
         .form__privacy
-          input.form__privacy-checkbox.visuallyhidden#form-privacy(type="checkbox", name="form-privacy", required="", checked="")
+          input.form__privacy-checkbox.visuallyhidden#form__privacy-checkbox(type="checkbox", name="form-privacy", required="", checked="")
           label.form__privacy-label(for="form__privacy-checkbox")
             | я согласен с
             |

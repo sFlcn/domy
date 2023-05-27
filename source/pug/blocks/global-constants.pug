@@ -1,4 +1,50 @@
 -
+  // данные страниц о домах
+  const HOUSE_DATA = {
+    "30m": {
+      title: "Domy. 30 м²",
+      price: "1 410 000",
+      data: [
+        {
+          name: "Габариты дома",
+          value: "5,2 × 7 м",
+          head: true
+        },
+        {
+          name: "Кухня / Гостиная",
+          value: "16,9",
+          underline: true
+        },
+        {
+          name: "Спальня",
+          value: "6,6",
+          underline: true
+        },
+        {
+          name: "Санузел",
+          value: "3,5",
+          underline: true
+        },
+        {
+          name: "Прихожая",
+          value: "3,7",
+        },
+        {
+          name: "Срок изготовления",
+          value: "25 дней",
+          summary: true,
+        },
+      ],
+      picturesFiles: [
+        {name: "main-img-30m", dimensions: [1050, 422]},
+        {name: "mid-img-30m", dimensions: [500, 281]},
+        {name: "small-img-30m", dimensions: [500, 209]},
+      ],
+      schemeFile: {name: "scheme-30m", dimensions: [658, 631]}
+    },
+  }
+
+  // для навигации — названия и имена фалов:
   const PAGES = {
     "index": { name: "Дома", pageHref: "index" },
     "technology": { name: "Технологии и производство", pageHref: "technology" },
@@ -17,20 +63,8 @@
     "credit": { name: "Кредитование", pageHref: "credit" },
     "shipping": { name: "Доставка и оплата", pageHref: "shipping" },
   };
-  //- const PAGES = {
-  //-   "index": { name: "Domy", pageHref: "index.html" },
-  //-   "technology": { name: "Domy: технологии и производство", pageHref: "technology.html" },
-  //-   "company": { name: "Domy: строим дома для будущего", pageHref: "company.html" },
-  //-   "faq": { name: "Domy: вопросы", pageHref: "faq.html" },
-  //-   "contacts": { name: "Domy: контакты", pageHref: "contacts.html" },
-  //-   "30m": { name: "Domy: ваш дом 30м²", pageHref: "30m.html" },
-  //-   "45m": { name: "Domy: ваш дом 45м²", pageHref: "45m.html" },
-  //-   "60m": { name: "Domy: ваш дом 60м²", pageHref: "60m.html" },
-  //-   "70m": { name: "Domy: ваш дом 70м²", pageHref: "70m.html" },
-  //-   "80m": { name: "Domy: ваш дом 80м²", pageHref: "80m.html" },
-  //-   "110m": { name: "Domy: ваш дом 110м²", pageHref: "110m.html" },
-  //-   "bath": { name: "Domy: ваша баян", pageHref: "bath.html" },
-  //- };
+
+  // для ссылок на соцсети:
   const SOCIAL_LINKS = [
     { name: "Вконтакте", cssClass: "vk", href: "https://vk.com/domycompany" },
     { name: "Telegram", cssClass: "tg", href: "https://t.me/domyhouse" },

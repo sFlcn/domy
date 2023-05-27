@@ -1,7 +1,15 @@
 .header {
+  min-height: 130px;
+}
+
+.header__fixed-container {
   padding-top: 38px;
+  position: fixed;
+  width: 100%;
   color: $palette-darkcontrast;
   background-color: $palette-brightcontrast;
+  z-index: 100;
+  box-shadow: 0 3px 50px rgba($palette-darkcontrast, 15%);
 }
 
 .header .wrapper {

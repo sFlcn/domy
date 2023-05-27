@@ -1,8 +1,12 @@
 extends blocks/page-layout.pug
 
 block prepend variables
-  - const currentPage = 'index';
-  - const pageTitle = 'Domy';
+  - const currentPage = PAGES["index"].pageHref;
+  - const pageTitle = "Domy";
+
+block append head
+    <link rel="preload" href="img/main-slider-1@2x.webp" media="(min-width: 1200px) and (min-resolution: 1.1dppx)" as="image/webp">
+    <link rel="preload" href="img/main-slider-1@1x.webp" media="(min-width: 1200px) and (max-resolution: 1dppx)" as="image/webp">
 
 block main
   main.main.index-main

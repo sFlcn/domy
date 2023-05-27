@@ -62,18 +62,18 @@ section.main-promo
         li.slider__next
           button.main-promo__slider-button.main-promo__slider-button--r.slider__button--next
             img(src="./img/slider-button.svg", width="86px", height="86px", alt="следующий слайд")
-  .main-promo__container-center.promo-description
-    .promo-description__header-block
-      h3.promo-description__title
+  .main-promo__container-center.description
+    .description__header-block
+      h3.description__title
         span 70
         span=" "
         span м²
-      p.promo-description__about= promoTableData.about1
-        span.promo-description__about-more= promoTableData.about2
-    dl.promo-description__specifications
+      p.description__about= promoTableData.about1
+        span.description__about-more= promoTableData.about2
+    dl.description__specifications.description__specifications--small
       each item in promoTableData.data
-        .promo-description__box(class= (item.underline === true) ? "promo-description__box--indented" : (item.summary === true) ? "promo-description__box--summary" : "")
-          dt.promo-description__parameter= item.name
-          dd.promo-description__value= item.value
-    a.promo-description__link.button(href= promoTableData.href + ".html") Cмотреть планировку
+        .description__box.description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
+          dt.description__parameter= item.name
+          dd.description__value= item.value
+    a.promo-description__link.description__link.button(href= promoTableData.href + ".html") Cмотреть планировку
 

@@ -1,0 +1,61 @@
+extends blocks/--houses.pug
+
+block houseVariables
+  - const currentPage = PAGES["30m"].pageHref;
+  - const pageTitle = HOUSE_DATA["30m"].title;
+
+block houseContent
+  section.house-promo.house-promo--30
+    .wrapper
+      .house-promo__text
+        h1.house-promo__title= "Ваш дом "
+        .house-promo__title-descr= "30 м²"
+        p.house-promo__price= `${HOUSE_DATA["30m"]["price"]} ₽`
+      ul.house-promo__images-list
+        li.house-promo__images-item
+          +pictureJpgWebp(
+            HOUSE_DATA["30m"]["picturesFiles"][0]["name"],
+            HOUSE_DATA["30m"]["picturesFiles"][0]["dimensions"][0],
+            HOUSE_DATA["30m"]["picturesFiles"][0]["dimensions"][1],
+            "Визуализация дома",
+            "house-promo__img0"
+          )
+        li.house-promo__images-item
+          +pictureJpgWebp(
+            HOUSE_DATA["30m"]["picturesFiles"][1]["name"],
+            HOUSE_DATA["30m"]["picturesFiles"][1]["dimensions"][0],
+            HOUSE_DATA["30m"]["picturesFiles"][1]["dimensions"][1],
+            "Визуализация дома",
+            "house-promo__img1"
+          )
+        li.house-promo__images-item
+          +pictureJpgWebp(
+            HOUSE_DATA["30m"]["picturesFiles"][2]["name"],
+            HOUSE_DATA["30m"]["picturesFiles"][2]["dimensions"][0],
+            HOUSE_DATA["30m"]["picturesFiles"][2]["dimensions"][1],
+            "Визуализация дома",
+            "house-promo__img2"
+          )
+
+  section.house-characteristics.house-characteristics--30
+    .wrapper
+      h2.house-characteristics__title Характеристики и планировка
+      .house-characteristics__description
+        dl.description__specifications
+          each item in HOUSE_DATA["30m"]["data"]
+            -
+              let cssClass= "";
+              if (item.head === true) {cssClass += "description__box--head "}
+              if (item.underline === true) {cssClass += "description__box--indented "}
+              if (item.summary === true) {cssClass += "description__box--summary "}
+            .description__box(class= cssClass)
+              dt.description__parameter= item.name
+              dd.description__value= item.value
+      .house-characteristics__scheme
+        +picturePngWebp(
+          HOUSE_DATA["30m"]["schemeFile"]["name"],
+          HOUSE_DATA["30m"]["schemeFile"]["dimensions"][0],
+          HOUSE_DATA["30m"]["schemeFile"]["dimensions"][1],
+          "Схема дома 30 м²",
+          "house-characteristics__img"
+        )
