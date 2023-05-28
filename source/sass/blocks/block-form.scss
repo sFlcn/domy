@@ -98,4 +98,10 @@
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
+  transition: color 0.3s, background-color 0.42s;
+
+  &:hover {
+    color: $palette-brightcontrast;
+    background-color: $palette-prime;
+  }
 }

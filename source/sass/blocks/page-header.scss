@@ -83,4 +83,10 @@
   background-color: $palette-accent;
   border: 1px solid $palette-darkcontrast;
   border-radius: 5px;
+  transition: color 0.3s, background-color 0.42s;
+
+  &:hover {
+    color: $palette-brightcontrast;
+    background-color: $palette-prime;
+  }
 }

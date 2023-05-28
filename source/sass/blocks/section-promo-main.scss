@@ -44,6 +44,12 @@
   background-color: $palette-accent;
   text-transform: uppercase;
   border-radius: 5px;
+  transition: color 0.3s, background-color 0.42s;
+
+  &:hover {
+    color: $palette-brightcontrast;
+    background-color: $palette-prime;
+  }
 }
 
 .main-promo__container-pseudo-right {
@@ -124,5 +130,11 @@
   font-size: 14px;
   color: $palette-brightcontrast;
   text-transform: uppercase;
-  background: $palette-prime url("../img/arrow-b.svg") no-repeat center right 68px;
+  background: $palette-prime url("../img/arrow-b.svg") no-repeat center right 60px;
+  transition: color 0.3s, background-color 0.42s;
+
+  &:hover {
+    color: $palette-darkcontrast;
+    background-color: $palette-accent;
+  }
 }

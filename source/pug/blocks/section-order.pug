@@ -22,7 +22,7 @@
   ]
 
 section.order
-  .wrapper
+  .wrapper.animated-appearance
     h2.order__title Закажите&nbsp;дом мечты&nbsp;уже <br>сегодня!
     .order__container
       form.order__form.form(action="https://echo.htmlacademy.ru", method="post", autocomplete="off")
@@ -39,4 +39,4 @@ section.order
             | я согласен с
             |
             a.form__privacy-link(href="privacy.html", onclick="return false") политикой конфиденциальности
-        input.form__submit.button(type="submit", value="Отправить")
+        input.form__submit.button(type="submit", value="Отправить", onclick="return false")

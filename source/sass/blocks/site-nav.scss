@@ -11,6 +11,7 @@
   margin: 0 45px;
   padding: 4px 5px;
   border-bottom: 1px solid transparent;
+  transition: border 0.42s;
 
   &:hover,
   &:focus {
@@ -40,6 +41,7 @@
   font-weight: 800;
   border-radius: 5px 0;
   padding: 2px 7px;
+  transition: background-color 0.42s;
 
   &:hover,
   &:focus-within {
