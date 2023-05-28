@@ -1,0 +1,11 @@
+extends blocks/page-layout.pug
+
+block prepend variables
+  - const currentPage = PAGES["contacts"].pageHref;
+  - const pageTitle = "Domy. Контакты";
+
+block main
+  main.main
+    h1.visuallyhidden Наши контакты
+    include blocks/section-contacts.pug
+

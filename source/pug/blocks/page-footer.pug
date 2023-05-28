@@ -13,7 +13,7 @@
 
 mixin socialLinkItem({ name, cssClass, href })
   li.socials__item
-    a(class=`socials__link socials__link--${cssClass}`, href= href)
+    a(class=`socials__link socials__link--${cssClass}`, href= href, target="_blank", rel="noopener")
       span.visuallyhidden= name
 
 mixin footerNavItem({ name, pageHref })
