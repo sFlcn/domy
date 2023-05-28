@@ -1,92 +1,30 @@
--
-  const equipmentData = [
-    {
-      title: "Основное",
-      iconName: "base",
-      parts: [
-        {
-          name: "Перекрытие пола",
-          content: "Брус камерной сушки хвойных пород 150 × 50. Огнебиозащита Neomid. Утепление 150 мм Технониколь. Диффузионная мембрана JUTA Ютавек. Пароизоляция JUTA Ютафол. Сетка сварная металлическая (защита от грызунов)",
-        },
-        {
-          name: "Стены",
-          content: "Брус камерной сушки хвойных пород 150 × 50. Огнебиозащита Neomid. Утепление 150 мм Технониколь. Диффузионная мембрана JUTA Ютавек. Пароизоляция JUTA Ютафол",
-        },
-        {
-          name: "Кровля",
-          content: "Брус камерной сушки хвойных пород 200 × 50. Огнебиозащита Neomid. Утепление 200 мм Технониколь.  Диффузионная мембрана JUTA  Ютавек. Пароизоляция JUTA  Ютафол. ПВХ-мембрана Технониколь LOGICROOF V-RP",
-        },
-        {
-          name: "Фасад",
-          content: "Планкен горизонтальный (цвет на выбор заказчика). Декоративная подсветка 5 точек",
-        },
-        {
-          name: "Оконные системы",
-          content: "Rehau Grazio 70 мм. Профиль с покраской (цвет на выбор заказчика). Стеклопакет энергосберегающий триплекс",
-        },
-        {
-          name: "Входная дверь",
-          content: "Алюминиевый профиль. Стеклопакет энергосберегающий триплекс",
-        },
-      ],
-    },
-    {
-      title: "Внутренняя отделка",
-      iconName: "interior",
-      parts: [
-        {
-          name: "Пол",
-          content: "Ламинат EGGER HOME Дуб Крестон",
-        },
-        {
-          name: "Стены",
-          content: "Комбинированная отделка планкеном и стенными панелями с покрытием акриловой краской Alpa (латексная шелковисто-матовая)",
-        },
-        {
-          name: "Потолок",
-          content: "Натяжной тканевый Deskor",
-        },
-        {
-          name: "Двери",
-          content: "Двери межкомнатные: 2000 × 600 мм EN1",
-        },
-      ],
-    },
-    {
-      title: "Инженерные коммуникации",
-      iconName: "communications",
-      parts: [
-        {
-          name: "Санузел",
-          content: "Душевая кабина FLUMEN DESIGN Tuluza 120 × 80 × 195 с трапом и душевой системой FLUMEN DESIGN Orlean с верхним душем; смеситель для душа FLUMEN DESIGN Orlean; раковина с тумбой AM.PM GEM 60 см и смесителем Cersanit Brasko Black; унитаз с инсталляцией Culto Monet",
-        },
-        {
-          name: "Электрика",
-          content: "Монтаж электрики в противопожарной гофре, кабель NUM. Розетки, выключатели Legrand Инспирия. Силовой щит с DIF автоматами. Освещение  –  трековые споты WOLTA Бейс, бра Kanlux laurin EL-10 у прикроватной зоны. Система теплого пола в санузлах с электронным регулятором",
-        },
-        {
-          name: "Водоснабжение",
-          content: "Разводка труб водоснабжения скрытым типом. Коллекторный узел скрытого типа с системой фильтрации воды",
-        },
-        {
-          name: "Канализация",
-          content: "Разводка труб канализации скрытым типом",
-        },
-      ],
-    },
-  ];
+- const equipmentData = isBath === true ? bathEquipmentData : houseEquipmentData
+
+mixin equipmentAccordionItem(buttonValue, contentValue)
+  li.basequipment__item
+    button.button.accordion-button.basequipment__item-name(type="button")= buttonValue
+    .basequipment__item-content.accordion-content
+      p= contentValue
 
 section.basequipment
   .wrapper
     h2.basequipment__title Что входит в базовую комплектацию
     ul.basequipment__categories-roster
-      each categoryRoster in equipmentData
-        li(class=`basequipment__category basequipment__category--${categoryRoster.iconName}`)
-          .basequipment__category-titlebox
-            h3.basequipment__category-title= categoryRoster.title
-          ul.basequipment__category-list
-            each item in categoryRoster.parts
-              li.basequipment__item
-                button.button.accordion-button.basequipment__item-name(type="button")= item.name
-                .basequipment__item-content.accordion-content
-                  p= item.content
+      each dataItem in equipmentData
+        if (Array.isArray(dataItem))
+          .basequipment__category-container
+            each subItem in dataItem
+              li(class=`basequipment__category basequipment__category--${subItem.iconName}`)
+                .basequipment__category-titlebox
+                  h3.basequipment__category-title= subItem.title
+                ul.basequipment__category-list
+                  each item in subItem.parts
+                    +equipmentAccordionItem(item.name, item.content)
+
+        else
+          li(class=`basequipment__category basequipment__category--${dataItem.iconName}`)
+            .basequipment__category-titlebox
+              h3.basequipment__category-title= dataItem.title
+            ul.basequipment__category-list
+              each item in dataItem.parts
+                +equipmentAccordionItem(item.name, item.content)

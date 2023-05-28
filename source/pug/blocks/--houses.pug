@@ -60,11 +60,6 @@ block main
           "house-characteristics__img"
         )
 
-
-//- block main
-//-   main.main.index-main
-
-//-     block houseContent
-
-//-     include section-basequipment.pug
-//-     include section-basequipment-not.pug
+  include section-basequipment.pug
+  if isBath !== true
+    include section-basequipment-not.pug

@@ -31,8 +31,21 @@
   justify-content: space-between;
 }
 
+.basequipment__category-container {
+  flex-basis: 31.25%;
+
+  & .basequipment__category:nth-child(1) {
+    min-height: 410px;
+  }
+}
+
 .basequipment__category {
   flex-basis: 31.25%;
+  margin-bottom: 13px;
+
+  &--none {
+    min-height: 355px;
+  }
 }
 
 .basequipment__category-titlebox {
@@ -41,6 +54,12 @@
   display: flex;
   border-radius: 30px 0;
   background-color: $palette-secondary;
+
+  .basequipment__category--none & {
+    padding-top: 12px;
+    padding-bottom: 14px;
+    background-color: $palette-accent;
+  }
 }
 
 .basequipment__category-title {
@@ -53,11 +72,18 @@
   background: url("../img/equipment-icons-base.svg") right 0 center no-repeat;
 
   .basequipment__category--interior & {
-    background-image: url("../img/equipment-icons-interior.svg")
+    background-image: url("../img/equipment-icons-interior.svg");
   }
 
   .basequipment__category--communications & {
-    background-image: url("../img/equipment-icons-communications.svg")
+    background-image: url("../img/equipment-icons-communications.svg");
+  }
+
+  .basequipment__category--none & {
+    margin-left: 37px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-image: none;
   }
 }
 
@@ -73,6 +99,10 @@
 
   margin-bottom: 9px;
   border-bottom: 1px solid $palette-darkcontrast;
+
+  &:last-of-type {
+    border-color: transparent;
+  }
 }
 
 .basequipment__item--empty {

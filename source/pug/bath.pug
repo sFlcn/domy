@@ -1,0 +1,9 @@
+extends blocks/--houses.pug
+
+block houseVariables
+  - const currentPage = PAGES["bath"].pageHref;
+  - const houseData = HOUSES_DATA["bath"]
+  - const isBath = true //- ← чтобы в комплектацию подгружались данные о бане
+  - const pageTitle = houseData.title;
+  - const classModifier = "--bath";
+  - const descrRu = "бани";
