@@ -33,15 +33,15 @@
 
 .basequipment__category-container {
   flex-basis: 31.25%;
-
-  & .basequipment__category:nth-child(1) {
-    min-height: 410px;
-  }
 }
 
 .basequipment__category {
   flex-basis: 31.25%;
   margin-bottom: 13px;
+
+  .basequipment__category-container &:nth-child(1) {
+    min-height: 355px;
+  }
 
   &--none {
     min-height: 355px;

@@ -2,13 +2,13 @@
   let mainNav = [
     PAGES.index,
     PAGES.company,
-    { name: "Для бизнеса" },
+    { name: "Для бизнеса", pageHref: "faq" },
     { name: "Условия" },
   ];
   mainNav[0].navSubPages = [ PAGES['30m'], PAGES['45m'], PAGES['60m'], PAGES['70m'], PAGES['80m'], PAGES['110m'], PAGES['bath'] ];
   mainNav[1].navSubPages = [ PAGES.technology, PAGES.faq, PAGES.contacts];
-  mainNav[2].navSubPages = [ PAGES.investors, PAGES.suppliers];
-  mainNav[3].navSubPages = [ PAGES.credit, PAGES.shipping];
+  //- mainNav[2].navSubPages = [ PAGES.investors, PAGES.suppliers];
+  //- mainNav[3].navSubPages = [ PAGES.credit, PAGES.shipping];
 
 mixin siteNavSubItem({ name, pageHref })
   li(class= pageHref !== currentPage ? 'site-nav__sub-item' : 'site-nav__sub-item site-nav__sub-item--current')

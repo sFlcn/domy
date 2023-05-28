@@ -1,0 +1,10 @@
+extends blocks/page-layout.pug
+
+block prepend variables
+  - const currentPage = PAGES["faq"].pageHref;
+  - const pageTitle = "Domy. Вопросы";
+
+block main
+  main.main
+    h1.visuallyhidden Частые вопросы
+    include blocks/section-faq.pug

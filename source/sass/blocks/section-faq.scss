@@ -1,0 +1,91 @@
+.faq {
+  padding: 150px 0;
+  min-height: 510px;
+  color: $palette-darkcontrast;
+  background-color: $palette-brightcontrast;
+  background-image:
+    url("../img/question.svg"),
+    url("../img/question-small.svg");
+  background-repeat:  no-repeat,  no-repeat;
+  background-position-x: 11.86vw, 22.35vw;
+  background-position-y: 9.9vh, 31.6vh;
+}
+
+.faq .wrapper {
+  position: relative;
+}
+
+.faq .wrapper::before {
+  content: "Частые вопросы";
+  position: absolute;
+
+  @include font-title-middle;
+}
+
+.faq__category-list {
+  @include list;
+
+  margin-left: 34.35%;
+  padding-top: 14px;
+  width: 34.57%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.faq__item {
+  @include font-primary($color: $palette-darkcontrast);
+
+  margin-bottom: 9px;
+  border-bottom: 1px solid $palette-darkcontrast;
+
+  // &:last-of-type {
+  //   border-color: transparent;
+  // }
+
+  &:--empty {
+    border-bottom: 1px solid transparent;
+    pointer-events: none;
+  }
+}
+
+.faq__item-name {
+  @include font-title-small;
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11px;
+  padding: 9.5px 0;
+  width: 100%;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: start;
+  word-break: normal;
+
+  &::after {
+    content: "+";
+  }
+
+  .faq__item--open &::after {
+    content: "-";
+  }
+
+  .faq__item--empty &::after {
+    content: "";
+  }
+}
+
+.faq__item-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-out, max-height 0.42s ease;
+
+  .faq__item--open & {
+    opacity: 1;
+  }
+}
+
+.faq__item-content p {
+  margin: 0 0 19px;
+  padding: 0;
+}

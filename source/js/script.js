@@ -1,4 +1,5 @@
 const basequipmentAccordions = document.querySelectorAll('.basequipment__category');
+const faqAccordions = document.querySelectorAll('.faq__category-list');
 
 // Functions:
 
@@ -78,6 +79,11 @@ function addTelInputMasks() {
 }
 
 window.addEventListener('DOMContentLoaded', addTelInputMasks);
+
 basequipmentAccordions.forEach((el) => {
   animateAccordion(el, 'basequipment__item--open');
+});
+
+faqAccordions.forEach((el) => {
+  animateAccordion(el, 'faq__item--open');
 });

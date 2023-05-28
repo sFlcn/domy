@@ -6,7 +6,7 @@
   "description": "domycompany webpage",
   "scripts": {
     "clean": "rm -r build/*",
-    "test": "stylelint \"source/sass/**/*.scss\" && pug-lint source/pug/*.pug",
+    "test": "stylelint \"source/sass/**/*.scss\" && pug-lint source/pug/*.pug && eslint source/js/",
     "build": "gulp build",
     "start": "gulp"
   },
