@@ -1,3 +1,7 @@
+mixin pictureJpg(filename, width, height, altText, cssClass, lazy)
+  picture
+    img(class= cssClass, src= `./img/${filename}@1x.jpeg`, srcset=`./img/${filename}@2x.jpeg 2x`, width=width, height=height, alt= altText loading=lazy)
+
 mixin pictureJpgWebp(filename, width, height, altText, cssClass, lazy)
   picture
     source(type="image/webp", srcset= `./img/${filename}@1x.webp 1x,./img/${filename}@2x.webp 2x`)

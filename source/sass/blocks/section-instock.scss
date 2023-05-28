@@ -36,6 +36,18 @@
   object-fit: cover;
 }
 
+.instock__item:nth-child(1) .instock__item-image {
+  background: linear-gradient(20deg, #A4B571, #A3ABB4);
+}
+
+.instock__item:nth-child(2) .instock__item-image {
+  background: linear-gradient(20deg, #594C4C, #F5DDB1);
+}
+
+.instock__item:nth-child(3) .instock__item-image {
+  background: linear-gradient(20deg, #6E8260, #ADB1BA);
+}
+
 .instock__item-name {
   position: absolute;
   top: 2.5%;

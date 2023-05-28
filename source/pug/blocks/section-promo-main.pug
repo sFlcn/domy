@@ -1,43 +1,5 @@
 -
-  const promoTableData = {
-    href: "70m",
-    about1: "Габариты дома",
-    about2: "11,20 × 9,50 м",
-    data: [
-      { name: "Гостиная",
-        value: "14,4",
-        underline: true
-      },
-      { name: "Спальня 1",
-        value: "8,7",
-      },
-      { name: "Спальня 2",
-        value: "10,2",
-      },
-      { name: "Спальня 3",
-        value: "11,6",
-        underline: true,
-      },
-      { name: "Кухня",
-        value: "14,4",
-        underline: true,
-      },
-      { name: "Санузел 1",
-        value: "1,4",
-      },
-      { name: "Санузел 2",
-        value: "8,9",
-        underline: true,
-      },
-      { name: "Терраса",
-        value: "24,4",
-      },
-      { name: "Срок изготовления",
-        value : "25 дней",
-        summary: true,
-      },
-    ],
-  }
+  const promoTableData = HOUSES_DATA["70m"]
 
 section.main-promo
   .wrapper
@@ -54,7 +16,7 @@ section.main-promo
     .main-promo__slider.slider
       ul.main-promo__slider-list
         li.main-promo__slider-item
-          +pictureJpgWebp('main-slider-1', '100%', 'auto', 'Фото модульного дома на фоне леса.', "main-promo__slider-image slider__image")
+          +pictureJpg('main-slider-1', '100%', 'auto', 'Фото модульного дома на фоне леса.', "main-promo__slider-image slider__image")
       ul.main-promo__slider-controls.slider__controls
         li.slider__prev
           button.main-promo__slider-button.slider__button--prev
@@ -68,12 +30,16 @@ section.main-promo
         span 70
         span=" "
         span м²
-      p.description__about= promoTableData.about1
-        span.description__about-more= promoTableData.about2
+      //- достаём поля заголовка для элемента about ↓
+      - const aboutFileds = promoTableData["data"].filter(field => {return field.head === true})[0];
+      p.description__about= aboutFileds["name"]
+        span.description__about-more= aboutFileds["value"]
     dl.description__specifications.description__specifications--small
       each item in promoTableData.data
-        .description__box.description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
-          dt.description__parameter= item.name
-          dd.description__value= item.value
+        //- переносим все поля, кроме заголовка, в таблицу ↓
+        if item["head"] !== true
+          .description__box.description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
+            dt.description__parameter= item.name
+            dd.description__value= item.value
     a.promo-description__link.description__link.button(href= promoTableData.href + ".html") Cмотреть планировку
 
