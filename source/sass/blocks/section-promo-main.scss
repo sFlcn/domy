@@ -24,7 +24,7 @@
 .main-promo__text-box {
   margin: 0 10px 234px;
 
-  @include font-primary;
+  @include font-primary($line-height: 18px);
 }
 
 .main-promo__features-list {

@@ -1,7 +1,11 @@
 .basequipment {
   background-color: $palette-brightcontrast;
   color: $palette-darkcontrast;
-  padding: 142px 0 150px;
+  padding: 142px 0 70px;
+  min-height: 780px;
+}
+
+.basequipment .wrapper{
   min-height: 780px;
 }
 
@@ -114,7 +118,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 11px;
-  padding: 10px 0;
+  padding: 10px 0 9px;
   width: 100%;
   color: $palette-darkcontrast;
   font-size: 16px;
@@ -136,6 +140,7 @@
 
 .basequipment__item-content {
   max-height: 0;
+  margin-bottom: 2px;
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.3s ease-out, max-height 0.42s ease;
