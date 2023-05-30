@@ -1,3 +1,4 @@
+const mainMenuItems = document.querySelectorAll('.site-nav__link');
 const basequipmentAccordions = document.querySelectorAll('.basequipment__category');
 const faqAccordions = document.querySelectorAll('.faq__category-list');
 
@@ -116,10 +117,32 @@ function animateAppearance(elementsCssClass, throttleTimer) {
   document.addEventListener('DOMContentLoaded', scrollingResolve);
 }
 
+// main-menu showing
+
+function mainMenuShowing(menuItemsElementsArr, openMenuClassName) {
+  let currentMenuItem;
+
+  function onMouseover() {
+    const parentEl = this.parentElement;
+    menuItemsElementsArr.forEach((el) => el.parentElement.classList.remove(openMenuClassName));
+
+    if (currentMenuItem) {
+      currentMenuItem.classList.remove(openMenuClassName);
+    }
+    parentEl.classList.add(openMenuClassName);
+    currentMenuItem = parentEl;
+  }
+
+  menuItemsElementsArr.forEach((el) => {
+    el.addEventListener('mouseover', onMouseover);
+  });
+}
+
 // LAUNCHING:
 
 window.addEventListener('DOMContentLoaded', addTelInputMasks);
 animateAppearance('animated-appearance', 250);
+mainMenuShowing(mainMenuItems, 'menu--active');
 
 basequipmentAccordions.forEach((el) => {
   animateAccordion(el, 'basequipment__item--open');

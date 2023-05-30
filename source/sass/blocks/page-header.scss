@@ -13,10 +13,13 @@
 }
 
 .header .wrapper {
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.header__logo-block {
+  flex-basis: 14.06%;
 }
 
 .header a {
@@ -24,56 +27,72 @@
 }
 
 .header__logo {
-  margin: 3px 0;
+  display: inline-block;
+  padding: 3px 0 5px;
+}
+
+.header__nav-block {
+  position: relative;
+  flex-basis: 48.43%;
 }
 
 .header__nav {
   flex-basis: 60%;
-  margin: 6px 5px 58px;
+  margin: 6px 2px 48px;
 }
 
 .header__sub-menu {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-between;
   position: absolute;
-  max-width: 54%;
-  min-width: 30%;
-  bottom: 23px;
+  width: 64.51%;
+  bottom: 22px;
+  left: 0;
   z-index: 100;
   transform: translateX(-25%);
+
+  &.header__sub-menu--shifted {
+    left: unset;
+    right: 3%;
+    justify-content: flex-end;
+  }
 }
 
-.header__container {
-  max-width: 31%;
-  flex-grow: 1;
+.header__sub-menu--shifted .header__sub-item {
+  margin-left: 8%;
+}
+
+.header__call-block {
+  flex-basis: 31.25%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .header__phone {
+  flex-basis: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 11px 5px;
+  margin: 11px 0;
 }
 
 .header__tel {
   font-size: 16px;
   font-weight: 700;
-  margin: 0 0 7px;
+  margin: 0 5px 7px;
 }
 
 .header__tel-time {
-  margin: 0;
+  margin: 0 5px;
   padding: 0;
   font-size: 14px;
   line-height: 16px;
 }
 
 .header__callback {
-  width: 41%;
+  flex-basis: 40%;
   margin: 2px 0;
   padding: 11px 9px 9px;
   align-self: flex-start;
