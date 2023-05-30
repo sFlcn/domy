@@ -103,21 +103,26 @@
   background: transparent center no-repeat;
   transition: opacity 0.42s;
 
+  &--vk {
+    background-image: url("../img/vk-logo.svg");
+  }
+
+  &--tg {
+    background-image: url("../img/tg-logo.svg");
+  }
+
+  &--ytb {
+    background-image: url("../img/ytb-logo.svg");
+  }
+
   &:hover {
     opacity: 0.5;
   }
-}
 
-.footer .socials__link--vk {
-  background-image: url("../img/vk-logo.svg");
-}
-
-.footer .socials__link--tg {
-  background-image: url("../img/tg-logo.svg");
-}
-
-.footer .socials__link--ytb {
-  background-image: url("../img/ytb-logo.svg");
+  &--disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
 }
 
 .footer__copyrights {

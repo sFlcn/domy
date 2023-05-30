@@ -65,6 +65,11 @@
   padding: 10px 0 10px 25px;
   font-size: 9px;
   line-height: 120%;
+
+  a {
+    padding: 1px 0 2px;
+    border-bottom: 0.5px solid $palette-prime;
+  }
 }
 
 .form__privacy-label::before {
@@ -98,10 +103,22 @@
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
-  transition: color 0.3s, background-color 0.42s;
+  transition: color 0.3s, background-color 0.42s, opacity 0.3s;
 
   &:hover {
     color: $palette-brightcontrast;
     background-color: $palette-prime;
+  }
+
+  &:active {
+    color: $palette-darkcontrast;
+    opacity: 0.5;
+  }
+
+  &:disabled {
+    color: $palette-dim;
+    background-color: transparent;
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
