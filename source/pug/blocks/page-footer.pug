@@ -27,7 +27,7 @@ mixin footerNavItem({ name, pageHref })
     if ((pageHref) && (pageHref !== currentPage))
       a.footer-nav__link(href=pageHref + ".html")= name
     else
-      a.footer-nav__link(href="##", onclick="return false")= name
+      a.footer-nav__link.na(href="##", onclick="return false")= name
 
 footer.footer
   .wrapper
