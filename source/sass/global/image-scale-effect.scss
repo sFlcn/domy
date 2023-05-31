@@ -1,0 +1,13 @@
+.image-scalebox {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image-scalebox img {
+  display: block;
+  transition: transform 1.1s ease-in-out;
+}
+
+.image-scalecontainer:hover img {
+  transform: rotate(-0.5deg) scale(1.05);
+}

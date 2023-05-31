@@ -52,12 +52,23 @@
   position: absolute;
   top: 2.5%;
   left: 2%;
-  padding: 11px 21px 11px 20px;
+  padding: 1px 11px 1px 10px;
   background-color: $palette-accent;
   border-radius: 30px 0;
   margin: 0;
 
   @include font-title-middle;
+
+  & a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    transition: transform 0.9s;
+
+    &:hover {
+      transform: scale(1.075);
+    }
+  }
 }
 
 .instock__item-name span:first-of-type {

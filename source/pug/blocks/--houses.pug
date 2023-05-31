@@ -12,7 +12,7 @@ block main
           .house-promo__title-descr=  houseData["header"][1]
           p.house-promo__price= `${houseData["price"]} ₽`
         ul.house-promo__images-list
-          li.house-promo__images-item
+          li.house-promo__images-item.image-scalecontainer.image-scalebox
             +pictureJpgWebp(
               houseData["picturesFiles"][0]["name"],
               houseData["picturesFiles"][0]["dimensions"][0],
@@ -20,7 +20,7 @@ block main
               "Визуализация дома",
               "house-promo__img0"
             )
-          li.house-promo__images-item
+          li.house-promo__images-item.image-scalecontainer.image-scalebox
             +pictureJpgWebp(
               houseData["picturesFiles"][1]["name"],
               houseData["picturesFiles"][1]["dimensions"][0],
@@ -28,7 +28,7 @@ block main
               "Визуализация дома",
               "house-promo__img1"
             )
-          li.house-promo__images-item
+          li.house-promo__images-item.image-scalecontainer.image-scalebox
             +pictureJpgWebp(
               houseData["picturesFiles"][2]["name"],
               houseData["picturesFiles"][2]["dimensions"][0],
