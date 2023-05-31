@@ -16,7 +16,7 @@ mixin siteNavSubItem({ name, pageHref })
 
 
 mixin siteNavItem({ name, pageHref, navSubPages }, index)
-  li(class= `site-nav__item ${ index === 0 ? "menu--active" : null}`)
+  li(class= `header__nav-item site-nav__item ${ index === 0 ? "menu--active" : null}`)
     if ((pageHref) && (pageHref !== currentPage))
       a.site-nav__link(href= pageHref + ".html")
         span= name
@@ -24,7 +24,7 @@ mixin siteNavItem({ name, pageHref, navSubPages }, index)
       a.site-nav__link(href="##", onclick="return false")
         span= name
     if navSubPages
-      ul(class= `header__sub-menu ${index !== 0 ? "header__sub-menu--shifted" : null} site-nav__sub-list`)
+      ul.header__sub-menu.site-nav__sub-list
         each subItem in navSubPages
           +siteNavSubItem(subItem)
 

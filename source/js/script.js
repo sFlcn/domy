@@ -1,4 +1,8 @@
-const mainMenuItems = document.querySelectorAll('.site-nav__link');
+// const mainMenuItems = document.querySelectorAll('.site-nav__link');
+const mainMenuElements = {
+  menuItemsElementsArr: document.querySelectorAll('.site-nav__link'),
+  openMenuClassName: 'menu--active',
+};
 const basequipmentAccordions = document.querySelectorAll('.basequipment__category');
 const faqAccordions = document.querySelectorAll('.faq__category-list');
 
@@ -119,22 +123,24 @@ function animateAppearance(elementsCssClass, throttleTimer) {
 
 // main-menu showing
 
-function mainMenuShowing(menuItemsElementsArr, openMenuClassName) {
-  let currentMenuItem;
+function mainMenuShowing({ menuItemsElementsArr, openMenuClassName }) {
+  function clearCurrentStatus() {
+    menuItemsElementsArr.forEach((el) => el.parentElement.classList.remove(openMenuClassName));
+  }
 
   function onMouseover() {
-    const parentEl = this.parentElement;
-    menuItemsElementsArr.forEach((el) => el.parentElement.classList.remove(openMenuClassName));
+    clearCurrentStatus();
+    this.parentElement.classList.add(openMenuClassName);
+  }
 
-    if (currentMenuItem) {
-      currentMenuItem.classList.remove(openMenuClassName);
-    }
-    parentEl.classList.add(openMenuClassName);
-    currentMenuItem = parentEl;
+  function onFocusin() {
+    clearCurrentStatus();
+    this.classList.add(openMenuClassName);
   }
 
   menuItemsElementsArr.forEach((el) => {
     el.addEventListener('mouseover', onMouseover);
+    el.parentElement.addEventListener('focusin', onFocusin);
   });
 }
 
@@ -142,7 +148,7 @@ function mainMenuShowing(menuItemsElementsArr, openMenuClassName) {
 
 window.addEventListener('DOMContentLoaded', addTelInputMasks);
 animateAppearance('animated-appearance', 250);
-mainMenuShowing(mainMenuItems, 'menu--active');
+mainMenuShowing(mainMenuElements);
 
 basequipmentAccordions.forEach((el) => {
   animateAccordion(el, 'basequipment__item--open');

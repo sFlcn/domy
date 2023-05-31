@@ -27,9 +27,6 @@
 .site-nav__sub-list {
   @include list;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   opacity: 0;
   transform: translateY(-15px);
   pointer-events: none;

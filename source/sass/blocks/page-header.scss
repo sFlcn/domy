@@ -44,23 +44,24 @@
 .header__sub-menu {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   position: absolute;
-  width: 64.51%;
+  width: 70%;
   bottom: 22px;
-  left: 0;
+  right: 0;
   z-index: 100;
   transform: translateX(-25%);
 
-  &.header__sub-menu--shifted {
-    left: unset;
-    right: 3%;
-    justify-content: flex-end;
+  .header__nav-item:nth-child(1) & {
+    justify-content: space-between;
+    left: 0;
   }
-}
 
-.header__sub-menu--shifted .header__sub-item {
-  margin-left: 8%;
+  .header__nav-item:last-child & {
+    gap: 10%;
+    justify-content: flex-end;
+    left: unset;
+  }
 }
 
 .header__call-block {
