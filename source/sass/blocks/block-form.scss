@@ -21,6 +21,11 @@
   border: 0;
   border-bottom: 0.5px solid rgba($palette-darkcontrast, .5);
 
+  .popup-form & {
+    margin-bottom: 21px;
+    padding: 14px 1px 17px;
+  }
+
   &:invalid {
     border-bottom: 0.5px transparent;
     box-shadow: 0 2px 1px -1px rgba(255 127 127);
@@ -70,6 +75,10 @@
     padding: 1px 0 2px;
     border-bottom: 0.5px solid $palette-prime;
   }
+
+  .popup-form & {
+    font-size: 11px;
+  }
 }
 
 .form__privacy-label::before {
@@ -105,6 +114,11 @@
   text-transform: uppercase;
   transition: color 0.3s, background-color 0.42s, opacity 0.3s;
 
+  .popup-form & {
+    padding: 9px 10px;
+    font-size: 14px;
+  }
+
   &:hover {
     color: $palette-brightcontrast;
     background-color: $palette-prime;
@@ -117,7 +131,6 @@
 
   &:disabled {
     color: $palette-dim;
-    background-color: transparent;
     opacity: 0.5;
     cursor: not-allowed;
   }

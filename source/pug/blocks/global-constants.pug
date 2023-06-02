@@ -18,6 +18,7 @@
     "suppliers": { name: "Поставщикам", },
     "credit": { name: "Кредитование", },
     "shipping": { name: "Доставка и оплата", },
+    "privacy": { name: "Политика конфиденциальности", pageHref: "privacy" },
   };
 
   // данные для ссылок на соцсети 🔗
@@ -577,3 +578,49 @@
       answer: "Да, наша компания ведет строительство в соответствии со  строительными нормами и правилами, регламентирующими строительство загородных домов. В договоре закреплена гарантия на дом.",
     },
   ]
+
+  // формы
+  const WRITEUS_FORM = [
+    {
+      inputName: "form-name",
+      inputType: "text",
+      label: "Ваше имя",
+      placeholder: "Ваше имя",
+    },
+    {
+      inputName: "form-cntctml",
+      inputType: "email",
+      label: "Электронная почта",
+      placeholder: "E-mаil*",
+      isRequired: true,
+    },
+    {
+      inputName: "form-cntctfn",
+      inputType: "tel",
+      label: "Телефон",
+      placeholder: "Телефон: ",
+    },
+  ]
+
+  const POPUP_FORM = [
+    {
+      inputName: "form-p-name",
+      inputType: "text",
+      label: "Как вас зовут*",
+      placeholder: "Как вас зовут*",
+    },
+    {
+      inputName: "form-p-cntctfn",
+      inputType: "tel",
+      label: "Телефон",
+      placeholder: "Телефон: ",
+      isRequired: true,
+    },
+    {
+      inputName: "form-p-cntctml",
+      inputType: "email",
+      label: "Электронная почта",
+      placeholder: "E-mail",
+    },
+  ]
+

@@ -1,26 +1,3 @@
--
-  const WRITEUS_FORM = [
-    {
-      inputName: "form-name",
-      inputType: "text",
-      label: "Ваше имя",
-      placeholder: "Ваше имя",
-    },
-    {
-      inputName: "form-cntctml",
-      inputType: "email",
-      label: "Электронная почта",
-      placeholder: "E-mаil*",
-      isRequired: true,
-    },
-    {
-      inputName: "form-cntctfn",
-      inputType: "tel",
-      label: "Телефон",
-      placeholder: "Телефон: +7 ",
-    },
-  ]
-
 section.order
   .wrapper.animated-appearance
     h2.order__title Закажите&nbsp;дом мечты&nbsp;уже <br>сегодня!
@@ -38,5 +15,5 @@ section.order
           label.form__privacy-label(for="form__privacy-checkbox")
             | я согласен с
             |
-            a.form__privacy-link(href="privacy.html", onclick="return false") политикой конфиденциальности
+            a.form__privacy-link(href=`${PAGES["privacy"]["pageHref"]}.html`, onclick="return false") политикой конфиденциальности
         input.form__submit.button(type="submit", value="Отправить", disabled=true)
