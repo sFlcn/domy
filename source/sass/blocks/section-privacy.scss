@@ -1,0 +1,78 @@
+.privacy {
+  padding: 150px 0;
+  color: $palette-darkcontrast;
+  background-color: $palette-secondary;
+}
+
+.privacy__title {
+  @include font-title-middle;
+
+  margin: 0 0 66px;
+  padding: 0;
+}
+
+.privacy__link-title {
+  display: inline-block;
+  padding: 3px 0 10px;
+  color: $palette-brightcontrast;
+  background-color: $palette-prime;
+  text-decoration: none;
+}
+
+.privacy ol {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+.privacy li::before {
+  counter-increment: section;
+  content: counters(section, ".") ". ";
+}
+
+.privacy__list {
+  margin: 0;
+  padding: 0;
+}
+
+.privacy__chapter {
+  margin-bottom: 48px;
+
+  &::before {
+    font-weight: 800;
+  }
+}
+
+.privacy__chapter-title {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.privacy__intro,
+.privacy__item {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 179%;
+}
+
+.privacy__item {
+  margin-bottom: 10px;
+}
+
+.privacy__text {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.privacy__intro {
+  margin-bottom: 48px;
+}
+
+.privacy__link-text {
+  font-weight: 800;
+  text-decoration: none;
+}
