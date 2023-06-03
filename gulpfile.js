@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import sync from 'browser-sync';
@@ -7,12 +8,11 @@ import gulppug from 'gulp-pug';
 import postcss from 'gulp-postcss';
 import csso from 'postcss-csso';
 import autoprefixer from 'autoprefixer';
-import terser from 'gulp-terser';
-import babel from 'gulp-babel';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import sharpResponsive from 'gulp-sharp-responsive';
+import webpack from 'webpack-stream';
+import webpackConf from './webpack.config.cjs';
 
 const sass = gulpSass(dartSass);
 
@@ -29,7 +29,7 @@ const paths = {
   },
   scripts: {
     src: 'source/js/script.js',
-    watch: 'source/js/script.js',
+    watch: 'source/js/**/*.js',
     dest: 'build/js/',
   },
   images: {
@@ -82,18 +82,8 @@ const styles = (done) => {
 };
 
 const scripts = (done) => {
-  gulp.src(paths.scripts.src)
-    .pipe(rename({
-      basename: 'script',
-      suffix: '-min',
-      extname: '.js',
-    }))
-    .pipe(babel({
-      presets: ['@babel/env'],
-    }))
-    .pipe(terser({
-      toplevel: 'true',
-    }))
+  gulp.src('.')
+    .pipe(webpack(webpackConf))
     .pipe(gulp.dest(paths.scripts.dest))
     .pipe(sync.stream());
   done();
@@ -209,7 +199,6 @@ export const build = gulp.series(
   copyResources,
   gulp.parallel(
     images,
-    // imagesLoseless,
     styles,
     scripts,
     pug,
@@ -222,7 +211,6 @@ export default gulp.series(
   copyResources,
   gulp.parallel(
     images,
-    // imagesLoseless,
     styles,
     scripts,
     pug,
