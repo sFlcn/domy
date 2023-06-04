@@ -1,5 +1,5 @@
 const mainMenuElements = {
-  menuItemsElementsArr: document.querySelectorAll('.site-nav__list--desktop .site-nav__link'),
+  menuItemsElementsArr: document.querySelectorAll('.header__nav-list--desktop .site-nav__link'),
   openMenuClassName: 'menu--active',
 };
 
