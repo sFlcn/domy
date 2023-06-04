@@ -5,55 +5,132 @@
 .features__list {
   @include list;
 
-  padding: 100px 0;
+  padding: 40px 0;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+
+  @media (min-width: $small-desktop-content) {
+    padding: 100px 0;
+    justify-content: space-around;
+  }
 }
 
 .features__item {
   display: flex;
-  flex-flow: column wrap;
-  justify-content: space-evenly;
-  padding: 17px 0 8px;
+  flex-flow: column nowrap;
   box-sizing: border-box;
-  width: 210px;
-  height: 195px;
-  transform: translateX(-5px);
-  background: transparent url("../img/brun1.svg") no-repeat center;
+  padding: 26px 0 2px;
+  flex-basis: 25%;
+  height: calc(100vw / $mobile-width * 100px);
+  background: transparent url("../img/brun1-d.svg") no-repeat center;
+
+  @media (min-width: $tablet-content) {
+    padding: 46px 0 12px;
+    flex-basis: 27%;
+    height: 210px;
+  }
+
+  @media (min-width: $desktop-content) {
+    padding: 54px 0 15px;
+    flex-basis: 20%;
+  }
+
+  &:nth-child(2n) {
+    margin-top: 31px;
+    background-image: url("../img/brun2-d.svg");
+
+    @media (min-width: $tablet-content) {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(3n),
+  &:nth-child(4n) {
+    background-image: url("../img/brun3-d.svg");
+  }
+}
+
+.features__item-container{
+
+  &--desktop {
+    display: none;
+
+    @media (min-width: $small-desktop-content) {
+      display: block;
+    }
+  }
+  &--mobile {
+    display: block;
+
+    @media (min-width: $small-desktop-content) {
+      display: none;
+    }}
 }
 
 .features__term {
   @include font-title-main;
 
   position: relative;
+  margin-bottom: 5px;
   z-index: 1;
+  font-size: calc(100vw / $mobile-width * 30px);
+  line-height: 107%;
+
+  @media (min-width: ($tablet-content)) {
+    margin-bottom: 16px;
+    font-size: 64px;
+    line-height: 106%;
+  }
 }
 
 .features__descr {
+  font-size: calc(100vw / $mobile-width * 10px);
+  line-height: 120%;
   position: relative;
   margin: 0;
   text-transform: uppercase;
   z-index: 1;
+
+  @media (min-width: ($tablet-content)) {
+    font-size: 18px;
+    line-height: 116%;
+  }
 }
 
 .features__item:nth-of-type(1) .features__term,
 .features__item:nth-of-type(1) .features__descr {
-  transform: translateX(23px);
+  transform: translateX(30%);
+
+  @media (min-width: $tablet-content) {
+    transform: translateX(24.5%);
+  }
 }
 
 .features__item:nth-of-type(2n) {
-  width: 190px;
-  transform: translateX(55px);
-  background: transparent url("../img/brun2.svg") no-repeat -5px -3px;
+
+  & .features__term {
+    transform: translateX(-8%);
+
+    @media (min-width: $tablet-content) {
+      transform: translateX(12%);
+    }
+  }
+
+  & .features__descr {
+    transform: translateX(10%);
+
+    @media (min-width: $tablet-content) {
+      transform: translateX(23%);
+    }
+  }
 }
 
-.features__item:nth-of-type(3n) {
-  width: 288px;
-  transform: translateX(50px);
-  background: transparent url("../img/brun3.svg") no-repeat  40px -2px;
-}
+.features__item:nth-of-type(3n) .features__term,
+.features__item:nth-of-type(3n) .features__descr {
+  transform: translateX(0);
 
-.features__item:nth-of-type(2) .features__term {
-  transform: translateX(-35px)
+  @media (min-width: $tablet-content) {
+    transform: translateX(9%);
+  }
 }

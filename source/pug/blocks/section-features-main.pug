@@ -1,12 +1,17 @@
 section.features
-  h2.visuallyhidden Наши особенности
-  dl.features__list
-    dl.features__item
-      dt.features__term 9 лет
-      <dd class="features__descr">Производим <br>дома</dd>
-    dl.features__item
-      dt.features__term= ">20"
-      <dd class="features__descr">Домов мы строим <br>каждый месяц</dd>
-    dl.features__item
-      dt.features__term 2–5 дней
-      <dd class="features__descr">Длится монтаж <br>дома</dd>
+  .wrapper
+    h2.visuallyhidden Наши особенности
+    dl.features__list.features__list
+      .features__item
+        dt.features__term 9 лет
+        <dd class="features__descr">Производим <br>дома</dd>
+      .features__item
+        dt.features__term= ">20"
+        <dd class="features__descr">Домов мы строим <br>каждый месяц</dd>
+      .features__item.features__item
+        .features__item-container--desktop
+          dt.features__term 2–5 дней
+          <dd class="features__descr">Длится монтаж <br>дома</dd>
+        .features__item-container--mobile
+          dt.features__term 2–5
+          <dd class="features__descr">Дней длится монтаж <br>дома</dd>
