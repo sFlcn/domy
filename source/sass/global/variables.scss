@@ -20,10 +20,10 @@ $palette-brightcontrast: #ffffff;
 $mobile-width: 360px;
 $tablet-width: 660px;
 $small-desktop-width: 1200px;
-$desktop-width: 1920px;
+$desktop-width: 1800px;
 
 // content
 $mobile-content: $mobile-width - 20; // 340
 $tablet-content: $tablet-width - 30; // 630
 $small-desktop-content: $small-desktop-width - 100; // 1100
-$desktop-content: $desktop-width - 320; // 1600
+$desktop-content: $desktop-width - 200; // 1600
