@@ -1,9 +1,9 @@
 // Global
 
+@import "global/fonts";
 @import "global/variables";
 @import "global/mixins";
 @import "global/global";
-@import "global/fonts";
 @import "global/image-scale-effect";
 @import "global/animated-appearance";
 
@@ -34,7 +34,6 @@
 @import "blocks/section-contacts";
 @import "blocks/section-faq";
 @import "blocks/section-privacy";
-
 @import "blocks/section-popup-form";
 
 // footer
