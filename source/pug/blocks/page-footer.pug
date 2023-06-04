@@ -11,6 +11,16 @@
     PAGES.contacts,
   ];
 
+mixin logoLinkFooter(logoHref)
+  if (logoHref)
+    a.footer__logo(href= logoHref)
+      if block
+        block
+  else
+    a.footer__logo.blanklink(href="##", onclick="return false")
+      if block
+        block
+
 mixin socialLinkItem({ name, cssClass, href })
   li.socials__item
     a(
@@ -32,7 +42,7 @@ mixin footerNavItem({ name, pageHref })
 footer.footer
   .wrapper
     //- logoHref генерируется в page-layout.pug
-    a.footer__logo(href=logoHref)
+    +logoLinkFooter(logoHref)
       img.domy-logo(src="./img/domy-logo.svg", width="86", height="26", alt="логотип DOMY.")
     a.footer__tel(href="tel:+74951828188") +7 (495) 182 81 88
     .footer__container
