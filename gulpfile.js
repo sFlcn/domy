@@ -40,7 +40,7 @@ const paths = {
   },
   resources: {
     src: [
-      'source/fonts/*.{woff2,woff}',
+      'source/fonts/*.{woff2,woff,otf,ttf}',
       'source/img/**/*.{png,jpg,jpeg,svg}',
     ],
     dest: 'build/',

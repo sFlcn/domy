@@ -5,8 +5,10 @@ block prepend variables
   - const pageTitle = "Domy";
 
 block append head
-    <link rel="preload" as="image" href="img/main-slider-1@2x.jpeg" media="(min-width: 1200px) and (min-resolution: 1.1dppx)" as="image/webp">
-    <link rel="preload" as="image" href="img/main-slider-1@1x.jpeg" media="(min-width: 1200px) and (max-resolution: 1dppx)" as="image/webp">
+    <link rel="preload" as="image" href="img/main-slider-1m@2x.jpeg" media="(max-width: 1199px) and (min-resolution: 1.1dppx)">
+    <link rel="preload" as="image" href="img/main-slider-1m@1x.jpeg" media="(max-width: 1199px) and (max-resolution: 1dppx)">
+    <link rel="preload" as="image" href="img/main-slider-1sd@2x.jpeg" media="(min-width: 1200px) and (max-width: 1699px) and (min-resolution: 1.1dppx)">
+    <link rel="preload" as="image" href="img/main-slider-1sd@1x.jpeg" media="(min-width: 1200px) and (max-width: 1699px) and (max-resolution: 1dppx)">
 
 block main
   main.main.index-main
