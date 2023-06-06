@@ -45,6 +45,10 @@ const paths = {
     ],
     dest: 'build/',
   },
+  favicons: {
+    src: 'source/favicon/*',
+    dest: 'build/',
+  },
 };
 
 const cleanDirs = async () => { await deleteAsync(['build']); };
@@ -92,6 +96,8 @@ const scripts = (done) => {
 const copyResources = (done) => {
   gulp.src(paths.resources.src, { base: 'source' })
     .pipe(gulp.dest(paths.resources.dest));
+  gulp.src(paths.favicons.src)
+    .pipe(gulp.dest(paths.favicons.dest));
   done();
 };
 
