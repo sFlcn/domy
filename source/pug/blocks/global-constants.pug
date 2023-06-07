@@ -3,8 +3,7 @@
   const PAGES = {
     "index": { name: "Дома", pageHref: "index" },
     "technology": { name: "Технологии и производство", },
-    //- "company": { name: "О компании", pageHref: "company" },
-    "company": { name: "О компании", pageHref: "contacts" },
+    "company": { name: "О компании", },
     "faq": { name: "FAQ", pageHref: "faq" },
     "contacts": { name: "Контакты", pageHref: "contacts" },
     "30m": { name: "30 м²", pageHref: "30m" },
@@ -24,7 +23,7 @@
   // данные для ссылок на соцсети 🔗
   const SOCIAL_LINKS = [
     { name: "Вконтакте", cssClass: "vk", href: "https://vk.com/domycompany" },
-    { name: "Telegram", cssClass: "tg", href: "https://t.me/domyhouse" },
+    { name: "Telegram", cssClass: "tg", href: "https://t.me/domycompany" },
     { name: "Youtube", cssClass: "ytb", },
   ];
 
@@ -580,15 +579,19 @@
   ]
 
   // формы
+  const FORM_HANDLER_NAME = "/mailer/send.php";
+
   const WRITEUS_FORM = [
     {
       inputName: "form-name",
+      inputId: "form-name",
       inputType: "text",
       label: "Ваше имя",
       placeholder: "Ваше имя",
     },
     {
       inputName: "form-cntctml",
+      inputId: "form-cntctml",
       inputType: "email",
       label: "Электронная почта",
       placeholder: "E-mаil*",
@@ -596,6 +599,7 @@
     },
     {
       inputName: "form-cntctfn",
+      inputId: "form-cntctfn",
       inputType: "tel",
       label: "Телефон",
       placeholder: "Телефон: ",
@@ -604,20 +608,24 @@
 
   const POPUP_FORM = [
     {
-      inputName: "form-p-name",
+      inputName: "form-name",
+      inputId: "form-p-name",
       inputType: "text",
       label: "Как вас зовут*",
       placeholder: "Как вас зовут*",
-    },
-    {
-      inputName: "form-p-cntctfn",
-      inputType: "tel",
-      label: "Телефон",
-      placeholder: "Телефон: ",
       isRequired: true,
     },
     {
-      inputName: "form-p-cntctml",
+      inputName: "form-cntctfn",
+      inputId: "form-p-cntctfn",
+      inputType: "tel",
+      label: "Телефон",
+      placeholder: "Телефон:*",
+      isRequired: true,
+    },
+    {
+      inputName: "form-cntctml",
+      inputId: "form-p-cntctml",
       inputType: "email",
       label: "Электронная почта",
       placeholder: "E-mail",

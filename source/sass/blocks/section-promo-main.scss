@@ -185,11 +185,11 @@ a.promo-description__link {
   font-size: 14px;
   color: $palette-brightcontrast;
   text-transform: uppercase;
-  background: $palette-prime url("../img/arrow-bw.svg") no-repeat center right 60px;
+  background: $palette-prime url("../img/arrow-bw.svg") no-repeat center right 17%;
   transition: color 0.3s, background 0.42s;
 
   &:hover {
     color: $palette-darkcontrast;
-    background: $palette-accent url("../img/arrow-bb.svg") no-repeat center right 50px;
+    background: $palette-accent url("../img/arrow-bb.svg") no-repeat center right 14%;
   }
 }
