@@ -2,12 +2,13 @@ section.order
   .wrapper.animated-appearance
     h2.order__title Закажите&nbsp;дом мечты&nbsp;уже <br>сегодня!
     .order__container
-      form.order__form.form(action="https://echo.htmlacademy.ru", method="post", autocomplete="off")
+      form.order__form.form(id="order__form", action=FORM_HANDLER_NAME, method="post", autocomplete="off")
         fieldset.order__fieldset.form__fieldset
           //- honey-pot for spam-bots ↓↓↓↓↓
           input.h#email(type="tel", name="email", placeholder="email", style="display: none")
           input.h#phone(type="tel", name="phone", placeholder="телефон", style="display: none")
           //- honey-pot for spam-bots ↑↑↑↑↑
+          input.form__simple-input#form__subject(type="text", name="form-subject", hidden="true", readonly="true", value="заказ обратной связи")
           each item in WRITEUS_FORM
             +formInput(item)(class="form__simple-input")
         .form__privacy
@@ -16,4 +17,4 @@ section.order
             | я согласен с
             |
             a.form__privacy-link(href=`${PAGES["privacy"]["pageHref"]}.html`) политикой конфиденциальности
-        input.form__submit.button(type="submit", value="Отправить", disabled=true)
+        input.form__submit.button(type="submit", value="Отправить")

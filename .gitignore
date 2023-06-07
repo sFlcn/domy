@@ -1,6 +1,7 @@
 node_modules/
 build/
 tmp/
+source/mailer/phpmailer/
 .DS_Store
 ._*
 .idea

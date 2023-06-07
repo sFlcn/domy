@@ -3,12 +3,13 @@ section.popup-form.popup
     h2.popup-form__title.popup__title Оставьте ваши данные, <br>и наш менеджер свяжется с вами
     button.popup-form__close.popup__close
       span.visuallyhidden Закрыть окно
-    form.popup-form__form.form.form--popup(action="https://echo.htmlacademy.ru", method="post", autocomplete="off")
+    form.popup-form__form.form.form--popup(id="popup__form", action=FORM_HANDLER_NAME, method="post", autocomplete="off")
       fieldset.popup-form__fieldset.form__fieldset
         //- honey-pot for spam-bots ↓↓↓↓↓
         input.h#email-p(type="tel", name="email", placeholder="email", style="display: none")
         input.h#phone-p(type="tel", name="phone", placeholder="телефон", style="display: none")
         //- honey-pot for spam-bots ↑↑↑↑↑
+        input.form__simple-input#form-p__subject(type="text", name="form-subject", hidden="true", readonly="true", value="заказ звонка")
         each item in POPUP_FORM
           +formInput(item)(class="form__simple-input")
       .form__privacy
@@ -17,4 +18,4 @@ section.popup-form.popup
           | я согласен с
           |
           a.form__privacy-link(href=`${PAGES["privacy"]["pageHref"]}.html`) политикой конфиденциальности
-      input.form__submit.button(type="submit", value="Перезвоните мне", disabled=true)
+      input.form__submit.button(type="submit", value="Перезвоните мне")

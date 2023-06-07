@@ -8,6 +8,7 @@
     "clean": "rm -r build/*",
     "test": "stylelint \"source/sass/**/*.scss\" && pug-lint source/pug/*.pug && eslint source/js/",
     "build": "NODE_ENV=production gulp build",
+    "fullbuild": "NODE_ENV=production gulp fullbuild",
     "webpack": "webpack --mode=development",
     "start": "gulp"
   },

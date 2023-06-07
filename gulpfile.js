@@ -45,6 +45,10 @@ const paths = {
     ],
     dest: 'build/',
   },
+  phps: {
+    src: 'source/mailer/**/*',
+    dest: 'build/',
+  },
   favicons: {
     src: 'source/favicon/*',
     dest: 'build/',
@@ -98,6 +102,12 @@ const copyResources = (done) => {
     .pipe(gulp.dest(paths.resources.dest));
   gulp.src(paths.favicons.src)
     .pipe(gulp.dest(paths.favicons.dest));
+  done();
+};
+
+const copyPhp = (done) => {
+  gulp.src(paths.phps.src, { base: 'source' })
+    .pipe(gulp.dest(paths.phps.dest));
   done();
 };
 
@@ -209,6 +219,18 @@ export const build = gulp.series(
     scripts,
     pug,
   ),
+);
+
+export const fullbuild = gulp.series(
+  cleanDirs,
+  copyResources,
+  gulp.parallel(
+    images,
+    styles,
+    scripts,
+    pug,
+  ),
+  copyPhp,
 );
 
 // Default

@@ -16,6 +16,8 @@ const callbackPopupOption = {
   popupBtns: document.querySelectorAll('.callback-button'),
 };
 
+const userForms = document.querySelectorAll('.form');
+
 // Functions:
 
 // animate accordion function
@@ -210,6 +212,31 @@ function popupAnimate({
   popupBtns.forEach((element) => element.addEventListener('click', popupOpenHandler));
 }
 
+// form sending
+async function submitFormHandler(event) {
+  event.preventDefault();
+  try {
+    const response = await fetch(event.target.action, { method: 'POST', body: new FormData(event.target) });
+    if (!response.ok) {
+      throw new Error(`Ошибка при обращении к серверу: ${response.status} ${response.statusText}`);
+    }
+    const contentType = response.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
+      throw new Error('Ошибка обработки. Ответ не JSON');
+    }
+    const json = await response.json();
+    if (json.result === 'success') {
+      alert(json.info);
+      event.target.reset();
+    } else {
+      console.log(json);
+      throw new Error(json.info);
+    }
+  } catch (error) {
+    alert(error);
+  }
+}
+
 // LAUNCHING:
 
 window.addEventListener('DOMContentLoaded', addTelInputMasks);
@@ -217,6 +244,10 @@ animateAppearance('animated-appearance', 250);
 mainMenuAppearing(mainMenuElements);
 mainMenuMobileShow(mainMenuMobileBurgerElements);
 popupAnimate(callbackPopupOption);
+
+userForms.forEach((el) => {
+  el.addEventListener('submit', submitFormHandler);
+});
 
 basequipmentAccordions.forEach((el) => {
   animateAccordion(el, 'basequipment__item--open');
