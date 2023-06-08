@@ -81,7 +81,7 @@
 
   &--indented {
     padding-bottom: 10.5px;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgba($palette-darkcontrast, 0.5);
     margin-bottom: 8px;
 
     .description__specifications--small & {

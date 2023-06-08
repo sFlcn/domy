@@ -46,7 +46,7 @@
 }
 
 .form__simple-input::placeholder {
-  color: rgba($palette-prime, 0.5);
+  color: $palette-prime;
   font-size: 14px;
 }
 
