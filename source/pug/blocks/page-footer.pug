@@ -23,13 +23,7 @@ mixin logoLinkFooter(logoHref)
 
 mixin socialLinkItem({ name, cssClass, href })
   li.socials__item
-    a(
-      class=`socials__link socials__link--${cssClass} ${ href ? null : "socials__link--disabled" }`,
-      href= ( href ? href : "##" ),
-      target="_blank",
-      rel="noopener",
-      onclick = ( href ? null : "return false" ),
-    )
+    a(class=`socials__link socials__link--${cssClass} ${ href ? null : "socials__link--disabled" }`, href= ( href ? href : "##" ), target="_blank", rel="noopener", onclick = ( href ? null : "return false" ))
       span.visuallyhidden= name
 
 mixin footerNavItem({ name, pageHref })

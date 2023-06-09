@@ -33,7 +33,7 @@ mixin logoLinkHeader(logoHref)
         block
 
 mixin siteNavSubItem({ name, pageHref })
-  li(class= 'header__sub-item site-nav__sub-item')
+  li(class= "header__sub-item site-nav__sub-item")
     if ((pageHref) && (pageHref !== currentPage))
       a.site-nav__sub-link(href= pageHref + ".html")= name
     else

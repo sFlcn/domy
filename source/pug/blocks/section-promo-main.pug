@@ -27,7 +27,7 @@ section.main-promo
       .description__header-block
         h3.description__title
           span 70
-          span=" "
+          span= " "
           span м²
         p.description__about= aboutFileds["name"]
           span.description__about-more= aboutFileds["value"]
@@ -42,9 +42,9 @@ section.main-promo
     .main-promo__container-center.description.description--mobile
       .description__smallcontainer
         h3.description__title
-          a(href= promoTableData.href + ".html").description__title-link
+          a.description__title-link(href= promoTableData.href + ".html")
             span 70
-            span=" "
+            span= " "
             span м²
         ul.description__shortlist
           each item in promoTableData.shortData
