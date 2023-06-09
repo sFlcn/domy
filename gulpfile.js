@@ -49,6 +49,12 @@ const paths = {
     src: 'source/mailer/**/*',
     dest: 'build/',
   },
+  yandexmetrica: {
+    trueFile: 'source/yandexmetrica-true.pug',
+    nullFile: 'source/yandexmetrica-null.pug',
+    targetPosition: 'source/',
+    targetName: 'yandexmetrica.pug',
+  },
   favicons: {
     src: 'source/favicon/*',
     dest: 'build/',
@@ -108,6 +114,20 @@ const copyResources = (done) => {
 const copyPhp = (done) => {
   gulp.src(paths.phps.src, { base: 'source' })
     .pipe(gulp.dest(paths.phps.dest));
+  done();
+};
+
+const prepareYandexmetrica = (done) => {
+  gulp.src(paths.yandexmetrica.trueFile)
+    .pipe(rename(paths.yandexmetrica.targetName))
+    .pipe(gulp.dest(paths.yandexmetrica.targetPosition));
+  done();
+};
+
+const falseYandexmetrica = (done) => {
+  gulp.src(paths.yandexmetrica.nullFile)
+    .pipe(rename(paths.yandexmetrica.targetName))
+    .pipe(gulp.dest(paths.yandexmetrica.targetPosition));
   done();
 };
 
@@ -211,6 +231,7 @@ const server = (done) => {
 
 // BUILD
 export const build = gulp.series(
+  falseYandexmetrica,
   cleanDirs,
   copyResources,
   gulp.parallel(
@@ -222,6 +243,7 @@ export const build = gulp.series(
 );
 
 export const fullbuild = gulp.series(
+  prepareYandexmetrica,
   cleanDirs,
   copyResources,
   gulp.parallel(
@@ -235,6 +257,7 @@ export const fullbuild = gulp.series(
 
 // Default
 export default gulp.series(
+  falseYandexmetrica,
   cleanDirs,
   copyResources,
   gulp.parallel(
