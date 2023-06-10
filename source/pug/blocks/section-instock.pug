@@ -3,22 +3,22 @@
     {
       name: "30 м²",
       href: PAGES["30m"]["pageHref"],
-      price: "1 410 000 ₽",
-      imageName: "in-stock-30m",
+      price: `${HOUSES_DATA["30m"]["price"]} ₽`,
+      imageName: "in-stock-30",
       alt: "фото дома 30 м²",
     },
     {
       name: "70",
       href: PAGES["70m"]["pageHref"],
       specialSpan: "м²",
-      price: "3 440 000 ₽",
+      price: `${HOUSES_DATA["70m"]["price"]} ₽`,
       alt: "фото дома 70 м²",
-      imageName: "in-stock-70m",
+      imageName: "in-stock-70",
     },
     {
       name: "Баня",
       href: PAGES["bath"]["pageHref"],
-      price: "1 150 000 ₽",
+      price: `${HOUSES_DATA["bath"]["price"]} ₽`,
       imageName: "in-stock-bath",
       alt: "фото бани",
     },
@@ -31,20 +31,20 @@ section.instock
     ul.instock__list
       each item in instockData
         li.instock__item
-          figure.instock__item-figure.image-scalecontainer
+          .instock__item-box.image-scalecontainer
             .image-scalebox
-              +pictureJpgWebp(item.imageName, 500, 343, item.alt, "instock__item-image", "lazy")
-            figcaption.instock__item-caption
+              +pictureJpgWebpM(item.imageName, 360, 185, item.alt, "instock__item-image", "lazy")
+            .instock__item-captions
               if (item.specialSpan)
                 h3.instock__item-name
-                  a(href=`${item.href}.html`)
-                    span= item.name
-                    span= " "
-                    span= item.specialSpan
+                  span= item.name
+                  span= " "
+                  span= item.specialSpan
               else
-                h3.instock__item-name
-                  a(href=`${item.href}.html`)= item.name
+                h3.instock__item-name= item.name
               .instock__item-under
                 .instock__item-underline
                 p.instock__item-price= item.price
+            a.instock__item-link(href=`${item.href}.html`)
+              span.visuallyhidden Подробнее
 

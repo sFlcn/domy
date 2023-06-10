@@ -37,29 +37,29 @@ block main
               "house-promo__img2"
             )
 
-  section(class= `house-characteristics house-characteristics${classModifier}`)
-    .wrapper.animated-appearance
-      h2.house-characteristics__title Характеристики и планировка
-      .house-characteristics__description
-        dl.description__specifications
-          each item in houseData["data"]
-            -
-              let cssClass= "";
-              if (item.head === true) {cssClass += "description__box--head "}
-              if (item.underline === true) {cssClass += "description__box--indented "}
-              if (item.summary === true) {cssClass += "description__box--summary "}
-            .description__box(class= cssClass)
-              dt.description__parameter= item.name
-              dd.description__value= item.value
-      .house-characteristics__scheme
-        +picturePngWebp(
-          houseData["schemeFile"]["name"],
-          houseData["schemeFile"]["dimensions"][0],
-          houseData["schemeFile"]["dimensions"][1],
-          `Схема ${descrRu}`,
-          "house-characteristics__img"
-        )
+    section(class= `house-characteristics house-characteristics${classModifier}`)
+      .wrapper.animated-appearance
+        h2.house-characteristics__title Характеристики и планировка
+        .house-characteristics__description
+          dl.description__specifications
+            each item in houseData["data"]
+              -
+                let cssClass= "";
+                if (item.head === true) {cssClass += "description__box--head "}
+                if (item.underline === true) {cssClass += "description__box--indented "}
+                if (item.summary === true) {cssClass += "description__box--summary "}
+              .description__box(class= cssClass)
+                dt.description__parameter= item.name
+                dd.description__value= item.value
+        .house-characteristics__scheme
+          +picturePngWebp(
+            houseData["schemeFile"]["name"],
+            houseData["schemeFile"]["dimensions"][0],
+            houseData["schemeFile"]["dimensions"][1],
+            `Схема ${descrRu}`,
+            "house-characteristics__img"
+          )
 
-  include section-basequipment.pug
-  if isBath !== true
-    include section-basequipment-not.pug
+    include section-basequipment.pug
+    if isBath !== true
+      include section-basequipment-not.pug

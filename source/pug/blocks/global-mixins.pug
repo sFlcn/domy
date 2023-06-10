@@ -1,13 +1,22 @@
 mixin pictureJpg(filename, width, height, altText, cssClass, lazy)
   picture
-    source(media="(min-width: 1700px)", srcset= `./img/${filename}d@1x.jpeg 1x, ./img/${filename}d@2x.jpeg 2x`)
-    source(media="(min-width: 1200px)", srcset= `./img/${filename}sd@1x.jpeg 1x, ./img/${filename}sd@2x.jpeg 2x`)
-    img(class= cssClass, src= `./img/${filename}m@1x.jpeg`, srcset=`./img/${filename}m@2x.jpeg 2x`, width= width, height= height, alt= altText, loading= lazy)
+    source(media="(min-width: 1700px)", srcset= `./img/${filename}-d@1x.jpeg 1x, ./img/${filename}-d@2x.jpeg 2x`)
+    source(media="(min-width: 1200px)", srcset= `./img/${filename}-sd@1x.jpeg 1x, ./img/${filename}-sd@2x.jpeg 2x`)
+    img(class= cssClass, src= `./img/${filename}-m@1x.jpeg`, srcset=`./img/${filename}-m@2x.jpeg 2x`, width= width, height= height, alt= altText, loading= lazy)
 
 mixin pictureJpgWebp(filename, width, height, altText, cssClass, lazy)
   picture
     source(type="image/webp", srcset= `./img/${filename}@1x.webp 1x,./img/${filename}@2x.webp 2x`)
     img(class= cssClass, src= `./img/${filename}@1x.jpeg`, srcset=`./img/${filename}@2x.jpeg 2x`, width=width, height=height, alt= altText, loading=lazy)
+
+mixin pictureJpgWebpM(filename, width, height, altText, cssClass, lazy)
+  picture
+    source(media="(min-width: 1700px)", type="image/webp", srcset= `./img/${filename}-d@1x.webp 1x,./img/${filename}-d@2x.webp 2x`)
+    source(media="(min-width: 1200px)", type="image/webp", srcset= `./img/${filename}-sd@1x.webp 1x,./img/${filename}-sd@2x.webp 2x`)
+    source(type="image/webp", srcset= `./img/${filename}-m@1x.webp 1x,./img/${filename}-m@2x.webp 2x`)
+    source(media="(min-width: 1700px)", srcset= `./img/${filename}-d@1x.jpeg 1x, ./img/${filename}-d@2x.jpeg 2x`)
+    source(media="(min-width: 1200px)", srcset= `./img/${filename}-sd@1x.jpeg 1x, ./img/${filename}-sd@2x.jpeg 2x`)
+    img(class= cssClass, src= `./img/${filename}-m@1x.jpeg`, srcset=`./img/${filename}-m@2x.jpeg 2x`, width= width, height= height, alt= altText, loading= lazy)
 
 mixin picturePngWebp(filename, width, height, altText, cssClass, lazy)
   picture

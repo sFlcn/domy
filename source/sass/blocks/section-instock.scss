@@ -1,7 +1,13 @@
 .instock {
   background-color: $palette-brightcontrast;
   color: $palette-darkcontrast;
-  padding: 142px 0 150px;
+  padding: 39px 0 150px;
+  text-align: center;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 142px 0 150px;
+    text-align: start;
+  }
 
   .index-main & {
     padding-bottom: 0;
@@ -9,10 +15,14 @@
 }
 
 .instock__title {
+  margin: 0 0 28px;
+  padding: 0;
+
   @include font-title-middle;
 
-  margin: 0 0 65px;
-  padding: 0;
+  @media (min-width: $small-desktop-width) {
+    margin: 0 0 65px;
+  }
 }
 
 .instock__list {
@@ -23,17 +33,38 @@
   justify-content: space-between;
 }
 
-.instock__item-figure {
+.instock__item {
+  margin: 0 0 30px;
+}
+
+.instock__item-box {
   margin: 0;
   padding: 0;
   position: relative;
 }
 
+.instock__item-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  text-decoration:  none;
+}
+
 .instock__item-image {
-  height: 343px;
+  height: 185px;
   margin: 0 0 5px;
   line-height: 0;
   object-fit: cover;
+
+  @media (min-width: $small-desktop-width) {
+    width: 347px;
+    height: 235px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 500px;
+    height: 343px;
+  }
 }
 
 .instock__item:nth-child(1) .instock__item-image {
@@ -50,24 +81,31 @@
 
 .instock__item-name {
   position: absolute;
-  top: 2.5%;
+  top: 5%;
   left: 2%;
-  padding: 1px 11px 1px 10px;
+  padding: 7px 20px 8px 15px;
   background-color: $palette-accent;
-  border-radius: 30px 0;
+  border-radius: 16px 0;
   margin: 0;
+  transition-property: transform, top, left;
+  transition-duration: 1.5s;
 
   @include font-title-middle;
 
-  & a {
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none;
-    transition: transform 0.9s;
+  @media (min-width: $small-desktop-width) {
+    top: 2.5%;
+    padding: 11px 21px 11px 20px;
+    border-radius: 20px 0;
+  }
 
-    &:hover {
-      transform: scale(1.075);
-    }
+  @media (min-width: $desktop-width) {
+    border-radius: 30px 0;
+  }
+
+  .instock__item:hover & {
+    top: 1.5%;
+    left: 1%;
+    transform: scale(0.75);
   }
 }
 
@@ -103,8 +141,19 @@
 }
 
 .instock__item-price {
-  @include font-primary($size: 24px, $line-height: 29px, $weight: 800);
+  margin: 0 1.5% 0 0;
+  padding: 0 0 0 7px;
+  transition: margin 1.1s;
 
-  margin: 0;
-  padding: 6px 8px 5px 10px;
+  @include font-primary($size: 16px, $line-height: 20px, $weight: 800);
+
+  @media (min-width: $small-desktop-width) {
+    padding: 6px 8px 5px 10px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .instock__item:hover & {
+    margin-right: 0;
+  }
 }
