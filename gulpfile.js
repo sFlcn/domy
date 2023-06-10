@@ -33,16 +33,17 @@ const paths = {
     dest: 'build/js/',
   },
   images: {
-    src: 'source/img-2jpg-n-webp/*.png',
-    srcLoseless: 'source/img-loseless/*.png',
-    srcJpgOnly: 'source/img-2jpg-only/*.png',
+    src: 'source/assets/img-2jpg-n-webp/*.png',
+    srcLoseless: 'source/assets/img-loseless/*.png',
+    srcJpgOnly: 'source/assets/img-2jpg-only/*.png',
     dest: 'build/img',
   },
   resources: {
     src: [
-      'source/fonts/*.{woff2,woff,otf,ttf}',
-      'source/img/**/*.{png,jpg,jpeg,svg}',
+      'source/assets/fonts/*.{woff2,woff,otf,ttf}',
+      'source/assets/img/**/*.{png,jpg,jpeg,svg}',
     ],
+    base: 'source/assets/',
     dest: 'build/',
   },
   phps: {
@@ -50,9 +51,9 @@ const paths = {
     dest: 'build/',
   },
   yandexmetrica: {
-    trueFile: 'source/yandexmetrica-true.pug',
-    nullFile: 'source/yandexmetrica-null.pug',
-    targetPosition: 'source/',
+    trueFile: 'source/pug/yandexmetrica/yandexmetrica-true.pug',
+    nullFile: 'source/pug/yandexmetrica/yandexmetrica-null.pug',
+    targetPosition: 'source/pug/yandexmetrica/',
     targetName: 'yandexmetrica.pug',
   },
   favicons: {
@@ -104,7 +105,7 @@ const scripts = (done) => {
 };
 
 const copyResources = (done) => {
-  gulp.src(paths.resources.src, { base: 'source' })
+  gulp.src(paths.resources.src, { base: paths.resources.base })
     .pipe(gulp.dest(paths.resources.dest));
   gulp.src(paths.favicons.src)
     .pipe(gulp.dest(paths.favicons.dest));
