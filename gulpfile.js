@@ -42,6 +42,7 @@ const paths = {
     src: [
       'source/assets/fonts/*.{woff2,woff,otf,ttf}',
       'source/assets/img/**/*.{png,jpg,jpeg,svg}',
+      'source/assets/robots.txt',
     ],
     base: 'source/assets/',
     dest: 'build/',
