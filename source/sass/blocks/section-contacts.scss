@@ -6,19 +6,31 @@
 
 .contacts .wrapper {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-flow: column nowrap;
+
+  @media (min-width: $small-desktop-width) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 
 .contacts__map {
-  flex-basis: 65.625%;
-  min-height: 519px;
+  height: 293px;
+
+  @media (min-width: $small-desktop-width) {
+    height: 519px;
+    flex-basis: 65.625%;
+  }
 }
 
 .contacts__list {
+  flex-basis: 100%;
+
   @include list;
 
-  flex-basis: 31.25%;
+  @media (min-width: $small-desktop-width) {
+    flex-basis: 31.25%;
+  }
 }
 
 .contacts__item {
@@ -36,9 +48,9 @@
 
   margin: 0 0 18px;
 
-  &--tel {
-    transform: translateX(-22px);
-  }
+  // &--tel {
+  //   transform: translateX(-22px);
+  // }
 }
 
 .contacts__item-title a {

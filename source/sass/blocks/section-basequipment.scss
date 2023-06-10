@@ -1,8 +1,12 @@
 .basequipment {
   background-color: $palette-brightcontrast;
   color: $palette-darkcontrast;
-  padding: 142px 0 70px;
+  padding: 12px 0 70px;
   min-height: 780px;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 142px 0 70px;
+  }
 }
 
 .basequipment .wrapper{
@@ -17,10 +21,16 @@
 }
 
 .basequipment__title {
+  margin: 0 0 25px;
+  padding: 0;
+  text-align: center;
+
   @include font-title-middle;
 
-  margin: 0 0 55px;
-  padding: 0;
+  @media (min-width: $small-desktop-width) {
+    margin: 0 0 55px;
+    text-align: start;
+  }
 
   .basequipment-not & {
     margin-bottom: 45px;
@@ -31,17 +41,29 @@
   @include list;
 
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-flow: column nowrap;
+
+  @media (min-width: $small-desktop-width) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 
 .basequipment__category-container {
-  flex-basis: 31.25%;
+  flex-basis: 100%;
+
+  @media (min-width: $small-desktop-width) {
+    flex-basis: 31.25%;
+  }
 }
 
 .basequipment__category {
-  flex-basis: 31.25%;
+  flex-basis: 100%;
   margin-bottom: 13px;
+
+  @media (min-width: $small-desktop-width) {
+    flex-basis: 31.25%;
+  }
 
   .basequipment__category-container &:nth-child(1) {
     min-height: 355px;
@@ -53,11 +75,15 @@
 }
 
 .basequipment__category-titlebox {
-  padding: 49px 0 50px;
+  padding: 8px 0 11px;
   margin-bottom: 30px;
   display: flex;
   border-radius: 30px 0;
   background-color: $palette-secondary;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 49px 0 50px;
+  }
 
   .basequipment__category--none & {
     padding-top: 12px;

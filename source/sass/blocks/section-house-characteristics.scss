@@ -1,8 +1,12 @@
 .house-characteristics {
+  padding: 50px 0 150px;
+  background-color: $palette-secondary;
+
   @include font-primary;
 
-  padding: 142px 0 150px;
-  background-color: $palette-secondary;
+  @media (min-width: $small-desktop-width) {
+    padding: 142px 0 150px;
+  }
 }
 
 .house-characteristics .wrapper {
@@ -19,5 +23,9 @@
 }
 
 .house-characteristics__description {
-  flex-basis: 31.25%;
+  flex-basis: 100%;
+
+  @media (min-width: $small-desktop-width) {
+    flex-basis: 31.25%;
+  }
 }
