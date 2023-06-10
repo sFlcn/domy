@@ -1,27 +1,46 @@
 .offer {
   background-color: $palette-secondary;
   color: $palette-darkcontrast;
-  padding: 142px 0 150px;
+  padding: 34px 0 8px;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 152px 0 44px;
+  }
 }
 
 .offer__title {
+  margin: 0 0 15px;
+  text-align: center;
+
   @include font-title-middle;
 
-  margin: 0 0 70px;
+  @media (min-width: $small-desktop-width) {
+    margin: 0 0 70px;
+    text-align: start;
+  }
 }
 
 .offer__list {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  gap: 1.5%;
 }
 
 .offer__item {
-  margin: 0;
-  padding: 110px 0 0;
-  width: 225px;
+  flex-basis: 100px;
   text-align: center;
+  margin: 19px 0 14px;
+  padding: 61px 0 0;
   background: url("../img/domy-icons-houses.svg") no-repeat center 3px;
+  background-size: 46.5%;
+
+  @media (min-width: $small-desktop-width) {
+    flex-basis: 14.1%;
+    margin: 0 0 100px;
+    padding: 110px 0 0;
+    background-size: unset;
+  }
 }
 
 .offer__item--houses {
@@ -49,7 +68,11 @@
 }
 
 .offer__container {
-  padding: 0 20px;
+  padding: 0 2px;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 0 20px;
+  }
 }
 
 .offer__name {
@@ -59,19 +82,46 @@
 }
 
 .offer__descr {
-  @include font-primary($size: 14px, $line-height: 16px);
+  // visually hidden
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 
-  margin: 0;
-  opacity: 0.5;
+  @include font-primary($size: 10px);
+
+  @media (min-width: $small-desktop-width) {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+    overflow: auto;
+    opacity: 0.5;
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .offer__item--houses .offer__descr {
-  padding: 0 5px;
+  padding: 0;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 0 5px;
+  }
 }
 
 .offer__item--houses .offer__name,
 .offer__item--arch .offer__name,
 .offer__item--guarantee .offer__name {
-  padding: 0 35px;
+  padding: 0 5px;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 0 35px;
+  }
 }
 
