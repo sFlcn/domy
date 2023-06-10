@@ -9,10 +9,18 @@
 }
 
 .footer-nav__item {
-  flex-basis: 49%;
+  flex-basis: 48.25%;
 }
 
 .footer-nav__link {
   display: inline-block;
   padding: 10px;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 10.25px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 9.75px 0;
+  }
 }

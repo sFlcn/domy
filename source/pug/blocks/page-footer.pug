@@ -42,7 +42,7 @@ footer.footer
     .footer__container
       .footer__about
         address.footer__adress
-          p.footer__office-adress Офис:
+          p.footer__office-adress="Офис: "
             span г.&nbsp;Москва, ул.&nbsp;Войкова, д.&nbsp;4 с1
           p.footer__manufacturing-adress Производство:
             span г.&nbsp;Хотьково, ул.&nbsp;Заводская, д.&nbsp;1 Ежедневно&nbsp;с&nbsp;9:00&nbsp;до&nbsp;21:00
@@ -50,9 +50,9 @@ footer.footer
       ul.footer__nav.footer-nav
         each item in footerNav
           +footerNavItem(item)
-      ul.footer__socials.socials__list
-          each item in SOCIAL_LINKS
-            +socialLinkItem(item)
+    ul.footer__socials.socials__list
+      each item in SOCIAL_LINKS
+        +socialLinkItem(item)
     .footer__copyrights
       p Дизайн: <a href="http://lisinica-port.tilda.ws/" rel="noopener">Lisinica</a>
       p Веб-разработка: Pavel Sokolovskii

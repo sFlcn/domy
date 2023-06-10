@@ -7,13 +7,18 @@
   color: $color;
 }
 
-@mixin font-title-main($size: 64px, $line-height: 68px, $weight: 800, $color: inherit) {
+@mixin font-title-main($size: 30px, $line-height: 107%, $weight: 800, $color: inherit) {
   font-family: "Gilroy", "Arial", sans-serif;
   font-style: normal;
   font-size: $size;
   line-height: $line-height;
   font-weight: $weight;
   color: $color;
+
+  @media (min-width: $small-desktop-width) {
+    font-size: ceil($size * 2.13);
+    line-height: $line-height - 1;
+  }
 }
 
 @mixin font-title-middle($size: 50px, $line-height: 55px, $weight: 800, $color: inherit) {
