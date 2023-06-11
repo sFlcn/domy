@@ -100,6 +100,8 @@
 .footer__about {
   text-align: center;
 
+  @include font-primary($weight: 800, $line-height: 29px, $color: $palette-brightcontrast);
+
   @media (min-width: $small-desktop-width) {
     flex-basis: 31.55%;
     padding: 7px 0;
@@ -117,8 +119,8 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-
-  @include font-primary($weight: 800, $line-height: 29px, $color: $palette-brightcontrast);
+  font-size: 16px;
+  font-style: normal;
 
   @media (min-width: $small-desktop-width) {
     align-items: normal;
@@ -160,6 +162,7 @@
   padding: 5px 0 0;
   border-bottom: 1px solid;
   transition: color 0.55s;
+  font-size: 16px;
 
   &:hover {
     color: $palette-accent;
