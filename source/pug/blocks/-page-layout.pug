@@ -26,7 +26,7 @@ html.page(lang="ru", dir="ltr")
       meta(name="theme-color", content="#ffffff")
 
   body.page__body
-    include ../yandexmetrica/yandexmetrica.pug
+    include ../addons/yandexmetrica.pug
 
     include page-header.pug
 
@@ -39,3 +39,5 @@ html.page(lang="ru", dir="ltr")
 
     block scripts
       script(src="./js/scripts.bundle.js")
+
+    include ../addons/envybox.pug

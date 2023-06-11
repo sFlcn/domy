@@ -51,11 +51,14 @@ const paths = {
     src: 'source/mailer/**/*',
     dest: 'build/',
   },
-  yandexmetrica: {
-    trueFile: 'source/pug/yandexmetrica/yandexmetrica-true.pug',
-    nullFile: 'source/pug/yandexmetrica/yandexmetrica-null.pug',
-    targetPosition: 'source/pug/yandexmetrica/',
-    targetName: 'yandexmetrica.pug',
+  layoutAddons: {
+    yandexmetricaTrueTemplate: 'source/pug/addons/yandexmetrica-true.pug',
+    yandexmetricaNullTemplate: 'source/pug/addons/yandexmetrica-null.pug',
+    yandexmetricaTarget: 'yandexmetrica.pug',
+    envyboxTrueTemplate: 'source/pug/addons/envybox-true.pug',
+    envyboxNullTemplate: 'source/pug/addons/envybox-null.pug',
+    envyboxTarget: 'envybox.pug',
+    targetPosition: 'source/pug/addons/',
   },
   favicons: {
     src: 'source/favicon/*',
@@ -119,17 +122,23 @@ const copyPhp = (done) => {
   done();
 };
 
-const prepareYandexmetrica = (done) => {
-  gulp.src(paths.yandexmetrica.trueFile)
-    .pipe(rename(paths.yandexmetrica.targetName))
-    .pipe(gulp.dest(paths.yandexmetrica.targetPosition));
+const embedLayoutAddons = (done) => {
+  gulp.src(paths.layoutAddons.yandexmetricaTrueTemplate)
+    .pipe(rename(paths.layoutAddons.yandexmetricaTarget))
+    .pipe(gulp.dest(paths.layoutAddons.targetPosition));
+  gulp.src(paths.layoutAddons.envyboxTrueTemplate)
+    .pipe(rename(paths.layoutAddons.envyboxTarget))
+    .pipe(gulp.dest(paths.layoutAddons.targetPosition));
   done();
 };
 
-const falseYandexmetrica = (done) => {
-  gulp.src(paths.yandexmetrica.nullFile)
-    .pipe(rename(paths.yandexmetrica.targetName))
-    .pipe(gulp.dest(paths.yandexmetrica.targetPosition));
+const withoutLayoutAddons = (done) => {
+  gulp.src(paths.layoutAddons.yandexmetricaNullTemplate)
+    .pipe(rename(paths.layoutAddons.yandexmetricaTarget))
+    .pipe(gulp.dest(paths.layoutAddons.targetPosition));
+  gulp.src(paths.layoutAddons.envyboxNullTemplate)
+    .pipe(rename(paths.layoutAddons.envyboxTarget))
+    .pipe(gulp.dest(paths.layoutAddons.targetPosition));
   done();
 };
 
@@ -233,7 +242,7 @@ const server = (done) => {
 
 // BUILD
 export const build = gulp.series(
-  falseYandexmetrica,
+  withoutLayoutAddons,
   cleanDirs,
   copyResources,
   gulp.parallel(
@@ -245,7 +254,7 @@ export const build = gulp.series(
 );
 
 export const fullbuild = gulp.series(
-  prepareYandexmetrica,
+  embedLayoutAddons,
   cleanDirs,
   copyResources,
   gulp.parallel(
@@ -259,7 +268,7 @@ export const fullbuild = gulp.series(
 
 // Default
 export default gulp.series(
-  falseYandexmetrica,
+  withoutLayoutAddons,
   cleanDirs,
   copyResources,
   gulp.parallel(

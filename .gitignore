@@ -4,6 +4,8 @@ tmp/
 source/mailer/phpmailer/
 yandexmetrica.pug
 yandexmetrica-true.pug
+envybox.pug
+envybox-true.pug
 .DS_Store
 ._*
 .idea
