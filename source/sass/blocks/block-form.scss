@@ -8,22 +8,31 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  margin: 0 0 17px;
+  margin: 0 0 18px;
   border: 0;
+
+  @media (min-width: $small-desktop-width) {
+    margin: 0 0 2px;
+  }
 }
 
 .form__simple-input {
   @include font-primary($size: 16px, $line-height: 18px, $color: $palette-prime);
 
-  margin-bottom: 18px;
-  padding: 14px 1px 16px;
+  margin-bottom: 19.5px;
+  padding: 15px 1px 17px;
   background-color: inherit;
   border: 0;
   border-bottom: 0.5px solid rgba($palette-darkcontrast, .5);
 
+  @media (min-width: $small-desktop-width) {
+    margin-bottom: 13px;
+    padding: 14px 1px 12px;
+  }
+
   .popup-form & {
-    margin-bottom: 21px;
-    padding: 14px 1px 17px;
+    margin-bottom: 15px;
+    padding: 14px 1px 15px;
   }
 
   &:invalid {
@@ -50,10 +59,6 @@
   font-size: 14px;
 }
 
-// .form input[type="tel"] {
-//   letter-spacing: .06em;
-// }
-
 .form__privacy {
   position: relative;
   display: flex;
@@ -71,12 +76,18 @@
   font-size: 9px;
   line-height: 120%;
 
+  @media (min-width: $small-desktop-width) {
+    margin: 0 0 34px;
+  }
+
   a {
     padding: 1px 0 2px;
     border-bottom: 0.5px solid $palette-prime;
   }
 
   .popup-form & {
+    margin: 0 0 25px;
+    padding: 13px 0 10px 25px;
     font-size: 11px;
   }
 }
@@ -93,6 +104,10 @@
   background: transparent url("../img/check.svg") no-repeat center -50px;
   background-size: 1000%;
   transition: background-size 0.3s, background-position 0.4s;
+
+  .popup-form & {
+    top: 21px;
+  }
 }
 
 .form__privacy-checkbox:checked+.form__privacy-label::before {

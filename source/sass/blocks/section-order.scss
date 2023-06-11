@@ -2,43 +2,54 @@
   position: relative;
   color: $palette-prime;
   background-color: $palette-secondary;
-  padding: 142px 0 150px;
+  padding: 29px 0 40px;
   min-height: 313px;
-}
 
-.order::after {
-  content: "";
-  position: absolute;
-  width: calc(100vw / $desktop-width * 786px);
-  height: calc(100vw / $desktop-width * 831px);
-  right: 0;
-  top: -15%;
-  background: transparent url("../img/bigbrun-xl.svg") no-repeat center;
+  @media (min-width: $small-desktop-width) {
+    padding: 125px 0 150px;
+  }
 }
 
 .order .wrapper {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   gap: 3.125%;
-}
 
-.order .wrapper > * {
-  flex-basis: 31.25%;
+  @media (min-width: $small-desktop-width) {
+    flex-flow: row wrap;
+  }
 }
 
 .order__title {
+  box-sizing: border-box;
+  margin: 0 0 39px;
+  padding: 0 10%;
+  text-align: center;
+
   @include font-title-middle($color: $palette-darkcontrast);
 
-  margin: 0;
+  @media (min-width: $small-desktop-width) {
+    width: 31.25%;
+    padding: 22px 50px 0 0;
+    text-align: start;
+  }
 }
 
 .order__form {
-  max-width: 233px;
   padding: 0 0 10px;
   background-color: transparent;
+
+  @media (min-width: $small-desktop-width) {
+    flex-basis: 31.25%;
+    max-width: 233px;
+  }
 }
 
 .order__fieldset {
-  padding: 0 8px 0 0;
+  padding: 0;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 0 8px 0 0;
+  }
 }
