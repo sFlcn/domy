@@ -61,7 +61,7 @@ const paths = {
     targetPosition: 'source/pug/addons/',
   },
   favicons: {
-    src: 'source/favicon/*',
+    src: 'source/assets/favicon/*',
     dest: 'build/',
   },
 };
