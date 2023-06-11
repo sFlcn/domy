@@ -1,11 +1,11 @@
 .basequipment {
   background-color: $palette-brightcontrast;
   color: $palette-darkcontrast;
-  padding: 12px 0 70px;
+  padding: 12px 0 0;
   min-height: 780px;
 
   @media (min-width: $small-desktop-width) {
-    padding: 142px 0 70px;
+    padding: 116px 0 70px;
   }
 }
 
@@ -14,10 +14,28 @@
 }
 
 .basequipment-not {
+  position: relative;
   background-color: $palette-back;
   color: $palette-darkcontrast;
-  padding: 142px 0 150px;
-  min-height: 420px;
+  padding: 35px 0 0;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 142px 0 150px;
+    min-height: 420px;
+  }
+}
+
+.basequipment-not::after {
+  @media (min-width: $small-desktop-width) {
+    content: "";
+    position: absolute;
+    width: calc(100vw / ($desktop-width + 410px) * 786px);
+    height: calc(100vw / ($desktop-width + 410px) * 831px);
+    right: 0;
+    top: 26%;
+    z-index: 1;
+    background: transparent url("../img/bigbrun-xl.svg") no-repeat center;
+  }
 }
 
 .basequipment__title {
@@ -59,10 +77,11 @@
 
 .basequipment__category {
   flex-basis: 100%;
-  margin-bottom: 13px;
+  margin-bottom: 9px;
 
   @media (min-width: $small-desktop-width) {
     flex-basis: 31.25%;
+    margin-bottom: 13px;
   }
 
   .basequipment__category-container &:nth-child(1) {
@@ -76,13 +95,15 @@
 
 .basequipment__category-titlebox {
   padding: 8px 0 11px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   display: flex;
-  border-radius: 30px 0;
+  border-radius: 20px 0;
   background-color: $palette-secondary;
 
   @media (min-width: $small-desktop-width) {
     padding: 49px 0 50px;
+    margin-bottom: 30px;
+    border-radius: 30px 0;
   }
 
   .basequipment__category--none & {
@@ -95,11 +116,24 @@
 .basequipment__category-title {
   @include font-title-small;
 
+  margin: 0 auto;
+  padding: 19px 68px 22px 8px;
+  max-width: 170px;
+  background-image: url("../img/equipment-icons-base.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 40px;
   text-transform: uppercase;
   text-align: center;
-  margin: 0 auto;
-  padding: 20px 101px 18px 0;
-  background: url("../img/equipment-icons-base.svg") right 0 center no-repeat;
+
+  @media (min-width: $tablet-width) {
+    max-width: unset;
+  }
+
+  @media (min-width: $small-desktop-width) {
+    padding: 19px 115px 18px 15px;
+    background-size: unset;
+  }
 
   .basequipment__category--interior & {
     background-image: url("../img/equipment-icons-interior.svg");
@@ -165,11 +199,21 @@
 }
 
 .basequipment__item-content {
+  font-size: 16px;
   max-height: 0;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.3s ease-out, max-height 0.42s ease;
+
+  @media (min-width: $small-desktop-width) {
+    margin-bottom: 2px;
+    font-size: 12px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+  }
 
   .basequipment__item--open & {
     opacity: 1;
