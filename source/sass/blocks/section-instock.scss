@@ -5,7 +5,7 @@
   text-align: center;
 
   @media (min-width: $small-desktop-width) {
-    padding: 142px 0 150px;
+    padding: 150px 0 150px;
     text-align: start;
   }
 
@@ -21,7 +21,7 @@
   @include font-title-middle;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 65px;
+    margin: 0 0 49px;
   }
 }
 
@@ -30,7 +30,13 @@
 
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10%;
+
+  @media (min-width: $small-desktop-width) {
+    justify-content: space-between;
+    gap: unset;
+  }
 }
 
 .instock__item {
@@ -57,6 +63,7 @@
   object-fit: cover;
 
   @media (min-width: $small-desktop-width) {
+    margin: 0 0 20px;
     width: 347px;
     height: 235px;
   }

@@ -15,14 +15,34 @@
   padding: 0;
   display: flex;
   flex-flow: column nowrap;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+  }
 }
 
 .main-promo__title {
   @include font-title-main($size: 30px, $line-height: 30px);
 
   margin: 0 0 17px;
-  padding: 32px 20px 10px;
+  padding: 32px 15% 10px;
   text-align: center;
+
+  @media (min-width: $large-mobile-width) {
+    padding: 32px 18% 10px;
+  }
+
+  @media (min-width: ($tablet-width - 180)) {
+    padding: 32px 23% 10px;
+  }
+
+  @media (min-width: ($tablet-width - 70)) {
+    padding: 32px 27% 10px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 32px 10% 10px;
+  }
 
   @media (min-width: $small-desktop-width) {
     max-width: 400px;
@@ -66,6 +86,7 @@
 .main-promo__features-item {
   margin: 11px 0;
   padding: 0 6px 0 0;
+  font-size: 16px;
 
   @media (min-width: $small-desktop-width) {
     margin: 11px 0;
@@ -75,7 +96,7 @@
 
 .main-promo__button {
   width: 100%;
-  padding: 9px;
+  padding: 11px;
   color: $palette-darkcontrast;
   border: 1px solid $palette-darkcontrast;
   background-color: $palette-accent;
@@ -157,12 +178,16 @@
 
 .main-promo__container-center {
   position: absolute;
-  top: 53.5%;
+  top: 335px;
   left: 8%;
   padding: 0;
   color: $palette-darkcontrast;
   background-color: $palette-secondary;
   border-radius: 35px 0;
+
+  @media (min-width: $tablet-width) {
+    top: 307px;
+  }
 
   @media (min-width: $small-desktop-width) {
     top: 50%;

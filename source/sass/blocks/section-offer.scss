@@ -25,6 +25,21 @@
   flex-flow: row wrap;
   justify-content: space-between;
   gap: 1.5%;
+
+  @media (min-width: $large-mobile-width) {
+    justify-content: space-around;
+    gap: 7%;
+  }
+
+  @media (min-width: $tablet-width) {
+    justify-content: space-evenly;
+    gap: 15%;
+  }
+
+  @media (min-width: $small-desktop-width) {
+    justify-content: space-between;
+    gap: 1.5%;
+  }
 }
 
 .offer__item {
@@ -71,6 +86,10 @@
   padding: 0 2px;
 
   @media (min-width: $small-desktop-width) {
+    padding: 0 10px;
+  }
+
+  @media (min-width: $desktop-width) {
     padding: 0 20px;
   }
 }

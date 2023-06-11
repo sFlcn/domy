@@ -127,7 +127,7 @@
 
 .description__smallcontainer {
   position: relative;
-  width: 143px;
+  width: 150px;
   padding: 41px 9px 15px 20px;
 }
 
@@ -177,15 +177,11 @@
 
   display: flex;
   flex-flow: row wrap;
+  gap: 5%;
   font-size: 12px;
   line-height: 150%;
 }
 
 .description__feature {
-  flex-basis: 40%;
-  margin-right: 22px;
-
-  &:nth-child(even) {
-    margin-right: 0;
-  }
+  flex-basis: 47%;
 }

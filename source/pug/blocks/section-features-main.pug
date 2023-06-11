@@ -1,17 +1,17 @@
+-
+  const FeaturesPictures = [
+    { name: "brun-1", altText: "9 лет производим дома", mobSize: [97, 90], sdSize: [280, 210], deskSize: [280, 220] },
+    { name: "brun-2", altText: ">20 домов мы строим каждый месяц", mobSize: [100, 90], sdSize: [280, 210], deskSize: [280, 220] },
+    { name: "brun-3", altText: "2–5 дней длится монтаж дома", mobSize: [88, 90], sdSize: [280, 210], deskSize: [280, 220] },
+  ];
+
 section.features
   .wrapper
     h2.visuallyhidden Наши особенности
-    dl.features__list.features__list
-      .features__item
-        dt.features__term 9 лет
-        <dd class="features__descr">Производим <br>дома</dd>
-      .features__item
-        dt.features__term= ">20"
-        <dd class="features__descr">Домов мы строим <br>каждый месяц</dd>
-      .features__item
-        .features__item-container--desktop
-          dt.features__term 2–5 дней
-          <dd class="features__descr">Длится монтаж <br>дома</dd>
-        .features__item-container--mobile
-          dt.features__term 2–5
-          <dd class="features__descr">Дней длится монтаж <br>дома</dd>
+    ul.features__list.features__list
+      each pict in FeaturesPictures
+        li.features__item
+          picture
+            source(media="(min-width: 1700px)", srcset= `./img/${pict.name}-d.svg`)
+            source(media="(min-width: 1200px)", srcset= `./img/${pict.name}-sd.svg`)
+            img.features__img(src=`./img/${pict.name}-m.svg`, width=`${pict.mobSize[0]}`, height=`${pict.mobSize[1]}`, alt=`${pict.altText}`)
