@@ -1,5 +1,5 @@
 .house-promo {
-  padding: 50px 0;
+  padding: 50px 0 12px;
 
   @include font-primary;
 
@@ -27,7 +27,8 @@
 
 .house-promo .wrapper {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column-reverse nowrap;
+  position: relative;
 
   @media (min-width: $small-desktop-width) {
     flex-flow: row-reverse nowrap;
@@ -40,6 +41,13 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
+  align-self: center;
+  text-align: center;
+
+  @media (min-width: $small-desktop-width) {
+    align-self: flex-start;
+    text-align: start;
+  }
 }
 
 .house-promo__title {
@@ -52,6 +60,7 @@
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
+  cursor: default;
 
   @include font-title-main($line-height: 64px);
 
@@ -62,7 +71,7 @@
     margin: 0 0 12px;
     border: unset;
     clip: auto;
-    overflow: auto;
+    overflow: initial;
   }
 
   .house-promo--pending & {
@@ -70,18 +79,41 @@
   }
 }
 
+.house-promo__title-gentext {
+  display: none;
+
+  @media (min-width: $small-desktop-width) {
+    display: initial;
+  }
+}
+
+.house-promo__title-alttext {
+  @media (min-width: $small-desktop-width) {
+    display: none;
+  }
+}
+
 .house-promo__title-descr {
   align-self: flex-start;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
   margin: 0;
-  padding: 23px 28px;
+  padding: 11px 23px;
   background-color: $palette-accent;
-  border-radius: 30px 0;
+  border-radius: 20px 0;
+  transform: translate(-50%, -35%);
+  z-index: 2;
 
-  @include font-title-main($line-height: 64px);
+  @include font-title-main;
 
   @media (min-width: $small-desktop-width) {
-    margin-bottom: 148px;
+    position: static;
+    margin-bottom: 147px;
+    padding: 21px 28px;
+    border-radius: 30px 0;
+    transform: translate(0);
   }
 
   .house-promo--pending & {
@@ -93,13 +125,13 @@
 
 .house-promo__price {
   margin: 0;
-  padding: 0;
-  border-top: 1px solid $palette-darkcontrast;
+  padding: 18px 0 10px;
 
-  @include font-title-main($color: $palette-dim, $line-height: 64px);
+  @include font-title-main($color: $palette-dim);
 
   @media (min-width: $small-desktop-width) {
     padding: 42px 0 10px;
+    border-top: 1px solid $palette-darkcontrast;
   }
 }
 
@@ -121,14 +153,40 @@
   text-transform: uppercase;
 }
 
+.house-promo__slider {
+  width: 100%;
+  overflow: hidden;
+
+  @media (min-width: $small-desktop-width) {
+    display: none;
+  }
+}
+
+.house-promo__slider-list {
+  @include list;
+}
+
+.house-promo__slider-item {
+  line-height: 0;
+}
+
+.house-promo__slider-img {
+  width: 100%;
+}
+
 .house-promo__images-list {
   @include list;
+
+  display: none;
+
+  @media (min-width: $small-desktop-width) {
 
   padding-top: 9px;
   flex-basis: 65.625%;
   display: flex;
   flex-flow: row wrap;
   column-gap: 4.76%;
+  }
 }
 
 .house-promo__images-item {
@@ -160,14 +218,6 @@
 .house-promo__images-item:nth-of-type(3) {
   max-width: 47.61%;
   align-self: center;
-}
-
-.house-promo__images-item:not(:first-of-type) {
-  display: none;
-
-  @media (min-width: $small-desktop-width) {
-    display: block;
-  }
 }
 
 .house-promo__images-item img {

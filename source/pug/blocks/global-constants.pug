@@ -89,6 +89,10 @@
         {name: "30m-mid-img", dimensions: [500, 281]},
         {name: "30m-small-img", dimensions: [500, 209]},
       ],
+      sliderData: {
+        files: ["30m-slider-1-m", "30m-slider-2-m", "30m-slider-3-m" ],
+        dimensions: [360, 218],
+      },
       schemeFile: {name: "30m-scheme", dimensions: [658, 631]},
     },
     "45m": {
@@ -136,7 +140,11 @@
         {name: "45m-mid-img", dimensions: [500, 281]},
         {name: "45m-small-img", dimensions: [263, 350]},
       ],
-      schemeFile: {name: "45m-scheme", dimensions: [778, 600]}
+      sliderData: {
+        files: ["45m-slider-1-m", "45m-slider-2-m", "45m-slider-3-m" ],
+        dimensions: [360, 218],
+      },
+      schemeFile: {name: "45m-scheme", dimensions: [778, 600]},
     },
     "60m": {
       title: "Модульный дом 60 м²",
@@ -187,7 +195,11 @@
         {name: "60m-mid-img", dimensions: [500, 281]},
         {name: "60m-small-img", dimensions: [501, 209]},
       ],
-      schemeFile: {name: "60m-scheme", dimensions: [882, 642]}
+      sliderData: {
+        files: ["60m-slider-1-m", "60m-slider-2-m", "60m-slider-3-m" ],
+        dimensions: [360, 218],
+      },
+      schemeFile: {name: "60m-scheme", dimensions: [882, 642]},
     },
     "70m": {
       title: "Модульный дом 70 м²",
@@ -248,7 +260,11 @@
         {name: "70m-mid-img", dimensions: [500, 281]},
         {name: "70m-small-img", dimensions: [500, 209]},
       ],
-      schemeFile: {name: "70m-scheme", dimensions: [652, 570]}
+      sliderData: {
+        files: ["70m-slider-1-m", "70m-slider-2-m", "70m-slider-3-m" ],
+        dimensions: [360, 218],
+      },
+      schemeFile: {name: "70m-scheme", dimensions: [652, 570]},
     },
     "80m": {
       title: "Модульный дом 80 м²",
@@ -305,18 +321,23 @@
         {name: "80m-mid-img", dimensions: [500, 281]},
         {name: "80m-small-img", dimensions: [500, 209]},
       ],
-      schemeFile: {name: "80m-scheme", dimensions: [823, 681]}
+      sliderData: {
+        files: ["80m-slider-1-m", "80m-slider-2-m", "80m-slider-3-m" ],
+        dimensions: [360, 218],
+      },
+      schemeFile: {name: "80m-scheme", dimensions: [823, 681]},
     },
     "110m": {
       title: "Модульный дом 110 м²",
       href: "110m",
       header: ["Ваш дом ", "110 м²"],
-      picturesFiles: [{name: "110m-pending-img", dimensions: [1050, 485]}]
+      picturesFiles: [{name: "110m-pending-img", dimensions: [1050, 485]}],
     },
     "bath": {
       title: "Модульная баня",
       href: "bath",
       header: ["Ваша баня", "15 м²"],
+      altHeader: ["Ваша баня 15 м²", "Баня"],
       price: "1 150 000",
       data: [
         {
@@ -354,11 +375,15 @@
         {name: "1bath-mid-img", dimensions: [500, 281]},
         {name: "1bath-small-img", dimensions: [500, 209]},
       ],
-      schemeFile: {name: "1bath-scheme", dimensions: [908, 438]}
+      sliderData: {
+        files: ["1bath-slider-1-m", "1bath-slider-2-m", "1bath-slider-3-m" ],
+        dimensions: [360, 218],
+      },
+      schemeFile: {name: "1bath-scheme", dimensions: [908, 438]},
     },
   }
 
- // данные о базовой комплектации домов 🏠
+  // данные о базовой комплектации домов 🏠
   const houseEquipmentData = [
     {
       title: "Основное",
@@ -436,7 +461,7 @@
     },
   ];
 
- // данные о базовой комплектации бани (+доп.опции)
+  // данные о базовой комплектации бани (+доп.опции)
   const bathEquipmentData = [
     {
       title: "Основное",
@@ -531,7 +556,7 @@
     ]
   ];
 
- // данные о НЕ входящем комплектацию
+  // данные о НЕ входящем комплектацию
   const equipmentNotData = [
     {
       name: "Фундамент",

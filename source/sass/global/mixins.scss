@@ -66,6 +66,10 @@
   margin: auto;
   padding: 0 10px;
 
+  &--ext {
+    padding: 0;
+  }
+
   @media (min-width: $tablet-width) {
     padding: 0 5%;
   }
