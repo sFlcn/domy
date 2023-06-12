@@ -1,5 +1,7 @@
 .swiper-pagination-bullet {
   background: $palette-brightcontrast;
+  width: 7px;
+  height: 7px;
 }
 
 .swiper-button-prev,
@@ -22,9 +24,4 @@
 .swiper-button-prev::after,
 .swiper-button-next::after {
   content: "";
-}
-
-.swiper-pagination-bullet{
-  width: 7px;
-  height: 7px;
 }

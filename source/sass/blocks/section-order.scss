@@ -48,8 +48,4 @@
 
 .order__fieldset {
   padding: 0;
-
-  @media (min-width: $small-desktop-width) {
-    padding: 0 8px 0 0;
-  }
 }

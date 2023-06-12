@@ -36,6 +36,8 @@ mixin siteNavSubItem({ name, pageHref })
   li(class= "header__sub-item site-nav__sub-item")
     if ((pageHref) && (pageHref !== currentPage))
       a.site-nav__sub-link(href= pageHref + ".html")= name
+    else if (pageHref === currentPage)
+      a.site-nav__sub-link(href="##", onclick="return false")= name
     else
       a.site-nav__sub-link.na(href="##", onclick="return false")= name
 

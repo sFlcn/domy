@@ -11,7 +11,8 @@ section.faq
     ul.faq__category-list
       each item in FAQ_ARRAY
         li(class= item.answer ? "faq__item" : "faq__item faq__item--empty")
-          button.button.accordion-button.faq__item-name(type="button")= item.question
+          button.button.accordion-button.faq__item-name(type="button")
+            span= item.question
           .faq__item-content.accordion-content
             if item.answer
               p= item.answer

@@ -109,6 +109,10 @@
   transform: translateX(10px);
 }
 
+.header__nav-item {
+  font-size: 16px;
+}
+
 .header__sub-menu {
   display: flex;
   flex-flow: row wrap;

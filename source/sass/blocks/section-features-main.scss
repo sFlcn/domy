@@ -26,6 +26,10 @@
 
   &:nth-child(even) {
     margin-top: 37px;
+
+    @media (min-width: $small-desktop-width) {
+      margin-top: 0;
+    }
   }
 
   @media (min-width: $tablet-width) {

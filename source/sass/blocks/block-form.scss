@@ -71,13 +71,15 @@
 
 .form__privacy-label {
   position: relative;
+  width: 100%;
   margin: 0 0 25px;
   padding: 10px 0 10px 25px;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 120%;
 
   @media (min-width: $small-desktop-width) {
     margin: 0 0 34px;
+    font-size: 9.5px;
   }
 
   a {

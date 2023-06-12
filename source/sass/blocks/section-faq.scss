@@ -12,8 +12,8 @@
 
   @media (min-width: $small-desktop-width) {
     padding: 150px 0;
-    background-position-x: 11.86vw, 22.35vw;
-    background-position-y: 9.9vh, 31.6vh;
+    background-position-x: 11.8vw, 22.3vw;
+    background-position-y: 107px, 342px;
   }
 }
 
@@ -31,7 +31,6 @@
 .faq__category-list {
   @include list;
 
-  // margin-left: 34.35%;
   padding-top: 55px;
   width: 100%;
   display: flex;
@@ -50,10 +49,6 @@
   margin-bottom: 9px;
   border-bottom: 1px solid $palette-darkcontrast;
 
-  // &:last-of-type {
-  //   border-color: transparent;
-  // }
-
   &:--empty {
     border-bottom: 1px solid transparent;
     pointer-events: none;
@@ -65,13 +60,22 @@
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 11px;
   padding: 9.5px 0;
   width: 100%;
   font-weight: 800;
-  text-transform: uppercase;
   text-align: start;
   word-break: normal;
+  font-size: 16px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+
+  & span {
+    max-width: 75%;
+  }
+  }
 
   &::after {
     content: "+";
