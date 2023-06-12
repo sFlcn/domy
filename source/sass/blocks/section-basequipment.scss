@@ -1,7 +1,7 @@
 .basequipment {
   background-color: $palette-brightcontrast;
   color: $palette-darkcontrast;
-  padding: 12px 0 0;
+  padding: 40px 0 0;
   min-height: 780px;
 
   @media (min-width: $small-desktop-width) {
@@ -51,7 +51,11 @@
   }
 
   .basequipment-not & {
-    margin-bottom: 45px;
+    margin-bottom: 24px;
+
+    @media (min-width: $small-desktop-width) {
+      margin-bottom: 45px;
+    }
   }
 }
 
