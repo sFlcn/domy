@@ -1,5 +1,5 @@
 .house-characteristics {
-  padding: 50px 0 150px;
+  padding: 18px 0 7px;
   background-color: $palette-secondary;
 
   @include font-primary;
@@ -16,10 +16,16 @@
 }
 
 .house-characteristics__title {
+  display: none;
+
   @include font-title-middle;
 
-  margin: 0 0 62px;
-  flex-basis: 100%;
+  @media (min-width: $small-desktop-width) {
+    display: block;
+    margin: 0 0 62px;
+    flex-basis: 100%;
+    padding: 142px 0 150px;
+  }
 }
 
 .house-characteristics__description {
