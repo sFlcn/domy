@@ -6,7 +6,7 @@ block prepend variables
 block main
   main.main
     section(class= `house-promo house-promo--pending house-promo${classModifier}`)
-      .wrapper
+      .wrapper.wrapper--ext
         .house-promo__text
           h1.house-promo__title= houseData["header"][0]
           .house-promo__title-descr= houseData["header"][1]
@@ -21,3 +21,13 @@ block main
               "Визуализация дома",
               "house-promo__img0"
             )
+        .house-promo__slider
+          .swiper
+            ul.house-promo__slider-list.swiper-wrapper
+              each item, index in houseData["sliderData"]["files"]
+                li.house-promo__slider-item.swiper-slide
+                  +pictureJpgWebp(item, houseData["sliderData"]["dimensions"][0], houseData["sliderData"]["dimensions"][1], "Визуализация дома", "house-promo__slider-img")
+            .house-promo__slider-control
+              .swiper-pagination
+              .swiper-button-prev
+              .swiper-button-next
