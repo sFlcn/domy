@@ -1,3 +1,17 @@
+import Swiper, { Navigation, Pagination } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
+
+// eslint-disable-next-line no-unused-vars
+const swiper = new Swiper(
+  '.swiper',
+  {
+    modules: [Navigation, Pagination],
+    loop: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  },
+);
+
 const mainMenuElements = {
   menuItemsElementsArr: document.querySelectorAll('.header__nav-list--desktop .site-nav__link'),
   openMenuClassName: 'menu--active',

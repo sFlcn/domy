@@ -1,0 +1,30 @@
+.swiper-pagination-bullet {
+  background: $palette-brightcontrast;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 65%;
+  width: 37px;
+  height: 37px;
+  background-image: url("../img/slider-button.svg");
+}
+
+.swiper-button-prev {
+  left: 20px;
+}
+
+.swiper-button-next {
+  right: 20px;
+  transform: rotate(180deg);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-pagination-bullet{
+  width: 7px;
+  height: 7px;
+}
