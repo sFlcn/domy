@@ -1,51 +1,94 @@
 .faq {
-  padding: 50px 0;
+  padding: 29px 0;
   min-height: 510px;
   color: $palette-darkcontrast;
   background-color: $palette-brightcontrast;
-  background-image:
-    url("../img/question.svg"),
-    url("../img/question-small.svg");
-  background-repeat:  no-repeat,  no-repeat;
-  background-position-x: -50px, 150px;
-  background-position-y: -50px, 110px;
 
   @media (min-width: $small-desktop-width) {
-    padding: 150px 0;
-    background-position-x: 11.8vw, 22.3vw;
-    background-position-y: 107px, 342px;
+    padding: 57px 0 140px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 108px 0 140px;
   }
 }
 
 .faq .wrapper {
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+
+  @media (min-width: $small-desktop-width) {
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-content: flex-start;
+    gap: 3.125%;
+  }
 }
 
-.faq .wrapper::before {
-  content: "Частые вопросы";
-  position: absolute;
+.faq__title {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 164px;
+  background-image:
+    url("../img/question.svg"),
+    url("../img/question-small.svg");
+    background-repeat: no-repeat;
+    background-size: 114px 143px, 57px 71px;
+    background-position-x: 42%, 62%;
+    background-position-y: 0, 93px;
+  text-align: center;
 
-  @include font-title-middle;
+  @include font-title-main;
+
+  @media (min-width: $small-desktop-width) {
+    padding-top: 32px;
+    width: 40%;
+    font-size: 50px;
+    text-align: start;
+    background-size: auto;
+    background-position-x: 75px, 276px;
+    background-position-y: 0, 234px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 42px;
+    width: 31.25%;
+    line-height: 55px;
+  }
 }
 
 .faq__category-list {
   @include list;
 
-  padding-top: 55px;
-  width: 100%;
   display: flex;
   flex-flow: column nowrap;
+  box-sizing: border-box;
+  padding: 10px 5px 0;
+  width: 100%;
+  min-height: 575px;
 
   @media (min-width: $small-desktop-width) {
-    width: 34.57%;
-    margin-left: 34.35%;
-    padding-top: 14px;
+    padding: 0;
+    width: 50.55%;
+    min-height: 480px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 34.5625%;
+    padding-top: 56px;
   }
 }
 
 .faq__item {
   @include font-primary($color: $palette-darkcontrast);
 
+  font-size: 16px;
   margin-bottom: 9px;
   border-bottom: 1px solid $palette-darkcontrast;
 
@@ -61,7 +104,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 11px;
+  margin-bottom: 12px;
   padding: 9.5px 0;
   width: 100%;
   font-weight: 800;
@@ -71,10 +114,6 @@
 
   @media (min-width: $tablet-width) {
     font-size: 16px;
-
-  & span {
-    max-width: 75%;
-  }
   }
 
   &::after {
@@ -87,6 +126,14 @@
 
   .faq__item--empty &::after {
     content: "";
+  }
+}
+
+.faq__item-name span {
+  max-width: 92%;
+
+  @media (min-width: $small-desktop-width) {
+    max-width: 75%;
   }
 }
 

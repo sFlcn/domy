@@ -4,7 +4,22 @@ block prepend variables
   - const currentPage = PAGES["faq"].pageHref;
   - const pageTitle = "Domy. Вопросы";
 
+mixin faqAccordionItem(buttonValue, contentValue)
+  li.faq__item
+    button.button.accordion-button.faq__item-name(type="button")= buttonValue
+    .faq__item-content.accordion-content
+      p= contentValue
+
 block main
   main.main
-    h1.visuallyhidden Частые вопросы
-    include blocks/section-faq.pug
+    section.faq
+      .wrapper
+        h1.faq__title Частые вопросы
+        ul.faq__category-list
+          each item in FAQ_ARRAY
+            li(class= item.answer ? "faq__item" : "faq__item faq__item--empty")
+              button.button.accordion-button.faq__item-name(type="button")
+                span= item.question
+              .faq__item-content.accordion-content
+                if item.answer
+                  p= item.answer
