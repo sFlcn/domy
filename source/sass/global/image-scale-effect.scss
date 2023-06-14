@@ -8,6 +8,7 @@
   transition: transform 1.1s ease-in-out;
 }
 
+.image-scalecontainer:focus-within img,
 .image-scalecontainer:hover img {
   transform: rotate(0.25deg) scale(1.25);
 }

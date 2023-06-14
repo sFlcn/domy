@@ -22,7 +22,7 @@ block main
         //- Картинки для 'больших' устройств
         ul.house-promo__images-list
           each item, index in houseData["picturesFiles"]
-            li.house-promo__images-item
+            li.house-promo__images-item.image-scalecontainer.image-scalebox
               +pictureJpgWebp(item["name"], item["dimensions"][0], item["dimensions"][1], "Визуализация дома", `house-promo__img${[index]}`)
         //- Слайдер для мобильных устройств
         .house-promo__slider

@@ -108,12 +108,13 @@
   @media (min-width: $desktop-width) {
     border-radius: 30px 0;
   }
+}
 
-  .instock__item:hover & {
-    top: 1.5%;
-    left: 1%;
-    transform: scale(0.75);
-  }
+.instock__item-link:hover ~ .instock__item-captions .instock__item-name,
+.instock__item-link:focus ~ .instock__item-captions .instock__item-name {
+  top: 1.5%;
+  left: 1%;
+  transform: scale(0.75);
 }
 
 .instock__item-name span:first-of-type {
@@ -159,8 +160,9 @@
     font-size: 24px;
     line-height: 29px;
   }
+}
 
-  .instock__item:hover & {
-    margin-right: 0;
-  }
+.instock__item-link:hover ~ .instock__item-captions .instock__item-price,
+.instock__item-link:focus ~ .instock__item-captions .instock__item-price {
+  margin-right: 0;
 }

@@ -32,6 +32,7 @@ section.instock
       each item in instockData
         li.instock__item
           .instock__item-box.image-scalecontainer
+            a.instock__item-link(href=`${item.href}.html`)
             .image-scalebox
               +pictureJpgWebpM(item.imageName, 360, 185, item.alt, "instock__item-image", "lazy")
             .instock__item-captions
@@ -45,6 +46,5 @@ section.instock
               .instock__item-under
                 .instock__item-underline
                 p.instock__item-price= item.price
-            a.instock__item-link(href=`${item.href}.html`)
               span.visuallyhidden Подробнее
 
