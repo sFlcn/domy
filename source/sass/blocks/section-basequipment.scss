@@ -5,7 +5,13 @@
   min-height: 780px;
 
   @media (min-width: $small-desktop-width) {
-    padding: 116px 0 70px;
+    padding: 150px 0 70px;
+  }
+}
+
+.index-main .basequipment {
+  @media (min-width: $small-desktop-width) {
+    padding-top: 117px;
   }
 }
 
