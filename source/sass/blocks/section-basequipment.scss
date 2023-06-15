@@ -2,21 +2,26 @@
   background-color: $palette-brightcontrast;
   color: $palette-darkcontrast;
   padding: 40px 0 0;
-  min-height: 780px;
 
   @media (min-width: $small-desktop-width) {
+    padding: 100px 0 50px;
+    min-height: 610px;
+  }
+
+  @media (min-width: $desktop-width) {
     padding: 150px 0 70px;
+    min-height: 780px;
   }
 }
 
 .index-main .basequipment {
   @media (min-width: $small-desktop-width) {
+    padding-top: 67px;
+  }
+
+  @media (min-width: $desktop-width) {
     padding-top: 117px;
   }
-}
-
-.basequipment .wrapper{
-  min-height: 780px;
 }
 
 .basequipment-not {
@@ -45,6 +50,7 @@
 }
 
 .basequipment__title {
+  justify-content: space-between;
   margin: 0 0 25px;
   padding: 0;
   text-align: center;
@@ -52,6 +58,11 @@
   @include font-title-middle;
 
   @media (min-width: $small-desktop-width) {
+    margin: 0 0 33px;
+    text-align: start;
+  }
+
+  @media (min-width: $desktop-width) {
     margin: 0 0 55px;
     text-align: start;
   }
@@ -95,7 +106,7 @@
   }
 
   .basequipment__category-container &:nth-child(1) {
-    min-height: 355px;
+    min-height: 310px;
   }
 
   &--none {
@@ -104,45 +115,46 @@
 }
 
 .basequipment__category-titlebox {
-  padding: 8px 0 11px;
-  margin-bottom: 10px;
   display: flex;
+  min-height: 80px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px 0;
   background-color: $palette-secondary;
 
   @media (min-width: $small-desktop-width) {
-    padding: 49px 0 50px;
+    min-height: 110px;
+    padding: 0 20px;
+    margin-bottom: 27px;
+    border-radius: 20px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 160px;
     margin-bottom: 30px;
     border-radius: 30px 0;
   }
 
   .basequipment__category--none & {
-    padding-top: 12px;
-    padding-bottom: 14px;
+    min-height: 87px;
     background-color: $palette-accent;
   }
 }
 
-.basequipment__category-title {
-  @include font-title-small;
-
-  margin: 0 auto;
-  padding: 19px 68px 22px 8px;
-  max-width: 170px;
+.basequipment__category-titlebox::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
   background-image: url("../img/equipment-icons-base.svg");
   background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 40px;
-  text-transform: uppercase;
-  text-align: center;
+  background-position: center;
 
-  @media (min-width: $tablet-width) {
-    max-width: unset;
-  }
-
-  @media (min-width: $small-desktop-width) {
-    padding: 19px 115px 18px 15px;
-    background-size: unset;
+  @media (min-width: $desktop-width) {
+    width: 58px;
+    height: 58px;
   }
 
   .basequipment__category--interior & {
@@ -154,10 +166,36 @@
   }
 
   .basequipment__category--none & {
+    background-image: none;
+  }
+}
+
+.basequipment__category-title {
+  display: flex;
+  flex-basis: min-content;
+  margin: 0;
+  padding: 5px 20px 5px 0;
+  max-width: 170px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include font-title-small;
+
+  @media (min-width: $small-desktop-width) {
+    flex-basis: auto;
+    max-width: unset;
+    padding-right: 35px;
+    background-size: unset;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-right: 45px;
+  }
+
+  .basequipment__category--none & {
     margin-left: 37px;
     padding-left: 10px;
     padding-right: 10px;
-    background-image: none;
   }
 }
 
@@ -169,10 +207,11 @@
 }
 
 .basequipment__item {
-  @include font-primary($color: $palette-prime);
-
-  margin-bottom: 9px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
   border-bottom: 1px solid $palette-darkcontrast;
+
+  @include font-primary($color: $palette-prime);
 
   &:last-of-type {
     border-color: transparent;
@@ -187,13 +226,23 @@
 .basequipment__item-name {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 11px;
+  margin-bottom: 5px;
   padding: 10px 0 9px;
   width: 100%;
   color: $palette-darkcontrast;
   font-size: 16px;
   font-weight: 800;
   text-align: start;
+
+  @media (min-width: $small-desktop-width) {
+    margin-bottom: 6px;
+    padding: 2px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 6px;
+    padding: 10px 0 7.5px;
+  }
 
   &::after {
     content: "+";
@@ -231,6 +280,15 @@
 }
 
 .basequipment__item-content p {
-  margin: 0 0 19px;
+  margin: 7px 0 19px;
   padding: 0;
+
+  @media (min-width: $small-desktop-width) {
+    margin: 0 0 9px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+    padding: 6px 0 14px;
+  }
 }
