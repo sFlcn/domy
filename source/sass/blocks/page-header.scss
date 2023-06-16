@@ -16,6 +16,10 @@
   box-shadow: 0 3px 50px rgba($palette-darkcontrast, 15%);
 
   @media (min-width: $small-desktop-width) {
+    padding-top: 33px;
+  }
+
+  @media (min-width: $desktop-width) {
     padding-top: 38px;
   }
 }
@@ -29,6 +33,14 @@
 
 .header__logo-block {
   flex-basis: 17%;
+
+  @media (min-width: $small-desktop-width) {
+    flex-basis: 8%;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-basis: 225px;
+  }
 }
 
 .header a {
@@ -38,6 +50,10 @@
 .header__logo {
   display: inline-block;
   padding: 5px 0;
+
+  @media (min-width: $desktop-width) {
+    padding: 1px 0 9px;
+  }
 
   & img {
     width: 49px;
@@ -58,23 +74,31 @@
 
   @media (min-width: $small-desktop-width) {
     order: 0;
-    flex-basis: 48.43%;
+    flex-basis: 49.5%;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-basis: 775px;
+    padding: 0 5px;
   }
 }
 
 .header__nav {
   position: absolute;
-  top: 0;
+  top: 45px;
   right: 0;
   transition: transform 0.3s ease-in 0.3s;
   pointer-events: none;
 
   @media (min-width: $small-desktop-width) {
-    margin: 6px 2px 48px;
-    flex-basis: 60%;
+    margin: 11px 2px 48px;
     position: static;
     display: block;
     pointer-events: auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 6px 18px 48px 0;
   }
 
   .header__nav-block--open & {
@@ -88,6 +112,11 @@
 
     @media (min-width: $small-desktop-width) {
       display: flex;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $desktop-width) {
+      justify-content: flex-end;
     }
   }
 
@@ -124,13 +153,19 @@
   @media (min-width: $small-desktop-width) {
     position: absolute;
     justify-content: space-around;
+    width: 90%;
+  }
+
+  @media (min-width: $desktop-width) {
     width: 70%;
-    transform: translateX(-25%);
   }
 
   .header__nav-item:nth-child(1) & {
     @media (min-width: $small-desktop-width) {
       justify-content: space-between;
+      left: 35px;
+    }
+    @media (min-width: $desktop-width) {
       left: 0;
     }
   }
@@ -172,13 +207,19 @@
 }
 
 .header__phone {
-  flex-basis: 45%;
+  flex-basis: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 0 11px;
 
   @media (min-width: $small-desktop-width) {
+    flex-basis: 190px;
+    margin: 13.5px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-basis: 225px;
     margin: 11px 0;
   }
 }
@@ -216,6 +257,7 @@
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
+  word-break: normal;
   background-color: $palette-accent;
   border: 1px solid $palette-darkcontrast;
   border-radius: 5px;
@@ -228,6 +270,12 @@
 
   @media (min-width: $small-desktop-width) {
     display: block;
+    flex-basis: 200px;
+    margin: 5px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 3px 0 3px 25px;
   }
 }
 

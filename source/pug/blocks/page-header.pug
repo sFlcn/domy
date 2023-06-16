@@ -47,8 +47,9 @@ mixin siteNavItem({ name, pageHref, navSubPages }, mode, index)
       a.site-nav__link(href= pageHref + ".html")
         span= name
     else
-      a.site-nav__link(href="##", onclick="return false")
+      span.site-nav__link.blanklink
         span= name
+    //- под-меню для всех пунктов на десктопе и первого пункта на мобайле
     if (navSubPages && (index === 0 || mode === "desktop"))
       ul.header__sub-menu.site-nav__sub-list
         each subItem in navSubPages
@@ -75,8 +76,8 @@ header.header
           ul.site-nav__list.header__nav-list--desktop
             each item, index in mainNav
               +siteNavItem(item, "desktop", index)
-      .header__call-block
-        .header__phone
-          a.header__tel(href="tel:+74951828188") +7 (495) 182 81 88
-          p.header__tel-time Ежедневно с 9:00 до 21:00
-        a.header__callback.button.callback-button(href="#callbackwidget") Заказать звонок
+      //- .header__call-block
+      .header__phone
+        a.header__tel(href="tel:+74951828188") +7 (495) 182 81 88
+        p.header__tel-time Ежедневно с 9:00 до 21:00
+      a.header__callback.button.callback-button(href="#callbackwidget") Заказать звонок
