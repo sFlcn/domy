@@ -2,16 +2,18 @@ include global-constants.pug
 include global-mixins.pug
 
 block variables
-  - let logoHref = currentPage === "index" ? false : "./index.html";
+  -
+    let logoHref = currentPage === "index" ? false : "./index.html";
+    const description = pageDescription ? pageDescription : "Для круглогодичного проживания. С отделкой и коммуникациями. Доставка по России. Сопровождение строительства • Собственное производство • Архитектурное бюро • Гарантия 10 лет";
 
 doctype html
-html.page(lang="ru", dir="ltr")
+html.page(lang="ru", dir="ltr", prefix="og: https://ogp.me/ns#")
   head
     block head
       meta(charset="utf-8")
       meta(name="viewport", content="width=device-width, initial-scale=1")
-      meta(name="description", content="Компания DOMY — возводим модульные дома для дач, баз отдыха и туристических компаний. Наше производство находится в городе Хотьково Московской области. Приобретение дома — это легко!")
-      title #{pageTitle}
+      meta(name="description", content=description)
+      title=pageTitle
       link(rel="stylesheet", href="./css/main.css")
       link(rel="stylesheet", href="./css/style-min.css")
       link(rel="preload", as="font", type="font/woff2", href="./fonts/gilroylight.woff2", crossorigin)
@@ -26,6 +28,19 @@ html.page(lang="ru", dir="ltr")
       link(rel="shortcut icon", href="./favicon.ico?v=2")
       meta(name="msapplication-TileColor", content="#fff000")
       meta(name="theme-color", content="#ffffff")
+      meta(property="og:title", content=OG["title"])
+      meta(property="og:type", content="website")
+      meta(property="og:description", content=description)
+      meta(property="og:image", content=OG["imageName"])
+      meta(property="og:site_name" content="Domy")
+      meta(property="og:url", content="https://domycompany.ru/")
+      meta(property="og:locale" content="ru")
+      meta(name="twitter:card" content="summary_large_image")
+      meta(property="twitter:domain" content="domycompany.ru")
+      meta(property="twitter:url" content="https://domycompany.ru/")
+      meta(name="twitter:title" content=OG["title"])
+      meta(name="twitter:description" content=description)
+      meta(name="twitter:image" content=OG["imageName"])
 
   body.page__body
     include ../addons/yandexmetrica.pug

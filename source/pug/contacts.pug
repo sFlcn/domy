@@ -2,7 +2,7 @@ extends blocks/-page-layout.pug
 
 block prepend variables
   - const currentPage = PAGES["contacts"].pageHref;
-  - const pageTitle = "Domy. Контакты";
+  - const pageTitle = "Контакты";
 
 mixin contactsItemTitle(contactData)
     if contactData["titleType"] === "tel"
