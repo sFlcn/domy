@@ -35,10 +35,12 @@ mixin footerNavItem({ name, pageHref })
 
 footer.footer
   .wrapper
-    //- logoHref генерируется в page-layout.pug
-    +logoLinkFooter(logoHref)
-      img.domy-logo(src="./img/domy-logo.svg", width="86", height="26", alt="логотип DOMY.")
-    a.footer__tel(href="tel:+74951828188") +7 (495) 182 81 88
+    .footer__logo-box
+      //- logoHref генерируется в page-layout.pug
+      +logoLinkFooter(logoHref)
+        img.domy-logo(src="./img/domy-logo.svg", width="86", height="26", alt="логотип DOMY.")
+    .footer__tel-box
+      a.footer__tel(href="tel:+74951828188") +7 (495) 182 81 88
     .footer__container
       .footer__about
         address.footer__adress
