@@ -35,7 +35,7 @@ section.main-promo
         each item in promoTableData.data
           //- переносим все поля, кроме заголовка, в таблицу ↓
           if item["head"] !== true
-            .description__box.description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
+            .description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
               dt.description__parameter= item.name
               dd.description__value= item.value
       a.promo-description__link.description__link.button(href= promoTableData.href + ".html") Cмотреть планировку

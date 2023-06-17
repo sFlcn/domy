@@ -46,11 +46,15 @@
 
   @media (min-width: $small-desktop-width) {
     max-width: 400px;
-    margin: 134px 0 15px;
+    margin: 144px 0 20px;
     padding: 5px 8px;
     font-size: 64px;
     line-height: 68px;
     text-align: left;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 134px 0 15px;
   }
 }
 
@@ -122,10 +126,14 @@
 
   @media (min-width: $small-desktop-width) {
     position: absolute;
-    width: 60%;
+    width: 57%;
     top: 0;
     bottom: 0;
     right: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 60%;
   }
 }
 
@@ -192,30 +200,42 @@
   @media (min-width: $small-desktop-width) {
     top: 50%;
     left: 50%;
-    min-width: 18.5%;
-    transform:translate(-39%, -45%);
-    padding: 35px 76px 39px 69px;
-    border-radius: 120px 0;
+    min-width: 288px;
+    transform: translate(-51%,-35%);
+    padding: 24px 64px 35px 56px;
+    border-radius: 100px 0;
   }
 
   @media (min-width: $desktop-width) {
     transform:translate(-64%, -48.9%);
+    min-width: 352px;
+    padding: 35px 76px 35px 69px;
+    border-radius: 120px 0;
   }
 }
 
 a.promo-description__link {
   display: inline-block;
   width: 100%;
-  padding: 12px 60px 12px 10px;
+  padding: 10px 60px 9px 22px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 11.5px;
   color: $palette-brightcontrast;
   text-transform: uppercase;
-  background: $palette-prime url("../img/arrow-bw.svg") no-repeat center right 17%;
+  background: $palette-prime url("../img/arrow-bw.svg") no-repeat center right 20%;
   transition: color 0.3s, background 0.42s;
+
+  @media (min-width: $desktop-width) {
+    background-position: center right 22%;
+    font-size: 14px;
+  }
 
   &:hover {
     color: $palette-darkcontrast;
-    background: $palette-accent url("../img/arrow-bb.svg") no-repeat center right 14%;
+    background: $palette-accent url("../img/arrow-bb.svg") no-repeat center right 15%;
+
+    @media (min-width: $desktop-width) {
+      background-position: center right 18%;
+    }
   }
 }

@@ -22,7 +22,11 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 0 0 16px;
+  margin: 0 0 10px;
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 13px;
+  }
 }
 
 .description__title {
@@ -35,6 +39,11 @@
 
   @media (min-width: $small-desktop-width) {
     position: static;
+    font-size: 40px;
+    line-height: 123%;
+  }
+
+  @media (min-width: $desktop-width) {
     font-size: 50px;
     line-height: 120%;
   }
@@ -51,14 +60,22 @@
 .description__about {
   margin: 0;
   padding: 10px 0;
-  font-size: 14px;
+  font-size: 12px;
+
+  @media (min-width: $desktop-width) {
+    font-size: 14px;
+  }
 }
 
 .description__about-more {
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   text-align: right;
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+  }
 }
 
 .description__specifications {
@@ -66,7 +83,11 @@
   margin: 0 0 42px;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 35px;
+    margin: 0 0 5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 11px;
   }
 }
 
@@ -80,7 +101,11 @@
   vertical-align: baseline;
 
   .description__specifications--small & {
-    font-size: 14px;
+    font-size: 12px;
+
+    @media (min-width: $desktop-width) {
+      font-size: 14px;
+    }
   }
 
   &--indented {
@@ -119,8 +144,14 @@
     }
 
     .description__specifications--small & {
-      margin-top: 18px;
-      font-size: 16px;
+      margin-top: 8px;
+      margin-bottom: 17px;
+      font-size: 14px;
+
+      @media (min-width: $desktop-width) {
+        margin-top: 16px;
+        margin-bottom: 29px;
+      }
     }
   }
 }
@@ -136,7 +167,13 @@
   }
 
   .description__specifications--small & {
-    font-size: 16px;
+    padding: 4.5px;
+    font-size: 14px;
+
+    @media (min-width: $desktop-width) {
+      padding: 5.5px;
+      font-size: 16px;
+    }
   }
 
   .description__box--summary & {
@@ -148,6 +185,14 @@
     @media (min-width: $small-desktop-width) {
       margin-right: 0;
       padding: 5px 12px;
+    }
+  }
+
+  .description__specifications--small .description__box--summary & {
+    font-size: 14px;
+
+    @media (min-width: $desktop-width) {
+      font-size: 16px;
     }
   }
 }
