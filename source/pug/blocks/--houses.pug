@@ -26,7 +26,7 @@ block main
               +pictureJpgWebp(item["name"], item["dimensions"][0], item["dimensions"][1], "Визуализация дома", `house-promo__img${[index]}`)
         //- Слайдер для мобильных устройств
         .house-promo__slider
-          .swiper
+          .slider-img.swiper
             ul.house-promo__slider-list.swiper-wrapper
               each item, index in houseData["sliderData"]["files"]
                 li.house-promo__slider-item.swiper-slide
@@ -34,7 +34,9 @@ block main
             .house-promo__slider-control
               .swiper-pagination
               .swiper-button-prev
+                span.visuallyhidden предыдущий слайд
               .swiper-button-next
+                span.visuallyhidden следующий слайд
 
     section(class= `house-characteristics house-characteristics${classModifier}`)
       .wrapper.animated-appearance

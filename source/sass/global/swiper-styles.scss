@@ -10,15 +10,48 @@
   width: 37px;
   height: 37px;
   background-image: url("../img/slider-button.svg");
+
+  @media (min-width: $small-desktop-width) {
+    top: unset;
+    width: 86px;
+    height: 86px;
+    bottom: 39px;
+  }
 }
 
 .swiper-button-prev {
   left: 20px;
+
+  @media (min-width: $small-desktop-width) {
+    left: 0;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
 }
 
 .swiper-button-next {
   right: 20px;
   transform: rotate(180deg);
+
+  @media (min-width: $small-desktop-width) {
+    right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
 }
 
 .swiper-button-prev::after,

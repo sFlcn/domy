@@ -1,16 +1,11 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, {
+  Navigation,
+  Pagination,
+  Controller,
+  FreeMode,
+  EffectCreative,
+} from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-
-// eslint-disable-next-line no-unused-vars
-const swiper = new Swiper(
-  '.swiper',
-  {
-    modules: [Navigation, Pagination],
-    loop: true,
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-  },
-);
 
 const mainMenuElements = {
   menuItemsElementsArr: document.querySelectorAll('.header__nav-list--desktop .site-nav__link'),
@@ -25,6 +20,11 @@ const mainMenuMobileBurgerElements = {
 
 const basequipmentAccordions = document.querySelectorAll('.basequipment__category');
 const faqAccordions = document.querySelectorAll('.faq__category-list');
+
+const promoSliderEl = document.querySelector('.slider-img');
+const auxTextSliderEl = document.querySelector('.slider-txt');
+let promoSwiper;
+let txtSwiper;
 
 // const callbackPopupOption = {
 //   popupElement: document.querySelector('.popup-form'),
@@ -271,3 +271,41 @@ basequipmentAccordions.forEach((el) => {
 faqAccordions.forEach((el) => {
   animateAccordion(el, 'faq__item--open');
 });
+
+if (promoSliderEl) {
+  promoSwiper = new Swiper(
+    promoSliderEl,
+    {
+      modules: [Navigation, Pagination, Controller, FreeMode, EffectCreative],
+      loop: true,
+      speed: 1250,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      effect: 'creative',
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: ['-120%', 0, -500],
+        },
+        next: {
+          shadow: true,
+          translate: ['120%', 0, -500],
+        },
+      },
+    },
+  );
+  if (auxTextSliderEl) {
+    txtSwiper = new Swiper(
+      auxTextSliderEl,
+      {
+        modules: [Controller],
+        loop: true,
+        speed: 1100,
+        spaceBetween: 1500,
+      },
+    );
+
+    txtSwiper.controller.control = promoSwiper;
+    promoSwiper.controller.control = txtSwiper;
+  }
+}

@@ -1,7 +1,9 @@
 -
-  const promoTableData = HOUSES_DATA["70m"];
+  const promoTableData70 = HOUSES_DATA["70m"];
+  const promoTableData30 = HOUSES_DATA["30m"];
   //- достаём поля заголовка для элемента about ↓
-  const aboutFileds = promoTableData["data"].filter(field => {return field.head === true})[0];
+  const aboutFileds70 = promoTableData70["data"].filter(field => {return field.head === true})[0];
+  const aboutFileds30 = promoTableData30["data"].filter(field => {return field.head === true})[0];
 
 section.main-promo
   .main-promo__wrapper
@@ -12,40 +14,64 @@ section.main-promo
         li.main-promo__features-item для круглогодичного проживания
         li.main-promo__features-item доставка по регионам России
       a.main-promo__button.callback-button.button(href="#callbackwidget") Получить консультацию
-    .main-promo__slider.slider
-      ul.main-promo__slider-list
-        li.main-promo__slider-item
-          +pictureJpg('main-slider-1', '100%', 'auto', 'Фото модульного дома на фоне леса.', "main-promo__slider-image slider__image")
-      //- ul.main-promo__slider-controls.slider__controls
-        li.slider__prev
-          button.main-promo__slider-button.slider__button--prev
-            img(src="./img/slider-button.svg", width="86px", height="86px", alt="предыдущий слайд")
-        li.slider__next
-          button.main-promo__slider-button.main-promo__slider-button--r.slider__button--next
-            img(src="./img/slider-button.svg", width="86px", height="86px", alt="следующий слайд")
-    .main-promo__container-center.description.description--desktop
-      .description__header-block
-        h3.description__title
-          span 70
-          span= " "
-          span м²
-        p.description__about= aboutFileds["name"]
-          span.description__about-more= aboutFileds["value"]
-      dl.description__specifications.description__specifications--small
-        each item in promoTableData.data
-          //- переносим все поля, кроме заголовка, в таблицу ↓
-          if item["head"] !== true
-            .description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
-              dt.description__parameter= item.name
-              dd.description__value= item.value
-      a.promo-description__link.description__link.button(href= promoTableData.href + ".html") Cмотреть планировку
-    .main-promo__container-center.description.description--mobile
-      .description__smallcontainer
-        h3.description__title
-          a.description__title-link(href= promoTableData.href + ".html")
-            span 70
-            span= " "
-            span м²
-        ul.description__shortlist
-          each item in promoTableData.shortData
-            li.description__feature= item
+    .main-promo__slider
+      .slider-img.swiper
+        ul.main-promo__slider-list.swiper-wrapper
+          li.main-promo__slider-item.swiper-slide
+            +pictureJpg('main-slider-1', '100%', 'auto', 'Фото модульного дома на фоне леса.', "main-promo__slider-image slider__image")
+          li.main-promo__slider-item.swiper-slide
+            +pictureJpg('main-slider-2', '100%', 'auto', 'Фото модульного дома среди травы в ясный день.', "main-promo__slider-image slider__image")
+        .main-promo__slider-controls
+          .swiper-button-prev
+            span.visuallyhidden предыдущий слайд
+          .swiper-button-next
+            span.visuallyhidden следующий слайд
+    .main-promo__container-center
+      .slider-txt.swiper
+        ul.main-promo__descr-list.swiper-wrapper
+          li.main-promo__descr-item.swiper-slide
+            .description__container
+              .description__header-block
+                h3.description__title
+                  span 70
+                  span= " "
+                  span м²
+                p.description__about= aboutFileds70["name"]
+                  span.description__about-more= aboutFileds70["value"]
+              dl.description__specifications.description__specifications--small
+                each item in promoTableData70.data
+                  //- переносим все поля, кроме заголовка, в таблицу ↓
+                  if item["head"] !== true
+                    .description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
+                      dt.description__parameter= item.name
+                      dd.description__value= item.value
+              a.promo-description__link.description__link.button(href= promoTableData70.href + ".html") Cмотреть планировку
+            .description__smallcontainer
+              h3.description__title
+                a.description__title-link(href= promoTableData70.href + ".html")
+                  span 70
+                  span= " "
+                  span м²
+              ul.description__shortlist
+                each item in promoTableData70.shortData
+                  li.description__feature= item
+          li.main-promo__descr-item.swiper-slide
+            .description__container
+              .description__header-block
+                h3.description__title 30 м²
+                p.description__about= aboutFileds30["name"]
+                  span.description__about-more= aboutFileds30["value"]
+              dl.description__specifications.description__specifications--small
+                each item in promoTableData30.data
+                  //- переносим все поля, кроме заголовка, в таблицу ↓
+                  if item["head"] !== true
+                    .description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
+                      dt.description__parameter= item.name
+                      dd.description__value= item.value
+              a.promo-description__link.description__link.button(href= promoTableData30.href + ".html") Cмотреть планировку
+            .description__smallcontainer
+              h3.description__title
+                a.description__title-link(href= promoTableData30.href + ".html") 30 м²
+              ul.description__shortlist
+                each item in promoTableData30.shortData
+                  li.description__feature= item
