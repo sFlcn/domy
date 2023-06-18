@@ -25,15 +25,14 @@
   ]
 
 section.instock
-  .wrapper.animated-appearance
+  .wrapper--ext.animated-appearance
     h2.instock__title У нас есть дома в наличии
-    //- p= (JSON.stringify(PAGES["bath"]["pageHref"]))
     ul.instock__list
       each item in instockData
         li.instock__item
           .instock__item-box.image-scalecontainer
             a.instock__item-link(href=`${item.href}.html`)
-            .image-scalebox
+            .instock__image-container.image-scalebox
               +pictureJpgWebpM(item.imageName, 360, 185, item.alt, "instock__item-image", "lazy")
             .instock__item-captions
               if (item.specialSpan)
