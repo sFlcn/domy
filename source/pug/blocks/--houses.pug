@@ -31,12 +31,13 @@ block main
               each item, index in houseData["sliderData"]["files"]
                 li.house-promo__slider-item.swiper-slide
                   +pictureJpgWebp(item, houseData["sliderData"]["dimensions"][0], houseData["sliderData"]["dimensions"][1], "Визуализация дома", "house-promo__slider-img")
-            .house-promo__slider-control
-              .swiper-pagination
-              .swiper-button-prev
-                span.visuallyhidden предыдущий слайд
-              .swiper-button-next
-                span.visuallyhidden следующий слайд
+            if houseData["sliderData"]["files"].length > 1
+              .house-promo__slider-control
+                .swiper-pagination
+                .swiper-button-prev
+                  span.visuallyhidden предыдущий слайд
+                .swiper-button-next
+                  span.visuallyhidden следующий слайд
 
     section(class= `house-characteristics house-characteristics${classModifier}`)
       .wrapper.animated-appearance
