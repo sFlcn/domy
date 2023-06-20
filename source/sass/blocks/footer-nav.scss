@@ -9,7 +9,11 @@
 }
 
 .footer-nav__item {
-  flex-basis: 48.5%;
+  flex-basis: 48%;
+
+  @media (min-width: $desktop-width) {
+    flex-basis: 45.5%;
+  }
 }
 
 .footer-nav__link {
