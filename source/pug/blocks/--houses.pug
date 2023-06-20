@@ -18,6 +18,9 @@ block main
           else
             h1.house-promo__title= houseData["header"][0]
             .house-promo__title-descr= houseData["header"][1]
+          .house__summary
+            each item in houseData["summary"]
+              p= item
           p.house-promo__price= `${houseData["price"]} ₽`
         //- Картинки для 'больших' устройств
         ul.house-promo__images-list
