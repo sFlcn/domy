@@ -35,8 +35,8 @@
   }
 
   @media (min-width: $desktop-width) {
-    height: 519px;
-    flex-basis: 65.625%;
+    height: 559px;
+    flex-basis: 67.625%;
   }
 }
 
@@ -45,7 +45,7 @@
 
   @include list;
 
-  margin-bottom: 24px;
+  margin-bottom: 27px;
 
   @media (min-width: $small-desktop-width) {
     flex-basis: 45.73%;
@@ -60,7 +60,7 @@
 .contacts__item {
   display: flex;
   flex-direction: column;
-  margin: 0 0 11px;
+  margin: 0 0 17px;
   padding: 0 3px 5px;
   border-bottom: 1px solid transparent;
 
@@ -130,7 +130,7 @@
 }
 
 .contacts__item-text--link {
-  margin: 0 auto 4px;
+  margin: 0 auto;
   padding: 10px 0 6px;
   border-bottom: 1px solid $palette-darkcontrast;
   text-decoration: none;

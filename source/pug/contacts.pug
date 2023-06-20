@@ -21,6 +21,7 @@ mixin contactsItemText(contactData)
 
 block main
   main.main
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=2b98b9be-369c-4518-a306-5c176159e8e5&lang=ru_RU")
     h1.visuallyhidden Наши контакты
     section.contacts
       .wrapper--ext
@@ -35,6 +36,5 @@ block main
           .map__container
             img.map__fallback(src="./img/map-c.png", width="1096", height="620", alt="Скриншот yandex-карты.")
             a.map__link(href="https://yandex.ru/maps/-/CCUsV8TRDD", target="_blank", rel="noopener") г. Москва, ул. Войкова, 4с1
-            iframe.map__iframe(src="https://yandex.ru/map-widget/v1/?ll=37.538647%2C55.852037&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1Njc4NTM3MBI70KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINGD0LvQuNGG0LAg0JLQvtC50LrQvtCy0LAsIDTRgTEiCg1KGhZCFTlsX0I%2C&z=13.62", width="1049", height="519", frameborder="0", allowfullscreen="true", style="position:relative;")
-
-
+            .map__map#ymap
+  <script type="text/javascript">function init(){let n=new ymaps.Map("ymap",{center:[55.859546057916205,37.51696268511962],zoom:13}),o=new ymaps.Placemark([55.85568406887567,37.525674500000015],{balloonContentHeader:"Офис Domycompany",balloonContentBody:"г. Москва, ул. Войкова, 4с1",balloonContentFooter:"2,4 км метро Коптево <br>2,41 км метро Лихоборы <br>3,5 км метро Селигерская",hintContent:"г. Москва, ул. Войкова, 4с1",iconContent:"<b>Domy</b>"},{preset:"islands#yellowStretchyIcon"});n.geoObjects.add(o)}ymaps.ready(init);</script>
