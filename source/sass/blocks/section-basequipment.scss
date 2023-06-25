@@ -16,7 +16,7 @@
 
 .index-main .basequipment {
   @media (min-width: $small-desktop-width) {
-    padding-top: 67px;
+    padding-top: 84px;
   }
 
   @media (min-width: $desktop-width) {
@@ -31,8 +31,12 @@
   padding: 35px 0 0;
 
   @media (min-width: $small-desktop-width) {
-    padding: 142px 0 150px;
-    min-height: 420px;
+    padding: 91px 0 23px;
+    min-height: 400px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 150px 0 150px;
   }
 }
 
@@ -71,6 +75,10 @@
     margin-bottom: 24px;
 
     @media (min-width: $small-desktop-width) {
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $desktop-width) {
       margin-bottom: 45px;
     }
   }
@@ -284,7 +292,7 @@
   padding: 0;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 9px;
+    margin: 6px 0 3px;
   }
 
   @media (min-width: $desktop-width) {

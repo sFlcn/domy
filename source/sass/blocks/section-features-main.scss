@@ -10,13 +10,12 @@
   flex-flow: row wrap;
   justify-content: space-between;
 
-  @media (min-width: $large-mobile-width) {
+  @media (min-width: $small-tablet-width) {
     justify-content: space-around;
   }
 
   @media (min-width: $small-desktop-width) {
     padding: 95px 0;
-    justify-content: space-around;
   }
 }
 

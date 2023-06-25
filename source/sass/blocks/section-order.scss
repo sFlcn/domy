@@ -6,7 +6,11 @@
   min-height: 313px;
 
   @media (min-width: $small-desktop-width) {
-    padding: 125px 0 150px;
+    padding: 72px 0 108px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 125px 0 128px;
   }
 }
 
@@ -31,8 +35,25 @@
 
   @media (min-width: $small-desktop-width) {
     width: 31.25%;
-    padding: 22px 50px 0 0;
+    padding: 22px 22px 0 0;
     text-align: start;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 31.25%;
+    padding: 22px 50px 0 0;
+  }
+}
+
+.order__container {
+  @media (min-width: $small-desktop-width) {
+    width: 345px;
+    padding-top: 19px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 233px;
+    padding-top: 0;
   }
 }
 
@@ -41,8 +62,7 @@
   background-color: transparent;
 
   @media (min-width: $small-desktop-width) {
-    flex-basis: 31.25%;
-    max-width: 233px;
+    width: 100%;
   }
 }
 

@@ -4,6 +4,10 @@
   padding: 34px 0 8px;
 
   @media (min-width: $small-desktop-width) {
+    padding: 91px 0 35px;
+  }
+
+  @media (min-width: $desktop-width) {
     padding: 152px 0 44px;
   }
 }
@@ -15,8 +19,12 @@
   @include font-title-middle;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 70px;
+    margin: 0 0 50px;
     text-align: start;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 70px;
   }
 }
 
@@ -26,7 +34,7 @@
   justify-content: space-between;
   gap: 1.5%;
 
-  @media (min-width: $large-mobile-width) {
+  @media (min-width: $small-tablet-width) {
     justify-content: space-around;
     gap: 7%;
   }
@@ -51,10 +59,15 @@
   background-size: 46.5%;
 
   @media (min-width: $small-desktop-width) {
-    flex-basis: 14.1%;
-    margin: 0 0 100px;
+    flex-basis: 31.5%;
+    margin: 0 0 46px;
     padding: 110px 0 0;
     background-size: unset;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-basis: 14.1%;
+    margin: 0 0 100px;
   }
 }
 
@@ -118,11 +131,16 @@
     width: auto;
     height: auto;
     margin: 0;
+    padding: 0 40px;
     clip: auto;
     overflow: auto;
     opacity: 0.5;
     font-size: 14px;
     line-height: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
   }
 }
 
@@ -130,6 +148,11 @@
   padding: 0;
 
   @media (min-width: $small-desktop-width) {
+    padding: 0 55px;
+  }
+  padding: 0;
+
+  @media (min-width: $desktop-width) {
     padding: 0 5px;
   }
 }
@@ -140,7 +163,24 @@
   padding: 0 5px;
 
   @media (min-width: $small-desktop-width) {
+    padding: 0 105px;
+  }
+
+  @media (min-width: $desktop-width) {
     padding: 0 35px;
   }
 }
 
+.offer__item--difficulty .offer__name,
+.offer__item--escort .offer__name,
+.offer__item--prod .offer__name {
+  padding: 0;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 0 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+  }
+}

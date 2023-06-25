@@ -5,6 +5,10 @@
   @include font-primary;
 
   @media (min-width: $small-desktop-width) {
+    padding: 90px 0;
+  }
+
+  @media (min-width: $desktop-width) {
     padding: 142px 0 150px;
   }
 }
