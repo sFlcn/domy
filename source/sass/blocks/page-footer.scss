@@ -139,7 +139,7 @@
   @media (min-width: $desktop-width) {
     flex-flow: row wrap;
     align-items: normal;
-    justify-content: space-between;
+    gap: 48px;
     margin: 0 0 51px;
   }
 }
@@ -152,7 +152,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    max-width: 45.5%;
+    width: 45%;
     margin: 0;
   }
 
@@ -226,8 +226,7 @@
     order: 1;
     flex-basis: 13.55%;
     justify-content: space-between;
-    align-items: flex-end;
-    padding: 55px 2px;
+    padding: 0 2px;
   }
 }
 
