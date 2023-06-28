@@ -14,7 +14,14 @@ block main
   main.main
     section.faq
       .wrapper
-        h1.faq__title Частые вопросы
+        .faq__title-container
+          h1.faq__title Частые вопросы
+          .faq__decor.faq__decor--1
+            .faq__decor-container
+              .faq__decor-back-image
+          .faq__decor.faq__decor--2
+            .faq__decor-container
+              .faq__decor-back-image
         ul.faq__category-list
           each item in FAQ_ARRAY
             li(class= item.answer ? "faq__item" : "faq__item faq__item--empty")
