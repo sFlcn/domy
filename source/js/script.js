@@ -278,7 +278,8 @@ if (promoSliderEl) {
     {
       modules: [Navigation, Pagination, Controller, FreeMode, EffectCreative],
       loop: true,
-      speed: 1250,
+      speed: 450,
+      grabCursor: true,
       pagination: { el: '.swiper-pagination', clickable: true },
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
       effect: 'creative',
@@ -299,9 +300,10 @@ if (promoSliderEl) {
       auxTextSliderEl,
       {
         modules: [Controller],
+        allowTouchMove: false,
         loop: true,
         speed: 1100,
-        spaceBetween: 1500,
+        spaceBetween: 300,
       },
     );
 
