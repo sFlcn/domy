@@ -18,7 +18,7 @@ block main
               houseData["picturesFiles"][0]["name"],
               houseData["picturesFiles"][0]["dimensions"][0],
               houseData["picturesFiles"][0]["dimensions"][1],
-              "Визуализация дома",
+              houseData["picturesAltText"],
               "house-promo__img0"
             )
         .house-promo__slider
@@ -26,4 +26,4 @@ block main
             .house-promo__slider-list
               each item, index in houseData["sliderData"]["files"]
                 .house-promo__slider-item
-                  +pictureJpgWebp(item, houseData["sliderData"]["dimensions"][0], houseData["sliderData"]["dimensions"][1], "Визуализация дома", "house-promo__slider-img")
+                  +pictureJpgWebp(item, houseData["sliderData"]["dimensions"][0], houseData["sliderData"]["dimensions"][1], houseData["picturesAltText"], "house-promo__slider-img")

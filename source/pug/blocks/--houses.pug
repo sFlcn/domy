@@ -26,14 +26,14 @@ block main
         ul.house-promo__images-list
           each item, index in houseData["picturesFiles"]
             li.house-promo__images-item.image-scalecontainer.image-scalebox
-              +pictureJpgWebp(item["name"], item["dimensions"][0], item["dimensions"][1], "Визуализация дома", `house-promo__img${[index]}`)
+              +pictureJpgWebp(item["name"], item["dimensions"][0], item["dimensions"][1], houseData["picturesAltText"], `house-promo__img${[index]}`)
         //- Слайдер для мобильных устройств
         .house-promo__slider
           .slider-img.swiper
             ul.house-promo__slider-list.swiper-wrapper
               each item, index in houseData["sliderData"]["files"]
                 li.house-promo__slider-item.swiper-slide
-                  +pictureJpgWebp(item, houseData["sliderData"]["dimensions"][0], houseData["sliderData"]["dimensions"][1], "Визуализация дома", "house-promo__slider-img")
+                  +pictureJpgWebp(item, houseData["sliderData"]["dimensions"][0], houseData["sliderData"]["dimensions"][1], houseData["picturesAltText"], "house-promo__slider-img")
             if houseData["sliderData"]["files"].length > 1
               .house-promo__slider-control
                 .swiper-pagination
