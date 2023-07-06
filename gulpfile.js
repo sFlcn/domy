@@ -43,6 +43,7 @@ const paths = {
       'source/assets/fonts/*.{woff2,woff,otf,ttf}',
       'source/assets/img/**/*.{png,jpg,jpeg,svg}',
       'source/assets/robots.txt',
+      'source/assets/.htaccess',
     ],
     base: 'source/assets/',
     dest: 'build/',
