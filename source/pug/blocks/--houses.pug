@@ -3,6 +3,20 @@ extends -page-layout.pug
 block prepend variables
   block houseVariables
 
+mixin specificationsItem(dataObj)
+  -
+    let cssClass= "";
+    if (dataObj.head === true) {cssClass += "description__box--head "}
+    if (dataObj.underline === true) {cssClass += "description__box--indented "}
+    if (dataObj.devider === true) {cssClass += "description__box--centered "}
+    if (dataObj.summary === true) {cssClass += "description__box--summary "}
+  .description__box(class= cssClass)
+    if (dataObj.value !== "")
+      dt.description__parameter= dataObj.name
+      dd.description__value= dataObj.value
+    else
+      .description__parameter= dataObj.name
+
 block main
   main.main
     section(class= `house-promo house-promo${classModifier}`)
@@ -43,27 +57,25 @@ block main
                   span.visuallyhidden следующий слайд
 
     section(class= `house-characteristics house-characteristics${classModifier}`)
-      .wrapper.animated-appearance
+      .wrapper
         h2.house-characteristics__title Характеристики и планировка
         .house-characteristics__description
-          dl.description__specifications
+          dl.description__specifications.animated-appearance
             each item in houseData["data"]
-              -
-                let cssClass= "";
-                if (item.head === true) {cssClass += "description__box--head "}
-                if (item.underline === true) {cssClass += "description__box--indented "}
-                if (item.summary === true) {cssClass += "description__box--summary "}
-              .description__box(class= cssClass)
-                dt.description__parameter= item.name
-                dd.description__value= item.value
-        .house-characteristics__scheme
-          +picturePngWebp(
-            houseData["schemeFile"]["name"],
-            houseData["schemeFile"]["dimensions"][0],
-            houseData["schemeFile"]["dimensions"][1],
-            `Схема ${descrRu}`,
-            "house-characteristics__img"
-          )
+              +specificationsItem(item)
+          if houseData["dataExt"]
+            dl.description__specifications.animated-appearance
+              each item in houseData["dataExt"]
+                +specificationsItem(item)
+        .house-characteristics__scheme.animated-appearance
+          +picturePngWebp(houseData["schemeFile"]["name"], houseData["schemeFile"]["dimensions"][0], houseData["schemeFile"]["dimensions"][1], `Схема ${descrRu}`, "house-characteristics__img")
+        if (houseData["dataExt2"]) && (houseData["schemeFile2"])
+          .house-characteristics__description.animated-appearance
+            dl.description__specifications
+              each item in houseData["dataExt2"]
+                +specificationsItem(item)
+          .house-characteristics__scheme.animated-appearance
+            +picturePngWebp(houseData["schemeFile2"]["name"], houseData["schemeFile2"]["dimensions"][0], houseData["schemeFile2"]["dimensions"][1], `Схема ${descrRu}`, "house-characteristics__img")
 
     include section-basequipment.pug
     if isBath !== true

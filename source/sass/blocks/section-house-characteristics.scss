@@ -17,6 +17,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  row-gap: 30px;
 }
 
 .house-characteristics__title {
@@ -38,4 +39,11 @@
   @media (min-width: $small-desktop-width) {
     flex-basis: 31.25%;
   }
+}
+
+.house-characteristics__scheme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
 }
