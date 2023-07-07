@@ -21,6 +21,8 @@
 }
 
 .form__simple-input {
+  width: 100%;
+
   @include font-primary($size: 16px, $line-height: 18px, $color: $palette-prime);
 
   margin-bottom: 19.5px;
@@ -87,7 +89,7 @@
 
   @media (min-width: $small-desktop-width) {
     margin: 0 0 24px;
-    font-size: 9.5px;
+    font-size: 9.4px;
   }
 
   @media (min-width: $desktop-width) {
@@ -134,9 +136,11 @@
 }
 
 .form__submit {
-  padding: 11.5px 10px 10.5px;
+  min-height: 40px;
+  padding: 11px 10px;
   border: 1px solid $palette-darkcontrast;
   border-radius: 5px;
+  color: $palette-darkcontrast;
   background-color: $palette-accent;
   font-size: 14px;
   line-height: 16px;
