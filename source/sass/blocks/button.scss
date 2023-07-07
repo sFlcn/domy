@@ -1,4 +1,5 @@
 .button {
+  appearance: none;
   box-sizing: border-box;
   padding: 10px;
   border: none;
@@ -8,5 +9,6 @@
   word-break: break-all;
   overflow: hidden;
   background-color: transparent;
+  border-style: none;
   cursor: pointer;
 }
