@@ -14,7 +14,8 @@ if (!error_get_last()) {
     $validating = true;
 
     if ($name == "") {
-      $name = "имя не указано";
+      // $name = "имя не указано";
+      $name = " ";
     }
 
     if ($email != "") {
@@ -26,7 +27,8 @@ if (!error_get_last()) {
         $data["desc"] = "Причина ошибки: введённые данные почты";
       }
     } else {
-      $email = "почта не указана";
+      // $email = "почта не указана";
+      $email = " ";
     }
 
     if ($tel == "") {
@@ -48,8 +50,8 @@ if (!error_get_last()) {
     $body = "
     <ul>
       <li>$name</li>
-      <li>$email</li>
       <li>$tel</li>
+      <li>$email</li>
     </ul>
     <hr>
     <p>

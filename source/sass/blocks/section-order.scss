@@ -3,14 +3,13 @@
   color: $palette-prime;
   background-color: $palette-secondary;
   padding: 29px 0 40px;
-  min-height: 313px;
 
   @media (min-width: $small-desktop-width) {
     padding: 72px 0 108px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 125px 0 128px;
+    padding: 125px 0 110px;
   }
 }
 
@@ -68,4 +67,8 @@
 
 .order__fieldset {
   padding: 0;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 15px 0 13px;
+  }
 }
