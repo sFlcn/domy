@@ -52,6 +52,7 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin: 0 0 10px;
   padding: 72px 10px 34px;
 
   @include font-primary($line-height: 18px);
@@ -59,8 +60,50 @@
   @media (min-width: $small-desktop-width) {
     align-self: flex-start;
     order: 0;
-    margin: 0;
+    margin: 0 0 70px;
     padding: 0 10px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 67px;
+  }
+}
+
+.main-promo__tour {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  order: 1;
+  padding: 0 10px 34px;
+
+  @media (min-width: $small-desktop-width) {
+    align-self: flex-start;
+    order: 0;
+    padding: 0 10px;
+  }
+}
+
+.main-promo__tour-text {
+  max-width: 250px;
+  font-size: 16px;
+  text-align: center;
+
+  @media (min-width: $small-desktop-width) {
+    max-width: 242px;
+    text-align: start;
+  }
+}
+
+.main-promo__tour-link {
+  display: inline-block;
+  min-width: 51px;
+  min-height: 51px;
+  background: $palette-prime url("../img/whatsapp-y.svg") no-repeat center;
+  transition: transform 0.5s;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.25);
   }
 }
 
