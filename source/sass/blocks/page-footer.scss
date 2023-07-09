@@ -273,6 +273,14 @@
   }
   }
 
+  &--wa {
+    background-image: url("../img/logo-wa.svg");
+
+    &:hover {
+    background-image: url("../img/logo-wa--y.svg");
+  }
+  }
+
   &--disabled {
     opacity: 0.55;
     pointer-events: none;
