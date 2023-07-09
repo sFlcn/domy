@@ -53,16 +53,14 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  cursor: default;
-
   padding: 72px 10px 30px;
+  cursor: default;
 
   @include font-primary($line-height: 18px);
 
   @media (min-width: $small-desktop-width) {
     align-self: flex-start;
     order: 0;
-
     padding: 0 10px;
   }
 }
