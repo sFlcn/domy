@@ -27,6 +27,7 @@
   margin: 0 0 17px;
   padding: 32px 15% 10px;
   text-align: center;
+  cursor: default;
 
   @media (min-width: $tablet-width) {
     padding: 32px 10% 10px;
@@ -34,7 +35,7 @@
 
   @media (min-width: $small-desktop-width) {
     max-width: 400px;
-    margin: 144px 0 20px;
+    margin: 196px 0 20px;
     padding: 5px 8px;
     font-size: 64px;
     line-height: 68px;
@@ -42,7 +43,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin: 134px 0 15px;
+    margin: 202px 0 15px;
   }
 }
 
@@ -52,58 +53,60 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin: 0 0 10px;
-  padding: 72px 10px 34px;
+  cursor: default;
+
+  padding: 72px 10px 30px;
 
   @include font-primary($line-height: 18px);
 
   @media (min-width: $small-desktop-width) {
     align-self: flex-start;
     order: 0;
-    margin: 0 0 70px;
+
     padding: 0 10px;
+  }
+}
+
+.main-promo__tour-circle {
+  position: absolute;
+  bottom: 26%;
+  right: 8%;
+  z-index: 10;
+  width: 82px;
+  height: 82px;
+  background: url("../img/tour-txt.svg") center no-repeat;
+
+  @media (min-width: $small-tablet-width) {
+    bottom: 22%;
+    right: 4%;
+    width: 100px;
+    height: 100px;
+  }
+
+  @media (min-width: $small-desktop-width) {
+    bottom: unset;
+    top: 46px;
+    right: 59.25%;
+    width: 141px;
+    height: 141px;
   }
 
   @media (min-width: $desktop-width) {
-    margin: 0 0 67px;
-  }
-}
-
-.main-promo__tour {
-  align-self: center;
-  display: flex;
-  flex-direction: row;
-  order: 1;
-  padding: 0 10px 34px;
-
-  @media (min-width: $small-desktop-width) {
-    align-self: flex-start;
-    order: 0;
-    padding: 0 10px;
-  }
-}
-
-.main-promo__tour-text {
-  max-width: 250px;
-  font-size: 16px;
-  text-align: center;
-
-  @media (min-width: $small-desktop-width) {
-    max-width: 242px;
-    text-align: start;
+    top: 40px;
+    right: 68.45%;
   }
 }
 
 .main-promo__tour-link {
-  display: inline-block;
-  min-width: 51px;
-  min-height: 51px;
-  background: $palette-prime url("../img/whatsapp-y.svg") no-repeat center;
-  transition: transform 0.5s;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../img/tour-wa.svg") center no-repeat;
+  transition: transform 0.7s cubic-bezier(0.68, -1, 0.26, 2.5);
 
   &:hover,
   &:focus {
-    transform: scale(1.25);
+    transform: scale(1.2);
   }
 }
 
@@ -197,6 +200,7 @@
 }
 
 .main-promo__slider-controls {
+  display: none;
   position: absolute;
   width: 130px;
   height: 37px;
@@ -204,6 +208,7 @@
   right: 10px;
 
   @media (min-width: $small-desktop-width) {
+    display: block;
     width: 200px;
     height: 86px;
     bottom: 0;
@@ -228,7 +233,7 @@
     top: 50%;
     left: 50%;
     width: 409px;
-    transform: translate(-49%,-33%);
+    transform: translate(-43%,-34%);
   }
 
   @media (min-width: $desktop-width) {
