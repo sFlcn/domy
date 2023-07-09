@@ -17,10 +17,10 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  gap: 3.125%;
 
   @media (min-width: $small-desktop-width) {
     flex-flow: row wrap;
+    gap: 3.125%;
   }
 }
 
@@ -46,13 +46,12 @@
 
 .order__container {
   @media (min-width: $small-desktop-width) {
-    width: 345px;
-    padding-top: 19px;
+    width: 31.25%;
+    padding-top: 0;
   }
 
   @media (min-width: $desktop-width) {
     width: 233px;
-    padding-top: 0;
   }
 }
 
@@ -61,6 +60,11 @@
   background-color: transparent;
 
   @media (min-width: $small-desktop-width) {
+    width: 230px;
+    margin-left: auto;
+  }
+
+  @media (min-width: $desktop-width) {
     width: 100%;
   }
 }
@@ -69,6 +73,6 @@
   padding: 0;
 
   @media (min-width: $small-desktop-width) {
-    padding: 15px 0 13px;
+    padding: 14px 0 13px;
   }
 }

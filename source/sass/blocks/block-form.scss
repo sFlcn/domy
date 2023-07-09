@@ -12,10 +12,6 @@
   border: 0;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 22px;
-  }
-
-  @media (min-width: $desktop-width) {
     margin: 0 0 2px;
   }
 }
@@ -88,12 +84,10 @@
   line-height: 120%;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 24px;
-    font-size: 9.4px;
-  }
-
-  @media (min-width: $desktop-width) {
     margin: 0 0 34px;
+    padding-left: 21px;
+    font-size: 9.4px;
+    text-align: right;
   }
 
   a {
