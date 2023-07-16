@@ -26,12 +26,16 @@ const auxTextSliderEl = document.querySelector('.slider-txt');
 let promoSwiper;
 let txtSwiper;
 
+const quizSliderEl = document.querySelector('.slider-quiz');
+let quizSwiper;
+
 // const callbackPopupOption = {
 //   popupElement: document.querySelector('.popup-form'),
 //   popupBtns: document.querySelectorAll('.callback-button'),
 // };
 
 const userForms = document.querySelectorAll('.form');
+const quizForms = document.querySelectorAll('.quiz__form');
 
 // Functions:
 
@@ -264,6 +268,10 @@ userForms.forEach((el) => {
   el.addEventListener('submit', submitFormHandler);
 });
 
+quizForms.forEach((el) => {
+  el.addEventListener('submit', submitFormHandler);
+});
+
 basequipmentAccordions.forEach((el) => {
   animateAccordion(el, 'basequipment__item--open');
 });
@@ -310,4 +318,30 @@ if (promoSliderEl) {
     txtSwiper.controller.control = promoSwiper;
     promoSwiper.controller.control = txtSwiper;
   }
+}
+
+if (quizSliderEl) {
+  // eslint-disable-next-line no-unused-vars
+  quizSwiper = new Swiper(
+    quizSliderEl,
+    {
+      modules: [Navigation, Pagination, Controller, FreeMode, EffectCreative],
+      speed: 750,
+      autoHeight: true,
+      navigation: { nextEl: '.swiper-quiz-next' },
+      effect: 'creative',
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -400],
+          rotate: [0, -180, 0],
+        },
+        next: {
+          shadow: true,
+          translate: [0, 0, -400],
+          rotate: [0, 180, 0],
+        },
+      },
+    },
+  );
 }

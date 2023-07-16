@@ -1,0 +1,84 @@
+-
+  const quizOptions = {
+    houses: [
+      {value: "30", label: "30 м²"},
+      {value: "45", label: "45 м²"},
+      {value: "60", label: "60 м²"},
+      {value: "70", label: "70 м²"},
+      {value: "80", label: "80 м²"},
+      {value: "144", label: "144 м²"},
+    ],
+    help: [
+      {value: "yes", label: "Да"},
+      {value: "no", label: "Нет"},
+    ],
+    time: [
+      {value: "month", label: "Mесяц"},
+      {value: "3month", label: "3 месяца"},
+      {value: "halfyear", label: "Полгода"},
+      {value: "na", label: "Пока прицениваюсь"},
+    ],
+    contact: [
+      {value: "whatsapp", label: "whatsapp"},
+      {value: "telegram", label: "telegram"},
+      {value: "viber", label: "viber"},
+    ]
+  }
+
+section.quiz
+  .wrapper
+    form.quiz__form.animated-appearance(id="quiz__form", action=FORM_HANDLER_NAME, method="post", autocomplete="off")
+      .slider-quiz.swiper
+        ul.quiz__list.swiper-wrapper
+          li.quiz__item.swiper-slide.swiper-no-swiping
+            .quiz__container
+              h2.quiz__title Узнайте стоимость вашего дома под ключ
+              h3.quiz__container-header Ответьте на 3 вопроса <br>и получите смету прямо в ваш мессенджер
+              button.button.quiz__a-button.swiper-quiz-next(type="button") Рассчитать стоимость
+              //- honey-pot for spam-bots ↓↓↓↓↓
+              input.h#email(type="tel", name="email", placeholder="email", style="display: none")
+              input.h#phone(type="tel", name="phone", placeholder="телефон", style="display: none")
+              //- honey-pot for spam-bots ↑↑↑↑↑
+              input#quiz-form__subject(type="text", name="form-subject", hidden="true", readonly="true", value="заказ рассчёта стоимости")
+          li.quiz__item.swiper-slide.swiper-no-swiping
+            .quiz__container.quiz__container--numbered.quiz__container--img
+              h3.quiz__container-header(data-card="1") Какой дом вас интересует?
+              fieldset.quiz__fieldset
+                each item in quizOptions.houses
+                  label.quiz__img-label
+                    input.visuallyhidden(id=`quiz_house-${item.value}`, type="radio", name="quiz_house", value=`${item.value}`, required)
+                    img(src=`./img/quiz-${item.value}.png`, alt=`Дом ${item.value} м²`, width="104", heiht="104")
+                    span.quiz__img-sign= `${item.label}`
+                    .quiz__img-checkbox
+              button.button.quiz__button.swiper-quiz-next(type="button") Далее
+          li.quiz__item.swiper-slide.swiper-no-swiping
+            .quiz__container.quiz__container--numbered
+              h3.quiz__container-header(data-card="2") Потребуется ли помощь в подборе участка?
+              fieldset.quiz__fieldset
+                each item in quizOptions.help
+                  input.visuallyhidden(id=`quiz_help-${item.value}`, type="radio", name="quiz_help", value=`${item.value}`, required)
+                  label.quiz__r-label(for=`quiz_help-${item.value}`)= `${item.label}`
+              button.button.quiz__button.swiper-quiz-next(type="button") Далее
+          li.quiz__item.swiper-slide.swiper-no-swiping
+            .quiz__container.quiz__container--numbered
+              h3.quiz__container-header(data-card="3") Когда бы хотели отметить новоселье?
+              fieldset.quiz__fieldset
+                each item in quizOptions.time
+                  input.visuallyhidden(id=`quiz_time-${item.value}`, type="radio", name="quiz_time", value=`${item.value}`, required)
+                  label.quiz__r-label(for=`quiz_time-${item.value}`)= `${item.label}`
+              button.button.quiz__button.swiper-quiz-next(type="button") Далее
+          li.quiz__item.swiper-slide.swiper-no-swiping
+            .quiz__container.quiz__container--msg
+              h2.quiz__title Результаты
+              h3.quiz__container-header Ваш расчет будет готов в течение дня 🙂
+              p.quiz__contact-text Удобный вам мессенджер
+              fieldset.quiz__fieldset
+                .quiz__contacts-box
+                  each item in quizOptions.contact
+                    input.visuallyhidden(id=`quiz_contact-${item.value}`, type="radio", name="quiz_contact", value=`${item.value}`, required)
+                    label(for=`quiz_contact-${item.value}`, class=`quiz__msg-label quiz__msg-label--${item.value}`)
+                      span.visuallyhidden= `${item.label}`
+              .quiz__final-inputs
+                input.quiz__contact#quiz_contact(type="tel", name="form-cntctfn", required)
+                label.visuallyhidden(for="quiz_contact") ваш телефон
+                input.button.quiz__a-button(type="submit", value="Рассчитать стоимость")

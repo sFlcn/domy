@@ -9,8 +9,14 @@ if (!error_get_last()) {
     $name = trim(htmlspecialchars($_POST["form-name"]));
     $email = trim(htmlspecialchars($_POST["form-cntctml"]));
     $tel = trim(htmlspecialchars($_POST["form-cntctfn"]));
+    $qhouse = trim(htmlspecialchars($_POST["quiz_house"]));
+    $qhelp = trim(htmlspecialchars($_POST["quiz_help"]));
+    $qtime = trim(htmlspecialchars($_POST["quiz_time"]));
+    $qcontact = trim(htmlspecialchars($_POST["quiz_contact"]));
+
     $honeypot1 = trim(htmlspecialchars($_POST["email"]));
     $honeypot2 = trim(htmlspecialchars($_POST["phone"]));
+
     $validating = true;
 
     if ($name == "") {
@@ -33,6 +39,36 @@ if (!error_get_last()) {
 
     if ($tel == "") {
       $tel = "телефон не указан";
+    }
+
+    if ($qhouse == "") {
+      $qhouse = "тип дома не указан";
+    } else {
+      $qhouse = 'Интересует дом — '.$qhouse.' м²';
+    }
+
+    if ($qhelp == "yes") {
+      $qhelp = "потребуется помощь с подбором участка";
+    } elseif ($qhelp == "no") {
+      $qhelp = "с участком помощь НЕ требуется";
+    } else {
+      $qhelp = "информация о помощи не указана";
+    }
+
+    if ($qtime == "month") {
+      $qtime = "срок — 1 месяц";
+    } elseif ($qtime == "3month") {
+      $qtime = "срок — 3 месяца";
+    } elseif ($qtime == "halfyear") {
+      $qtime = "срок — полгода";
+    } else {
+      $qtime = "срок не определён";
+    }
+
+    if ($qcontact == "") {
+      $qcontact = "мессенджер не указан";
+    } else {
+      $qcontact = 'мессенджер: '.$qcontact;
     }
 
     if ( $honeypot1 != "" || $honeypot2 != "" ) {
@@ -60,6 +96,24 @@ if (!error_get_last()) {
       <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRkZGMDAwIi8+CjxwYXRoIGQ9Ik0xNyA0NkgyNi44NTg3QzMzLjYzNjUgNDYgMzguODUwMyA1MC4wNzYyIDM4Ljg1MDMgNTYuOTAxNEMzOC44NTAzIDYzLjcyNjcgMzMuNjM2NSA2Ny44NTAzIDI2Ljg1ODcgNjcuODUwM0gxN1Y0NlpNMjIuNjg3NyA1MC45NzY3VjYyLjg3MzVIMjYuODU4N0MzMC40MTM1IDYyLjg3MzUgMzMuMDIwNCA2MC43NDA2IDMzLjAyMDQgNTYuOTAxNEMzMy4wMjA0IDUzLjA2MjIgMzAuNDEzNSA1MC45NzY3IDI2Ljg1ODcgNTAuOTc2N0gyMi42ODc3WiIgZmlsbD0iIzFDMUMxQiIvPgo8cGF0aCBkPSJNMzkuNTEzOSA1OS40MTM1QzM5LjUxMzkgNTQuMDU3NiA0My40NDc4IDUwLjU5NzYgNDguODAzOCA1MC41OTc2QzU0LjE1OTcgNTAuNTk3NiA1OC4wOTM3IDU0LjAxMDIgNTguMDkzNyA1OS40MTM1QzU4LjA5MzcgNjQuNzY5NCA1NC4xNTk3IDY4LjIyOTUgNDguODAzOCA2OC4yMjk1QzQzLjQ0NzggNjguMjI5NSAzOS41MTM5IDY0LjgxNjggMzkuNTEzOSA1OS40MTM1Wk00NS4yMDE2IDU5LjQxMzVDNDUuMjAxNiA2MS41OTM4IDQ2LjYyMzUgNjIuOTIwOSA0OC43NTY0IDYyLjkyMDlDNTAuODg5MyA2Mi45MjA5IDUyLjMxMTIgNjEuNTkzOCA1Mi4zMTEyIDU5LjQxMzVDNTIuMzExMiA1Ny4yMzMyIDUwLjg4OTMgNTUuOTA2MSA0OC43NTY0IDU1LjkwNjFDNDYuNjIzNSA1NS45MDYxIDQ1LjIwMTYgNTcuMjMzMiA0NS4yMDE2IDU5LjQxMzVaIiBmaWxsPSIjMUMxQzFCIi8+CjxwYXRoIGQ9Ik01OC44OTk0IDUxLjAyNDFINjQuNTM5OFY1Mi42ODMxQzY1LjYyOTkgNTEuNDAzMyA2Ny4wNTE4IDUwLjY0NSA2OC43NTgxIDUwLjY0NUM3MS4xMjggNTAuNjQ1IDcyLjY0NDcgNTEuNjg3NyA3My41NDUzIDUzLjI5OTJDNzQuNzMwMiA1MS42NDAzIDc2LjQ4MzkgNTAuNjQ1IDc4LjUyMiA1MC42NDVDODMuMTY3IDUwLjY0NSA4NC44MjU5IDU0LjI5NDYgODQuODI1OSA1OC42NTUxVjY3Ljg1MDNINzkuMjMzVjU4Ljg5MjFDNzkuMjMzIDU3LjIzMzIgNzguNDI3MiA1NS45NTM1IDc3LjEwMDEgNTUuOTUzNUM3NS41ODM0IDU1Ljk1MzUgNzQuNjgyOCA1Ny4wOTEgNzQuNjgyOCA1OS4xMjkxVjY3Ljg1MDNINjkuMDg5OVY1OC44OTIxQzY5LjA4OTkgNTcuMjMzMiA2OC4yODQyIDU1Ljk1MzUgNjYuOTU3IDU1Ljk1MzVDNjUuNTM1MSA1NS45NTM1IDY0LjUzOTggNTYuOTk2MiA2NC41Mzk4IDU4Ljc5NzNWNjcuODUwM0g1OC44OTk0VjUxLjAyNDFaIiBmaWxsPSIjMUMxQzFCIi8+CjxwYXRoIGQ9Ik04OS44NSA1MS4wMjQxTDkzLjU0NzEgNjAuNzg4SDkzLjczNjZMOTcuMTk2NyA1MS4wMjQxSDEwMi42VjUyLjExNDNMOTYuNTMzMSA2Ny44OTc3Qzk1LjIwNiA3MS4zMTAzIDkzLjQ1MjMgNzMuMzk1OCA4Ny40ODAyIDczLjM5NThWNjcuOTkyNUM4OC43NTk5IDY3Ljk5MjUgODkuNjEzMSA2Ny45NDUxIDkwLjE4MTggNjcuNzA4MUw4NC4wMjAxIDUyLjExNDNWNTEuMDI0MUg4OS44NVoiIGZpbGw9IiMxQzFDMUIiLz4KPC9zdmc+Cg==' />
     </p>
     ";
+
+    if ($subj == "заказ рассчёта стоимости") {
+      $body = "
+      <ul>
+        <li>$qhouse</li>
+        <li>$qhelp</li>
+        <li>$qtime</li>
+        <li>$qcontact</li>
+        <li>$tel</li>
+      </ul>
+      <hr>
+      <p>
+        <small>$dateTimeMsk</small>
+        <br>
+        <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRkZGMDAwIi8+CjxwYXRoIGQ9Ik0xNyA0NkgyNi44NTg3QzMzLjYzNjUgNDYgMzguODUwMyA1MC4wNzYyIDM4Ljg1MDMgNTYuOTAxNEMzOC44NTAzIDYzLjcyNjcgMzMuNjM2NSA2Ny44NTAzIDI2Ljg1ODcgNjcuODUwM0gxN1Y0NlpNMjIuNjg3NyA1MC45NzY3VjYyLjg3MzVIMjYuODU4N0MzMC40MTM1IDYyLjg3MzUgMzMuMDIwNCA2MC43NDA2IDMzLjAyMDQgNTYuOTAxNEMzMy4wMjA0IDUzLjA2MjIgMzAuNDEzNSA1MC45NzY3IDI2Ljg1ODcgNTAuOTc2N0gyMi42ODc3WiIgZmlsbD0iIzFDMUMxQiIvPgo8cGF0aCBkPSJNMzkuNTEzOSA1OS40MTM1QzM5LjUxMzkgNTQuMDU3NiA0My40NDc4IDUwLjU5NzYgNDguODAzOCA1MC41OTc2QzU0LjE1OTcgNTAuNTk3NiA1OC4wOTM3IDU0LjAxMDIgNTguMDkzNyA1OS40MTM1QzU4LjA5MzcgNjQuNzY5NCA1NC4xNTk3IDY4LjIyOTUgNDguODAzOCA2OC4yMjk1QzQzLjQ0NzggNjguMjI5NSAzOS41MTM5IDY0LjgxNjggMzkuNTEzOSA1OS40MTM1Wk00NS4yMDE2IDU5LjQxMzVDNDUuMjAxNiA2MS41OTM4IDQ2LjYyMzUgNjIuOTIwOSA0OC43NTY0IDYyLjkyMDlDNTAuODg5MyA2Mi45MjA5IDUyLjMxMTIgNjEuNTkzOCA1Mi4zMTEyIDU5LjQxMzVDNTIuMzExMiA1Ny4yMzMyIDUwLjg4OTMgNTUuOTA2MSA0OC43NTY0IDU1LjkwNjFDNDYuNjIzNSA1NS45MDYxIDQ1LjIwMTYgNTcuMjMzMiA0NS4yMDE2IDU5LjQxMzVaIiBmaWxsPSIjMUMxQzFCIi8+CjxwYXRoIGQ9Ik01OC44OTk0IDUxLjAyNDFINjQuNTM5OFY1Mi42ODMxQzY1LjYyOTkgNTEuNDAzMyA2Ny4wNTE4IDUwLjY0NSA2OC43NTgxIDUwLjY0NUM3MS4xMjggNTAuNjQ1IDcyLjY0NDcgNTEuNjg3NyA3My41NDUzIDUzLjI5OTJDNzQuNzMwMiA1MS42NDAzIDc2LjQ4MzkgNTAuNjQ1IDc4LjUyMiA1MC42NDVDODMuMTY3IDUwLjY0NSA4NC44MjU5IDU0LjI5NDYgODQuODI1OSA1OC42NTUxVjY3Ljg1MDNINzkuMjMzVjU4Ljg5MjFDNzkuMjMzIDU3LjIzMzIgNzguNDI3MiA1NS45NTM1IDc3LjEwMDEgNTUuOTUzNUM3NS41ODM0IDU1Ljk1MzUgNzQuNjgyOCA1Ny4wOTEgNzQuNjgyOCA1OS4xMjkxVjY3Ljg1MDNINjkuMDg5OVY1OC44OTIxQzY5LjA4OTkgNTcuMjMzMiA2OC4yODQyIDU1Ljk1MzUgNjYuOTU3IDU1Ljk1MzVDNjUuNTM1MSA1NS45NTM1IDY0LjUzOTggNTYuOTk2MiA2NC41Mzk4IDU4Ljc5NzNWNjcuODUwM0g1OC44OTk0VjUxLjAyNDFaIiBmaWxsPSIjMUMxQzFCIi8+CjxwYXRoIGQ9Ik04OS44NSA1MS4wMjQxTDkzLjU0NzEgNjAuNzg4SDkzLjczNjZMOTcuMTk2NyA1MS4wMjQxSDEwMi42VjUyLjExNDNMOTYuNTMzMSA2Ny44OTc3Qzk1LjIwNiA3MS4zMTAzIDkzLjQ1MjMgNzMuMzk1OCA4Ny40ODAyIDczLjM5NThWNjcuOTkyNUM4OC43NTk5IDY3Ljk5MjUgODkuNjEzMSA2Ny45NDUxIDkwLjE4MTggNjcuNzA4MUw4NC4wMjAxIDUyLjExNDNWNTEuMDI0MUg4OS44NVoiIGZpbGw9IiMxQzFDMUIiLz4KPC9zdmc+Cg==' />
+      </p>
+      ";
+    }
 
     $mail = new PHPMailer\PHPMailer\PHPMailer();
 
