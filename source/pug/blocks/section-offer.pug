@@ -29,11 +29,11 @@
   ]
 
 section.offer
-  .wrapper.animated-appearance
-    h2.offer__title Мы предлагаем вам
+  .wrapper
+    h2.offer__title.animated-appearance Мы предлагаем вам
     .offer__list
       each item in servicesArray
-        dl(class= ("offer__item offer__item--" + item.offerCss))
+        dl(class= ("offer__item animated-appearance offer__item--" + item.offerCss))
           .offer__container
             dt.offer__name= item.offerName
             dd.offer__descr= item.offerDescr

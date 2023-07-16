@@ -1,9 +1,9 @@
 section.basequipment-not
-  .wrapper.animated-appearance
-    h2.basequipment__title Не входят в базовую комплектацию:
+  .wrapper
+    h2.basequipment__title.animated-appearance Не входят в базовую комплектацию:
     .basequipment__categories-roster.basequipment__categories-roster--single
       .basequipment__category.basequipment__category--not
-        ul.basequipment__category-list
+        ul.basequipment__category-list.animated-appearance
           each item in equipmentNotData
             li(class= item.content ? "basequipment__item" : "basequipment__item basequipment__item--empty")
               button.button.accordion-button.basequipment__item-name(type="button")= item.name

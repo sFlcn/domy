@@ -25,11 +25,11 @@
   ]
 
 section.instock
-  .wrapper--ext.animated-appearance
-    h2.instock__title У нас есть дома в наличии
+  .wrapper--ext
+    h2.instock__title.animated-appearance У нас есть дома в наличии
     ul.instock__list
       each item in instockData
-        li.instock__item
+        li.instock__item.animated-appearance
           .instock__item-box.image-scalecontainer
             a.instock__item-link(href=`${item.href}.html`)
             .instock__image-container.image-scalebox

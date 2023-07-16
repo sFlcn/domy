@@ -7,24 +7,24 @@ mixin equipmentAccordionItem(buttonValue, contentValue)
       p= contentValue
 
 section.basequipment
-  .wrapper.animated-appearance
-    h2.basequipment__title Что входит в базовую комплектацию
+  .wrapper
+    h2.basequipment__title.animated-appearance Что входит в базовую комплектацию
     ul.basequipment__categories-roster
       each dataItem in equipmentData
         if (Array.isArray(dataItem))
           .basequipment__category-container
             each subItem in dataItem
               li(class=`basequipment__category basequipment__category--${subItem.iconName}`)
-                .basequipment__category-titlebox
+                .basequipment__category-titlebox.animated-appearance
                   h3.basequipment__category-title= subItem.title
-                ul.basequipment__category-list
+                ul.basequipment__category-list.animated-appearance
                   each item in subItem.parts
                     +equipmentAccordionItem(item.name, item.content)
 
         else
           li(class=`basequipment__category basequipment__category--${dataItem.iconName}`)
-            .basequipment__category-titlebox
+            .basequipment__category-titlebox.animated-appearance
               h3.basequipment__category-title= dataItem.title
-            ul.basequipment__category-list
+            ul.basequipment__category-list.animated-appearance
               each item in dataItem.parts
                 +equipmentAccordionItem(item.name, item.content)
