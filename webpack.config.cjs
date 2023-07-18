@@ -19,6 +19,9 @@ module.exports = {
           loader: 'babel-loader',
           options: { presets: [['@babel/preset-env']] },
         },
+        resolve: {
+          fullySpecified: false,
+        },
       },
       { test: /\.css$/i, use: [MiniCssExtractPlugin.loader, 'css-loader'] },
       { test: /\.(png|svg|jpg|jpeg|gif)$/i, type: 'asset/resource' },
