@@ -1,3 +1,4 @@
+import { makePromoSwiper, makeAuxSwiper, makeQuizSwiper } from './swipers';
 import addTelInputMasks from './tel-input-mask';
 import animateAppearance from './animate-appearance';
 import animateAccordion from './accordion-animation';
@@ -5,7 +6,12 @@ import { mainMenuAppearing, mainMenuMobileShow } from './main-menu-animation';
 import submitFormHandler from './forms';
 // import popupAnimate from './popup';
 
-import './sliders-start';
+const promoSliderEl = document.querySelector('.slider-img');
+const auxTextSliderEl = document.querySelector('.slider-txt');
+const quizSliderEl = document.querySelector('.slider-quiz');
+let promoSwiper;
+let auxSwiper;
+let quizSwiper;
 
 // LAUNCHING
 window.addEventListener('DOMContentLoaded', addTelInputMasks);
@@ -30,6 +36,21 @@ mainMenuMobileShow({
 // accordions
 document.querySelectorAll('.basequipment__category').forEach((el) => { animateAccordion(el, 'basequipment__item--open'); });
 document.querySelectorAll('.faq__category-list').forEach((el) => { animateAccordion(el, 'faq__item--open'); });
+
+// sliders
+if (promoSliderEl) {
+  promoSwiper = makePromoSwiper(promoSliderEl);
+  if (auxTextSliderEl) {
+    auxSwiper = makeAuxSwiper(auxTextSliderEl);
+    auxSwiper.controller.control = promoSwiper;
+    promoSwiper.controller.control = auxSwiper;
+  }
+}
+
+if (quizSliderEl) {
+  // eslint-disable-next-line no-unused-vars
+  quizSwiper = makeQuizSwiper(quizSliderEl);
+}
 
 // forms handling
 document.querySelectorAll('.form').forEach((el) => { el.addEventListener('submit', submitFormHandler); });
