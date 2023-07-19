@@ -4,6 +4,7 @@ import animateAppearance from './animate-appearance';
 import animateAccordion from './accordion-animation';
 import { mainMenuAppearing, mainMenuMobileShow } from './main-menu-animation';
 import submitFormHandler from './forms';
+import buttonEnabling from './button-enabling-check';
 // import popupAnimate from './popup';
 
 const promoSliderEl = document.querySelector('.slider-img');
@@ -48,8 +49,10 @@ if (promoSliderEl) {
 }
 
 if (quizSliderEl) {
-  // eslint-disable-next-line no-unused-vars
   quizSwiper = makeQuizSwiper(quizSliderEl);
+  document.querySelectorAll('.quiz__container').forEach((el) => {
+    buttonEnabling(el, 'swiper-quiz-next', () => { quizSwiper.slideNext(); });
+  });
 }
 
 // forms handling
