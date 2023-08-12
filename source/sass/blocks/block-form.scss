@@ -85,9 +85,8 @@
 
   @media (min-width: $small-desktop-width) {
     margin: 0 0 34px;
-    padding-left: 21px;
-    font-size: 9.4px;
-    text-align: right;
+    padding-left: 33px;
+    font-size: 14px;
   }
 
   a {
@@ -114,6 +113,10 @@
   background: transparent url("../img/check.svg") no-repeat center -50px;
   background-size: 1000%;
   transition: background-size 0.3s, background-position 0.4s;
+
+  @media (min-width: $desktop-width) {
+    left: 8px;
+  }
 
   .popup-form & {
     top: 21px;
