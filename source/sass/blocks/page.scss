@@ -19,3 +19,50 @@
 .wrapper {
   @include wrapper;
 }
+
+.page__tour-circle {
+  position: fixed;
+  top: 9.5%;
+  right: 1%;
+  z-index: 10;
+  width: 72px;
+  height: 72px;
+  border: 0 solid transparent;
+  border-radius: 50%;
+  background: rgba($palette-prime, 0.33);
+  transition: background 0.75s, border 0.75s;
+
+  @media (min-width: $small-tablet-width) {
+    right: 0.5%;
+    width: 100px;
+    height: 100px;
+  }
+
+  @media (min-width: $small-desktop-width) {
+    top: unset;
+    bottom: 8%;
+    right: unset;
+    left: 5.5%;
+    width: 141px;
+    height: 141px;
+  }
+
+  &:hover,
+  &:focus {
+    border-width: 5px;
+    background: rgba($palette-prime, 0.85) url("../img/tour-txt.svg") center no-repeat;
+  }
+}
+
+.page__tour-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../img/tour-wa.svg") center no-repeat;
+  transition: transform 0.7s cubic-bezier(0.68, -1, 0.26, 2.5);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+}
