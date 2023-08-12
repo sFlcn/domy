@@ -98,6 +98,7 @@
   border-radius: 5px;
   font-size: 14px;
   line-height: 16px;
+  letter-spacing: 0.04em;
   transition: color 0.3s, background-color 0.42s;
 
   @media (min-width: $small-desktop-width) {
@@ -213,6 +214,7 @@ a.promo-description__link {
   font-size: 11.5px;
   color: $palette-brightcontrast;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   background: $palette-prime url("../img/arrow-bw.svg") no-repeat center right 18%;
   transition: color 0.3s, background 0.42s;
 
