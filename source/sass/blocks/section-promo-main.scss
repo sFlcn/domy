@@ -43,7 +43,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin: 202px 0 15px;
+    margin: 164px 0 15px;
   }
 }
 
@@ -99,6 +99,10 @@
   line-height: 16px;
   letter-spacing: 0.04em;
   transition: color 0.3s, background-color 0.42s;
+
+  @media (min-width: $small-desktop-width) {
+    width: 332px;
+  }
 
   &:hover {
     color: $palette-brightcontrast;
