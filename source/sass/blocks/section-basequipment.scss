@@ -31,7 +31,7 @@
   padding: 35px 0 0;
 
   @media (min-width: $small-desktop-width) {
-    padding: 91px 0 23px;
+    padding: 91px 0 85px;
     min-height: 400px;
   }
 
@@ -44,12 +44,20 @@
   @media (min-width: $small-desktop-width) {
     content: "";
     position: absolute;
-    width: calc(100vw / ($desktop-width + 410px) * 786px);
-    height: calc(100vw / ($desktop-width + 410px) * 831px);
-    right: 0;
-    top: 26%;
+    width: 473px;
+    height: 449px;
+    top: 33%;
+    right: 1%;
     z-index: 1;
-    background: transparent url("../img/bigbrun-xl.svg") no-repeat center;
+    background: transparent url("../img/bigbrun-an-sd.svg") no-repeat center;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 28%;
+    right: 0;
+    width: 630px;
+    height: 831px;
+    background: transparent url("../img/bigbrun-an-d.svg") no-repeat center;
   }
 }
 
