@@ -4,6 +4,7 @@ import Swiper, {
   Controller,
   FreeMode,
   EffectCreative,
+  Autoplay,
 } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 
@@ -11,12 +12,16 @@ export function makePromoSwiper(el) {
   return new Swiper(
     el,
     {
-      modules: [Navigation, Pagination, Controller, FreeMode, EffectCreative],
+      modules: [Navigation, Pagination, Controller, FreeMode, EffectCreative, Autoplay],
       loop: true,
-      speed: 450,
+      speed: 1500,
       grabCursor: true,
       pagination: { el: '.swiper-pagination', clickable: true },
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      autoplay: {
+        delay: 4500,
+        pauseOnMouseEnter: true,
+      },
       effect: 'creative',
       creativeEffect: {
         prev: {
