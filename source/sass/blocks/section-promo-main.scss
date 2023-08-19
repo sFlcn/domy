@@ -35,7 +35,7 @@
 
   @media (min-width: $small-desktop-width) {
     max-width: 400px;
-    margin: 196px 0 20px;
+    margin: 147px 0 20px;
     padding: 5px 8px;
     font-size: 64px;
     line-height: 68px;
@@ -43,7 +43,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    margin: 164px 0 15px;
+    margin: 122px 0 15px;
   }
 }
 
@@ -102,6 +102,10 @@
   transition: color 0.3s, background-color 0.42s;
 
   @media (min-width: $small-desktop-width) {
+    width: 100%;
+  }
+
+  @media (min-width: $desktop-width) {
     width: 332px;
   }
 
@@ -190,12 +194,12 @@
     top: 50%;
     left: 50%;
     width: 409px;
-    transform: translate(-43%,-34%);
+    transform: translate(-43%,-45%);
   }
 
   @media (min-width: $desktop-width) {
     width: 498px;
-    transform:translate(-64%, -48.9%);
+    transform:translate(-64%, -50%);
   }
 }
 

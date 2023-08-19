@@ -35,11 +35,14 @@ mixin logoLinkHeader(logoHref)
 mixin siteNavSubItem({ name, pageHref })
   li(class= "header__sub-item site-nav__sub-item")
     if ((pageHref) && (pageHref !== currentPage))
-      a.site-nav__sub-link(href= pageHref + ".html")= name
+      a.site-nav__sub-link(href= pageHref + ".html")
+        span= name
     else if (pageHref === currentPage)
-      a.site-nav__sub-link(href="##", onclick="return false")= name
+      a.site-nav__sub-link(href="##", onclick="return false")
+        span= name
     else
-      a.site-nav__sub-link.na(href="##", onclick="return false")= name
+      a.site-nav__sub-link.na(href="##", onclick="return false")
+        span= name
 
 mixin siteNavItem({ name, pageHref, navSubPages }, mode, index)
   li(class= `header__nav-item site-nav__item ${ index === 0 ? "menu--active" : ""}`)
@@ -47,13 +50,13 @@ mixin siteNavItem({ name, pageHref, navSubPages }, mode, index)
       a.site-nav__link(href= pageHref + ".html")
         span= name
     else
-      span.site-nav__link.blanklink
-        span= name
+      span.site-nav__link.blanklink(tabindex="0")= name
     //- под-меню для всех пунктов на десктопе и первого пункта на мобайле
     if (navSubPages && (index === 0 || mode === "desktop"))
-      ul.header__sub-menu.site-nav__sub-list
-        each subItem in navSubPages
-          +siteNavSubItem(subItem)
+      .header__sub-container
+        ul.header__sub-menu.site-nav__sub-list
+          each subItem in navSubPages
+            +siteNavSubItem(subItem)
 
 header.header
   .header__fixed-container

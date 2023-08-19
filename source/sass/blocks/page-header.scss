@@ -2,7 +2,7 @@
   min-height: 70px;
 
   @media (min-width: $small-desktop-width) {
-    min-height: 130px;
+    min-height: 90px;
   }
 }
 
@@ -16,11 +16,8 @@
   box-shadow: 0 3px 50px rgba($palette-darkcontrast, 15%);
 
   @media (min-width: $small-desktop-width) {
-    padding-top: 33px;
-  }
-
-  @media (min-width: $desktop-width) {
-    padding-top: 38px;
+    padding-top: 25px;
+    min-height: 65px;
   }
 }
 
@@ -29,6 +26,10 @@
   flex-direction: row;
   justify-content: space-between;
   min-height: 50px;
+
+  @media (min-width: $small-desktop-width) {
+    min-height: 62px;
+  }
 }
 
 .header__logo-block {
@@ -51,8 +52,8 @@
   display: inline-block;
   padding: 5px 0;
 
-  @media (min-width: $desktop-width) {
-    padding: 1px 0 9px;
+  @media (min-width: $small-desktop-width) {
+    padding: 3px 0;
   }
 
   & img {
@@ -91,14 +92,14 @@
   pointer-events: none;
 
   @media (min-width: $small-desktop-width) {
-    margin: 11px 2px 48px;
+    margin: 0 2px;
     position: static;
     display: block;
     pointer-events: auto;
   }
 
   @media (min-width: $desktop-width) {
-    margin: 6px 18px 48px 0;
+    margin: 0 18px 0 0;
   }
 
   .header__nav-block--open & {
@@ -139,44 +140,69 @@
 }
 
 .header__nav-item {
+  position: relative;
   font-size: 16px;
+}
+
+@keyframes submenu {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.header__sub-container {
+  @media (min-width: $small-desktop-width) {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 15px;
+    padding-top: 5px;
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+
+  @media (min-width: $desktop-width) {
+    left: 75px;
+  }
+}
+
+.header__nav-item:hover .header__sub-container,
+.header__nav-item:focus-within .header__sub-container {
+  @media (min-width: $small-desktop-width) {
+    display: block;
+    animation: submenu 0.75s;
+    animation-fill-mode: forwards;
+  }
 }
 
 .header__sub-menu {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
-  bottom: 22px;
-  right: 0;
   z-index: 100;
 
   @media (min-width: $small-desktop-width) {
-    position: absolute;
-    justify-content: space-around;
-    width: 90%;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    row-gap: 6px;
+    min-width: 150px;
+    background-color: rgba(#ffffff, 0.85);
+    border-radius: 25px;
   }
 
   @media (min-width: $desktop-width) {
-    width: 70%;
-  }
-
-  .header__nav-item:nth-child(1) & {
-    @media (min-width: $small-desktop-width) {
-      justify-content: space-between;
-      left: 5px;
-    }
-
-    @media (min-width: $desktop-width) {
-      left: 0;
-    }
-  }
-
-  .header__nav-item:last-child & {
-    @media (min-width: $small-desktop-width) {
-      gap: 10%;
-      justify-content: flex-end;
-      left: unset;
-    }
+    min-width: 230px;
+    min-height: 62px;
   }
 }
 
@@ -216,12 +242,11 @@
 
   @media (min-width: $small-desktop-width) {
     flex-basis: 190px;
-    margin: 13.5px 0;
+    margin: 3px 0;
   }
 
   @media (min-width: $desktop-width) {
     flex-basis: 225px;
-    margin: 11px 0;
   }
 }
 
@@ -232,7 +257,7 @@
   padding: 2px 0;
 
   @media (min-width: $small-desktop-width) {
-    margin-bottom: 7px;
+    margin-bottom: 0;
     padding: 0;
     font-size: 16px;
   }
@@ -273,11 +298,11 @@
   @media (min-width: $small-desktop-width) {
     display: block;
     flex-basis: 200px;
-    margin: 5px 0;
+    margin: 0;
   }
 
   @media (min-width: $desktop-width) {
-    margin: 3px 0 3px 25px;
+    margin: 0 0 0 25px;
   }
 }
 

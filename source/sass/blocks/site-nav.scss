@@ -17,18 +17,18 @@
 
   @media (min-width: $small-desktop-width) {
     margin: 0 0 10px 41px;
-    padding: 4px 0;
+    padding: 6px 0 4px;
   }
 
   @media (min-width: $desktop-width) {
     margin: 0 0 10px 100px;
   }
+}
 
-  &:hover,
-  &:focus {
-    border-bottom: 1px solid $palette-darkcontrast;
-    transition: border 0.42s;
-  }
+.site-nav__item:hover .site-nav__link,
+.site-nav__item:focus-within .site-nav__link {
+  border-bottom: 1px solid $palette-darkcontrast;
+  transition: border 0.42s;
 }
 
 .site-nav__item:last-child > .site-nav__link {
@@ -38,52 +38,58 @@
 .site-nav__sub-list {
   @include list;
 
-  margin-bottom: 9px;
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
-
   @media (min-width: $small-desktop-width) {
-    transform: translateY(-15px);
-    margin: 0;
+    padding: 40px 20px 30px;
   }
 }
 
-.site-nav__item.menu--active .site-nav__sub-list {
+.site-nav__item:hover .site-nav__sub-list,
+.site-nav__item:focus-within .site-nav__sub-list {
   opacity: 1;
-  pointer-events: auto;
-  transition: transform 0.5s ease-out 0.3s, opacity 0.5s ease-out 0.3s;
-
-  @media (min-width: $small-desktop-width) {
-    transform: translateY(0);
-  }
+  transform: scaleY(1);
 }
-
 
 .site-nav__sub-item {
   font-weight: 800;
 }
 
 .site-nav__sub-link {
+  @media (min-width: $small-desktop-width) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 36px;
+    padding: 0 5px;
+  }
+}
+
+.site-nav__sub-link span {
   border-radius: 5px 0;
   padding: 2px 0;
   font-size: 14px;
   font-weight: 800;
-  transition: background-color 0.5s;
+  transition: background-color 0.7s, padding 1s;
 
   @media (min-width: $small-desktop-width) {
-    padding: 2px 7px;
+    padding: 2px 10px 2px 0;
     font-size: 16px;
-  }
-
-  &:hover,
-  &:focus-within {
-    background-color: $palette-accent;
-    outline: 0;
-    transition: background-color 0.42s;
+    font-weight: 300;
+    white-space: nowrap;
   }
 }
 
-.site-nav__sub-item .menu-text{
+.site-nav__sub-link:hover span,
+.site-nav__sub-link:focus-within span {
+  background-color: $palette-accent;
+  outline: 0;
+  font-weight: 800;
+  transition: background-color 1s, padding 0.7s;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 2px 5px;
+  }
+}
+
+.site-nav__sub-item .menu-text {
   padding: 3px 10px;
 }

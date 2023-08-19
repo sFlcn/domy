@@ -2,7 +2,7 @@ import { makePromoSwiper, makeAuxSwiper, makeQuizSwiper } from './swipers';
 import addTelInputMasks from './tel-input-mask';
 import animateAppearance from './animate-appearance';
 import animateAccordion from './accordion-animation';
-import { mainMenuAppearing, mainMenuMobileShow } from './main-menu-animation';
+import { mainMenuMobileShow } from './main-menu-animation';
 import submitFormHandler from './forms';
 import buttonEnabling from './button-enabling-check';
 // import popupAnimate from './popup';
@@ -22,11 +22,6 @@ animateAppearance('animated-appearance', 250);
 //   popupElement: document.querySelector('.popup-form'),
 //   popupBtns: document.querySelectorAll('.callback-button'),
 // });
-
-mainMenuAppearing({
-  menuItemsElementsArr: document.querySelectorAll('.header__nav-list--desktop .site-nav__link'),
-  openMenuClassName: 'menu--active',
-});
 
 mainMenuMobileShow({
   menuEl: document.querySelector('.header__nav-block'),
