@@ -1,0 +1,21 @@
+include blocks/global-constants.pug
+include blocks/global-mixins.pug
+
+doctype html
+html.page(lang="ru", dir="ltr")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="Страница не найдена")
+    title Страница не найдена
+    link(rel="stylesheet", href="./css/style-min.css")
+    link(rel="icon", type="image/svg+xml", href="./icon404.svg")
+    link(rel="icon", type="image/png", sizes="16x16", href="./icon404-16x16.png")
+    link(rel="shortcut icon", href="./icon404.ico")
+
+  body.page__body
+    main.main.page404
+      .wrapper
+        h1.page404__title 404
+        p.page404__text Ой! Что-то пошло не так... Страницы, на которую вы попали, не существует.
+        a.page404__main-link(href="./index.html") Верните меня на главную!

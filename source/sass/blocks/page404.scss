@@ -1,0 +1,84 @@
+.page404 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  color: $palette-darkcontrast;
+  background-color: $palette-secondary;
+  background-repeat: no-repeat;
+  background-image: url("../img/404bigbrun.svg"), url("../img/404eyesbrun.svg");
+  background-size: 370px 352px, 147px 155px;
+  background-position: left -87px top 47px, right -10% bottom -8%;
+
+  @media (min-width: $small-tablet-width) {
+    background-image: url("../img/404bigbrun.svg"), url("../img/404eyesbrun.svg");
+    background-size: 370px 352px, 147px 155px;
+    background-position-x: -17px, 92%;
+    background-position-y: 47px, 10%;
+  }
+
+  @media (min-width: $tablet-width) {
+    background-image: url("../img/404bigbrun.svg"), url("../img/404eyesbrun.svg");
+    background-size: 545px 519px, 293px 309px;
+    background-position-x: 18%, 95%;
+    background-position-y: 60%, 10%;
+  }
+
+  @media (min-width: $small-desktop-width) {
+    font-size: 24px;
+    background-size: 1091px 1037px, 440px 464px;
+    background-position-x: calc(-1150px + 75vw), 94%;
+    background-position-y: 30%, 38%;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-position-x: 15%, 77%;
+    background-position-y: center, 30%;
+  }
+}
+
+.page404 .wrapper {
+  text-align: center;
+}
+
+.page404__title {
+  margin: 7px 0 37px;
+  color: $palette-prime;
+  font-size: 145px;
+  line-height: 110%;
+  font-weight: 700;
+
+  @media (min-width: $small-desktop-width) {
+    margin: 40px 0 135px;
+    padding: 0 350px 0 0;
+    font-size: 300px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 50px;
+    padding: 0 500px 0 0;
+  }
+}
+
+.page404__text {
+  margin: 0 0 7px;
+  padding: 0;
+
+  @media (min-width: $small-desktop-width) {
+    margin: 0;
+  }
+}
+
+.page404__main-link {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 5px 0;
+  color: inherit;
+  border-bottom: 1px solid $palette-darkcontrast;
+  text-decoration: none;
+}

@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /mailer/
 Disallow: /fonts/
+Disallow: /404.html
 Disallow: /tst.html
 Disallow: /110m.html

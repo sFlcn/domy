@@ -17,21 +17,23 @@ mixin logoLinkFooter(logoHref)
       if block
         block
   else
-    a.footer__logo.blanklink(href="##", onclick="return false")
+    a.footer__logo.blanklink(href="#", onclick="return false")
       if block
         block
 
 mixin socialLinkItem({ name, lClass, href })
   li.socials__item
-    a(class=`socials__link socials__link--${lClass} ${ href ? "" : "socials__link--disabled" }`, href= ( href ? href : "##" ), target="_blank", rel="noopener", onclick = ( href ? null : "return false" ))
+    a(class=`socials__link socials__link--${lClass} ${ href ? "" : "socials__link--disabled" }`, href= ( href ? href : "#" ), target="_blank", rel="noopener", onclick = ( href ? null : "return false" ))
       span.visuallyhidden= name
 
 mixin footerNavItem({ name, pageHref })
   li(class= pageHref !== currentPage ? 'footer-nav__item' : 'footer-nav__item footer-nav__item--active')
     if ((pageHref) && (pageHref !== currentPage))
       a.footer-nav__link(href=pageHref + ".html")= name
+    else if (pageHref === currentPage)
+      a.footer-nav__link.blanklink(href="#", onclick="return false")= name
     else
-      a.footer-nav__link.na(href="##", onclick="return false")= name
+      a.footer-nav__link.na(href="404.html", onclick="return false")= name
 
 footer.footer
   .wrapper
