@@ -8,11 +8,11 @@ section.order
           input.h#email(type="tel", name="email", placeholder="email", style="display: none")
           input.h#phone(type="tel", name="phone", placeholder="телефон", style="display: none")
           //- honey-pot for spam-bots ↑↑↑↑↑
-          input.form__simple-input#form__subject(type="text", name="form-subject", hidden="true", readonly="true", value="заказ обратной связи")
+          input.form__simple-input#form__subject(type="text", name="form-subject", hidden, readonly, value="заказ обратной связи")
           each item in WRITEUS_FORM
             +formInput(item)(class="form__simple-input")
         .form__privacy
-          input.form__privacy-checkbox.visuallyhidden#form__privacy-checkbox(type="checkbox", name="form-privacy", required="", checked="")
+          input.form__privacy-checkbox.visuallyhidden#form__privacy-checkbox(type="checkbox", name="form-privacy", required, checked)
           label.form__privacy-label(for="form__privacy-checkbox")
             | я согласен с
             |

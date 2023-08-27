@@ -36,10 +36,10 @@ section.quiz#quiz
               h3.quiz__container-header Ответьте на 3 вопроса <br>и получите смету прямо в ваш мессенджер
               button.button.quiz__a-button.swiper-quiz-next(type="button") Рассчитать стоимость
               //- honey-pot for spam-bots ↓↓↓↓↓
-              input.h#email(type="tel", name="email", placeholder="email", style="display: none")
-              input.h#phone(type="tel", name="phone", placeholder="телефон", style="display: none")
+              input.h#email-quiz(type="tel", name="email", placeholder="email", style="display: none")
+              input.h#phone-quiz(type="tel", name="phone", placeholder="телефон", style="display: none")
               //- honey-pot for spam-bots ↑↑↑↑↑
-              input#quiz-form__subject(type="text", name="form-subject", hidden="true", readonly="true", value="заказ рассчёта стоимости")
+              input#quiz-form__subject(type="text", name="form-subject", hidden, readonly, value="заказ рассчёта стоимости")
           li.quiz__item.swiper-slide.swiper-no-swiping
             .quiz__container.quiz__container--numbered.quiz__container--img
               h3.quiz__container-header(data-card="1") Какой дом вас интересует?
@@ -47,9 +47,9 @@ section.quiz#quiz
                 each item in quizOptions.houses
                   label.quiz__img-label
                     input.visuallyhidden(id=`quiz_house-${item.value}`, type="radio", name="quiz_house", value=`${item.value}`, required)
-                    img(src=`./img/quiz-${item.value}.png`, alt=`Дом ${item.value} м²`, width="104", heiht="104")
+                    img(src=`./img/quiz-${item.value}.png`, alt=`Дом ${item.value} м²`, width="104", height="104")
                     span.quiz__img-sign= `${item.label}`
-                    .quiz__img-checkbox
+                    span.quiz__img-checkbox
               button.button.quiz__button.swiper-quiz-next(type="button") Далее
           li.quiz__item.swiper-slide.swiper-no-swiping
             .quiz__container.quiz__container--numbered

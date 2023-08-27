@@ -29,17 +29,22 @@ mixin simpleButton(text, additionalClassesArray, href)
   a(class= cssClass, href= linkHref)= text
 
 mixin formInput({ inputName, inputId, inputType, placeholder, label, cols, rows, optionsArray, isRequired, isHidden, isReadonly })
+  -
+    const inputAttributesObj = {}
+    if (isRequired) { inputAttributesObj.required = "required"}
+    if (isHidden) { inputAttributesObj.hidden = "hidden"}
+    if (isReadonly) { inputAttributesObj.readonly = "readonly"}
   if isHidden !== true
-    label.visuallyhidden(for= inputName)= label
+    label.visuallyhidden(for= inputId)= label
   if inputType === 'textarea'
-    textarea(id= inputId, name= inputName, cols= cols, rows= rows, placeholder= placeholder, required= isRequired, hidden= isHidden, readonly= isReadonly)&attributes(attributes)
+    textarea(id= inputId, name= inputName, cols= cols, rows= rows, placeholder= placeholder)&attributes(inputAttributesObj)&attributes(attributes)
   else if inputType === 'select'
-    select(id= inputId, name= inputName, required= isRequired)&attributes(attributes)
+    select(id= inputId, name= inputName)&attributes(inputAttributesObj)&attributes(attributes)
       option(label= placeholder)
       each optionItem in optionsArray
         option= optionItem
   else if inputType === 'file'
     label= label
-      input(id= inputId, type= inputType, name= inputName, required= isRequired, hidden= isHidden, readonly= isReadonly)&attributes(attributes)
+      input(id= inputId, type= inputType, name= inputName)&attributes(inputAttributesObj)&attributes(attributes)
   else
-    input(id= inputId, type= inputType, name= inputName, placeholder= placeholder, required= isRequired, hidden= isHidden, readonly= isReadonly)&attributes(attributes)
+    input(id= inputId, type= inputType, name= inputName, placeholder= placeholder)&attributes(inputAttributesObj)&attributes(attributes)
