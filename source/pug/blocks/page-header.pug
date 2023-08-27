@@ -73,9 +73,9 @@ header.header
           span.header__burger-line
         nav.header__nav.site-nav
           ul.site-nav__list.header__nav-list--mobile
-            .site-nav__container
-              each item, index in mobileNav
-                +siteNavItem(item, "mobile", index)
+            //- .site-nav__container
+            each item, index in mobileNav
+              +siteNavItem(item, "mobile", index)
           ul.site-nav__list.header__nav-list--desktop
             each item, index in mainNav
               +siteNavItem(item, "desktop", index)
