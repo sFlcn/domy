@@ -45,9 +45,7 @@ html.page(lang="ru", dir="ltr", prefix="og: https://ogp.me/ns#")
   body.page__body
     include ../addons/yandexmetrica.pug
 
-    .page__tour-circle
-      a.page__tour-link(href=`${SOCIAL_LINKS.find((item)=>item.name==="WhatsApp").href}`, rel="noopener", target="blank")
-        span.visuallyhidden= `Хотите убедиться в качестве? Запишитесь на экскурсию по производству`
+    include widgets.pug
 
     include page-header.pug
 

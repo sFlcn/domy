@@ -5,6 +5,7 @@ import animateAccordion from './accordion-animation';
 import { mainMenuMobileShow } from './main-menu-animation';
 import submitFormHandler from './forms';
 import buttonEnabling from './button-enabling-check';
+import headsetStick from './widget-headset';
 // import popupAnimate from './popup';
 
 const promoSliderEl = document.querySelector('.slider-img');
@@ -17,6 +18,10 @@ let quizSwiper;
 // LAUNCHING
 window.addEventListener('DOMContentLoaded', addTelInputMasks);
 animateAppearance('animated-appearance', 250);
+
+// headset widget
+const widgetEl = document.querySelector('.widget-headset');
+headsetStick({ targetEl: widgetEl, cssClass: 'widget-headset--sticky', scrollDistance: 70 });
 
 // popupAnimate({
 //   popupElement: document.querySelector('.popup-form'),
