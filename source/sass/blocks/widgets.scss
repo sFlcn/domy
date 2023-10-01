@@ -2,21 +2,20 @@
   position: fixed;
   top: 432px;
   right: 30px;
-  z-index: 100;
+  z-index: 90;
   transition-property: transform, top, bottom, left, right;
   transition-duration: 0.75s;
 
   @media (min-width: $small-desktop-width) {
     width: 64px;
     height: 64px;
-    right: unset;
-    top: 693px;
-    left: 10%;
+    top: 745px;
+    right: 4%;
   }
 
   @media (min-width: $desktop-width) {
-    top: 663px;
-    left: 6%;
+    top: 704px;
+    right: 2.5%;
   }
 
   &:hover,
@@ -25,14 +24,14 @@
   }
 }
 
+body :not(.index-main)  .widget-headset,
 .widget-headset--sticky {
-  top: calc(99% - 46px);
-  right: calc(1%);
+  top: calc(97% - 46px);
+  right: calc(2%);
 
   @media (min-width: $small-desktop-width) {
     top: calc(95% - 64px);
-    right: unset;
-    left: calc(2%);
+    right: 2%;
   }
 }
 
