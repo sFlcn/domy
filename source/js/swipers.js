@@ -14,12 +14,12 @@ export function makePromoSwiper(el) {
     {
       modules: [Navigation, Pagination, Controller, FreeMode, EffectCreative, Autoplay],
       loop: true,
-      speed: 1500,
+      speed: 1750,
       grabCursor: true,
       pagination: { el: '.swiper-pagination', clickable: true },
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
       autoplay: {
-        delay: 4500,
+        delay: 5500,
         pauseOnMouseEnter: true,
       },
       effect: 'creative',
