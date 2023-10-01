@@ -174,7 +174,12 @@
     width: 200px;
     height: 86px;
     bottom: 0;
-    right: 160px;
+    right: 192px;
+  }
+
+  @media (min-width: $desktop-width) {
+    bottom: 42px;
+    right: 178px;
   }
 }
 
