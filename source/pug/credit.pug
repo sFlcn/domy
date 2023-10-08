@@ -1,0 +1,12 @@
+extends blocks/-page-layout.pug
+
+block prepend variables
+  - const currentPage = PAGES["credit"].pageHref;
+  - const pageTitle = "Кредитование";
+
+block main
+  main.main
+    include blocks/widget-headset.pug
+
+    - const creditPage = true;
+    include blocks/section-credit.pug

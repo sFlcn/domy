@@ -1,0 +1,72 @@
+-
+  const creditFeatures = [
+    {
+      featureTerm: "Клиентов приобретают наши дома в ипотеку",
+      featureDescription: "7 из 10",
+    },
+    {
+      featureTerm: "Минимальная ставка по ипотеке",
+      featureDescription: "6%",
+    },
+    {
+      featureTerm: "Срок первичного одобрения ипотеки",
+      featureDescription: "1 день",
+    },
+    {
+      featureTerm: "Сопровождаем и консультируем по ипотечной сделке",
+      featureDescription: "Бесплатно",
+    },
+  ]
+
+  const banks = [
+    {
+      name: "Сбербанк",
+      href: "http://www.sberbank.ru/ru/person/credits/homenew",
+      imgFileName: "sber-logo",
+      imgWidth: 273,
+      imgHeight: 46,
+    },
+    {
+      name: "Почта Банк",
+      href: "https://www.pochtabank.ru/service/bistr_doma",
+      imgFileName: "pochtabank-logo",
+      imgWidth: 167,
+      imgHeight: 81,
+    },
+  ]
+
+  const creditSpecialistTxt ={
+    header: "Наши специалисты предоставят всю необходимую информацию по интересующей вас программе банковской поддержки, проконсультируют и помогут сделать правильный выбор.",
+    text: "В оформлении заявки вам поможет персональный менеджер, который курирует ваш проект. При необходимости мы также привлекаем узких специалистов в области банковского финансирования, чтобы учесть все тонкости и нюансы, максимально быстро подобрать полный пакет документов, использовать льготы, сократить срок рассмотрения заявления и повысить вероятность одобрения.",
+  }
+
+  const creditPartnersTxt ={
+    header: "Банки-партнеры",
+    text: "Мы сотрудничаем с надёжными банками, которые предоставляют услуги ипотечного и потребительского кредитования – СберБанком и Почта Банком.",
+  }
+
+section.credit
+  .wrapper
+    if creditPage
+      h1.credit__title Предлагаем приобрести дом в кредит или ипотеку без первоначального взноса
+    else
+      h2.credit__title.animated-appearance Покупка дома без первоначального взноса? Это возможно!
+    .credit__features.credit-features
+      each item in creditFeatures
+        dl.credit-features__list.animated-appearance
+          .credit-features__container
+            dt.credit-features__descr= item.featureDescription
+            dd.credit-features__term= item.featureTerm
+    .credit__specialist.animated-appearance
+      h3= creditSpecialistTxt.header
+      p= creditSpecialistTxt.text
+    .credit__partners.animated-appearance
+      h3= creditPartnersTxt.header
+      p= creditPartnersTxt.text
+      a.credit__request.button.callback-button(href="#callbackwidget") Оставить заявку
+    .credit__banks.animated-appearance
+      .banks
+        each item in banks
+          a.banks__link(href= item.href, target="_blank", rel="noopener")
+            span.visuallyhidden= item.name
+            img(src= `./img/${item.imgFileName}.svg`, width= item.imgWidth, height= item.imgHeight, alt= `логотип ${item.name}`)
