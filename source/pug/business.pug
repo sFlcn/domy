@@ -1,0 +1,12 @@
+extends blocks/-page-layout.pug
+
+block prepend variables
+  - const currentPage = PAGES["business"].pageHref;
+  - const pageTitle = "Для бизнеса";
+
+block main
+  main.main
+    h1.business__title.visuallyhidden Для бизнеса
+    include blocks/section-business-investors.pug
+    include blocks/section-business-suppliers.pug
+    include blocks/section-business-realtors.pug
