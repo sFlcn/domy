@@ -48,3 +48,8 @@ mixin formInput({ inputName, inputId, inputType, placeholder, label, cols, rows,
       input(id= inputId, type= inputType, name= inputName)&attributes(inputAttributesObj)&attributes(attributes)
   else
     input(id= inputId, type= inputType, name= inputName, placeholder= placeholder)&attributes(inputAttributesObj)&attributes(attributes)
+
+mixin inlineLink(cssClass, linkHref="https://domycompany.ru/", linkText=" domycompany.ru")
+  |
+  |
+  a(class=cssClass, href=linkHref)= linkText
