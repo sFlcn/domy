@@ -35,8 +35,8 @@ mainMenuMobileShow({
 });
 
 // accordions
-document.querySelectorAll('.basequipment__category').forEach((el) => { animateAccordion(el, 'basequipment__item--open'); });
-document.querySelectorAll('.faq__category-list').forEach((el) => { animateAccordion(el, 'faq__item--open'); });
+document.querySelectorAll('.basequipment__category').forEach((el) => { animateAccordion(el, 'basequipment__item--open', 'autoCollapse'); });
+document.querySelectorAll('.faq__category-list').forEach((el) => { animateAccordion(el, 'faq__item--open', 'autoCollapse'); });
 
 // sliders
 if (promoSliderEl) {
