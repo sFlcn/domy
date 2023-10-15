@@ -16,6 +16,11 @@ let auxSwiper;
 let quizSwiper;
 
 // LAUNCHING
+const noJsEl = document.querySelector('main.no-js');
+if (noJsEl) {
+  noJsEl.classList.remove('no-js');
+}
+
 window.addEventListener('DOMContentLoaded', addTelInputMasks);
 animateAppearance('animated-appearance', 250);
 
