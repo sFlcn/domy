@@ -5,8 +5,9 @@ block prepend variables
   - const pageTitle = "Для бизнеса";
 
 block main
-  main.main
-    h1.business__title.visuallyhidden Для бизнеса
-    include blocks/section-business-investors.pug
-    include blocks/section-business-suppliers.pug
-    include blocks/section-business-realtors.pug
+  main.main.no-js
+    section.business
+      h1.business__title.visuallyhidden Для бизнеса
+      include blocks/article-business-investors.pug
+      include blocks/article-business-suppliers.pug
+      include blocks/article-business-realtors.pug
