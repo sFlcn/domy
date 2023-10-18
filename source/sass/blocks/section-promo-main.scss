@@ -197,15 +197,16 @@
   }
 
   @media (min-width: $small-desktop-width) {
-    top: 50%;
+    top: 155px;
     left: 50%;
     width: 409px;
-    transform: translate(-43%,-45%);
+    transform: translate(-43%, 0);
   }
 
   @media (min-width: $desktop-width) {
+    top: 100px;
     width: 498px;
-    transform:translate(-64%, -50%);
+    transform:translate(-64%, 0);
   }
 }
 
