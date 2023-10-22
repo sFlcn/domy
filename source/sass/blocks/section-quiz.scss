@@ -198,8 +198,7 @@
 .quiz__fieldset {
   display: flex;
   flex-flow: row wrap;
-  column-gap: 50px;
-  row-gap: 19px;
+  gap: 19px 50px;
   margin: 0 0 40px;
   padding: 0;
   border: none;
