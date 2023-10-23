@@ -1,0 +1,64 @@
+extends blocks/-page-layout.pug
+
+block prepend variables
+  - const currentPage = PAGES["technology"].pageHref;
+  - const pageTitle = "Технологии и производство";
+
+block main
+  main.main.technology
+    include blocks/widget-headset.pug
+
+    section.technology__intro
+      .wrapper
+        h1.technology__title.animated-appearance Технологии и производство
+        ul.technology__list
+          li.technology__item.animated-appearance
+            .technology__icon
+              img(src="./img/domy-icons-logistik.svg", width="81", height="48", alt="Пиктограмма с грузовым автомобилем.")
+            p.technology__descr Производство <br>полного цикла. Удобная логистика
+          li.technology__item.animated-appearance
+            .technology__icon
+              img(src="./img/domy-icons-qc.svg", width="81", height="48", alt="Пиктограмма 'знак качества'.")
+            p.technology__descr Тщательный контроль <br>качества на всех этапах производства
+          li.technology__item.animated-appearance
+            .technology__icon
+              img(src="./img/domy-icons-90finished.svg", width="81", height="48", alt="Пиктограмма грузовика перевозящего дом.")
+            p.technology__descr Дом привозится <br>на 90% готовым
+          li.technology__item.animated-appearance
+            .technology__icon
+              img(src="./img/domy-icons-nomoisture.svg", width="81", height="48", alt="Пиктограмма с перечёркнутой каплей.")
+            p.technology__descr Фабричное производство и наши технологии исключают попадание влаги на дерево и образование грибка
+
+    section.technology__features
+      .wrapper
+        article.technology__article.animated-appearance
+          h2.technology__feature-title Удобная локация и логистика
+          p.technology__feature-text Наше производство располагается в городе Хотьково Московской области недалеко от ЦКАД, что позволяет организовать удобную логистику по всей России.
+          .technology__feature-photo.technology__feature-photo--big
+            +pictureJpgWebpM("tech-factory", 340, 207, "Производственный цех с рабочими, каркасом дома и сборочным материалом.")
+        article.technology__article.technology__article--double-image.animated-appearance
+          h2.technology__feature-title Мы используем только современные, высококачественные материалы
+          p.technology__feature-text Все детали конструкции модульного дома проходят тщательный контроль качества на всех этапах производства.
+          .technology__feature-photo
+            +pictureJpgWebpM("tech-workshop1", 160, 152, "Доски и каркас дома в цеху.", "", "lazy")
+          .technology__feature-photo
+            +pictureJpgWebpM("tech-workshop2", 160, 124, "Дом на стадии сборки.", "", "lazy")
+        article.technology__article.animated-appearance
+          h2.technology__feature-title Дом собирается на 90% в цехе и привозится на участок заказчика готовым — целым модулем
+          p.technology__feature-text Остается лишь установить дом на фундамент и подключить к коммуникациям.
+          .technology__feature-photo.technology__feature-photo--big
+            +pictureJpgWebpM("tech-shipment", 360, 218, "Грузовик перевозит готовый дом.", "", "lazy")
+      .wrapper
+        article.technology__article.technology__article--empty(style="display:none")
+        article.technology__article.technology__article--double-image.animated-appearance
+          h2.technology__feature-title Благодаря фабричному производству и нашим технологиям исключается попадание влаги на дерево
+          p.technology__feature-text Таким образом дерево остается сухим и исключается появление плесени и грибка, что гарантирует экологичность и долгий срок службы дома.
+          .technology__feature-photo
+            +pictureJpgWebpM("tech-planks", 160, 180, "Деревянный материал крупным планом в цеху.", "", "lazy")
+          .technology__feature-photo
+            +pictureJpgWebpM("tech-inhouse", 160, 180, "Фото интерьера дома в цеху на завершающей стадии работы.", "", "lazy")
+
+    .technology__outro
+      .wrapper
+        p.animated-appearance Воплотите свои мечты в реальность с Domy – вашим надежным партнером в строительстве модульных домов!
+
