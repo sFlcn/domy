@@ -166,9 +166,12 @@
 }
 
 .header__sub-container {
+  margin-bottom: 7px;
+
   @media (min-width: $small-desktop-width) {
     display: none;
     position: absolute;
+    margin: 0;
     top: 35px;
     left: 15px;
     padding-top: 5px;
