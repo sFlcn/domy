@@ -61,7 +61,7 @@
 .quiz__item:first-child .quiz__container {
   margin-top: 60px;
   padding: 30px;
-  min-height: 370px;
+  min-height: 350px;
 
   @media (min-width: $small-desktop-width) {
     min-height: 449px;
@@ -503,15 +503,6 @@
     background-color: $palette-prime;
   }
 }
-
-.quiz__item:first-child .quiz__a-button {
-  margin-top: 20px;
-
-  @media (min-width: $small-desktop-width) {
-    margin-top: 0;
-  }
-}
-
 
 .quiz__button {
   width: 200px;
