@@ -46,6 +46,21 @@ block main
           p.technology__feature-text Остается лишь установить дом на фундамент и подключить к коммуникациям.
           .technology__feature-photo.technology__feature-photo--big.animated-appearance
             +pictureJpgWebpM("tech-shipment", 360, 218, "Грузовик перевозит готовый дом.", "", "lazy", [660, 1700])
+      //- Слайдер
+      .wrapper--ext
+        .technology__photo-slider
+          .slider-coverflow.swiper
+            ul.technology__slider-list.swiper-wrapper
+              each item in [0, 1, 2, 3, 4]
+                li.swiper-slide
+                  .technology__slider-item
+                    +pictureJpgWebpM(`tech-slider-${item}`, 360, 218, "Установка дома на участке", "technology__slider-img", null, [660, 1700])
+            .technology__slider-control
+              .swiper-pagination
+              .swiper-button-prev
+                span.visuallyhidden предыдущий слайд
+              .swiper-button-next
+                span.visuallyhidden следующий слайд
       .wrapper
         article.technology__article.technology__article--empty(style="display:none")
         article.technology__article.technology__article--double-image.animated-appearance

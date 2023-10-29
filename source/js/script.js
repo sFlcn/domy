@@ -1,4 +1,6 @@
-import { makePromoSwiper, makeAuxSwiper, makeQuizSwiper } from './swipers';
+import {
+  makePromoSwiper, makeAuxSwiper, makeQuizSwiper, makeCoverflowSwiper,
+} from './swipers';
 import addTelInputMasks from './tel-input-mask';
 import animateAppearance from './animate-appearance';
 import animateAccordion from './accordion-animation';
@@ -11,9 +13,16 @@ import headsetStick from './widget-headset';
 const promoSliderEl = document.querySelector('.slider-img');
 const auxTextSliderEl = document.querySelector('.slider-txt');
 const quizSliderEl = document.querySelector('.slider-quiz');
+const technologySliderEl = document.querySelector('.technology__photo-slider .slider-coverflow');
 let promoSwiper;
 let auxSwiper;
 let quizSwiper;
+let coverflowSwiper;
+
+const pageWindow = {
+  width: window.innerWidth,
+  height: window.innerHeight,
+};
 
 // LAUNCHING
 const noJsEl = document.querySelector('main.no-js');
@@ -52,6 +61,14 @@ if (promoSliderEl) {
     auxSwiper.controller.control = promoSwiper;
     promoSwiper.controller.control = auxSwiper;
   }
+}
+
+if (technologySliderEl) {
+  // remove first slide on desktop version (due to the presence of a similar picture)
+  if (pageWindow.width >= 1200) technologySliderEl.querySelector('.swiper-slide:first-child').remove();
+
+  // eslint-disable-next-line no-unused-vars
+  coverflowSwiper = makeCoverflowSwiper(technologySliderEl);
 }
 
 if (quizSliderEl) {

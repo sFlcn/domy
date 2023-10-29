@@ -4,6 +4,7 @@ import Swiper, {
   Controller,
   FreeMode,
   EffectCreative,
+  EffectCoverflow,
   Autoplay,
 } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
@@ -71,6 +72,38 @@ export function makeQuizSwiper(el) {
           rotate: [0, 180, 0],
         },
       },
+    },
+  );
+}
+
+export function makeCoverflowSwiper(el) {
+  return new Swiper(
+    el,
+    {
+      modules: [Navigation, Pagination, Controller, EffectCoverflow, Autoplay],
+      loop: true,
+      speed: 2000,
+      autoplay: { delay: 750 },
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      breakpoints: {
+        660: {
+          speed: 3000,
+          slidesPerView: 2,
+          autoplay: { delay: 1750 },
+        },
+      },
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 10,
+        stretch: -20,
+        depth: 200,
+        scale: 0.7,
+        slideShadows: false,
+      },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
     },
   );
 }
