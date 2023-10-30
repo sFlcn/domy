@@ -1,0 +1,40 @@
+extends blocks/-page-layout.pug
+
+block prepend variables
+  - const currentPage = PAGES["delivery"].pageHref;
+  - const pageTitle = "Доставка и оплата";
+
+block main
+  main.main
+    include blocks/widget-headset.pug
+    -
+      const paymentSteps = [
+        [
+          "мы заключаем договор и согласовываем сроки исполнения работ",
+          "вы оплачиваете 70% от стоимости дома",
+        ],
+        [
+          "мы собираем дом в цеху в соответствии с производственным графиком",
+          "вы вносите следующие 25% от стоимости перед отправкой на ваш участок",
+        ],
+        [
+          "оставшиеся 5% стоимости дома вы вносите уже после подписания акта приема-передачи и выдаче ключей",
+        ],
+      ]
+    section.delivery
+      .wrapper
+        h1.delivery__title Доставка и оплата
+        .delivery__shipping
+          h2.delivery__shipping-title Наша компания предоставляет услуги по доставке модульных домов в любую точку России.
+          .delivery__shipping-text
+            p Способ и стоимость доставки выбирается строго индивидуально, потому они зависят от многих факторов: расстояние, вид используемой спецтехники, наличие и качество подъезда к месту разгрузки, вес, размеры модулей, сложность маршрута.
+            p Как правило, в зависимости от объема груза доставка производится с помощью низкорамного трала, либо манипулятором. Для разгрузки-погрузки модульных систем используется кран.
+        .delivery__payment
+          h2.delivery__payment-title В стандартном варианте процесс оплаты стоимости модульного дома делится на 3 этапа:
+          ol.delivery__payment-list
+            each step in paymentSteps
+              li.delivery__payment-item(class=`${step.length <= 1 ? "delivery__payment-item--short" : ""}`)
+                each paragraph in step
+                  p.delivery__payment-text= paragraph
+          p.delivery__payment-remark Другие варианты оплаты могут быть обсуждены в индивидуальном порядке с каждым клиентом.
+
