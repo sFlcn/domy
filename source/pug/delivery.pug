@@ -23,18 +23,18 @@ block main
       ]
     section.delivery
       .wrapper
-        h1.delivery__title Доставка и оплата
-        .delivery__shipping
-          h2.delivery__shipping-title Наша компания предоставляет услуги по доставке модульных домов в любую точку России.
+        h1.delivery__title.animated-appearance Доставка и оплата
+        .delivery__shipping.animated-appearance
+          h2.delivery__shipping-title Наша компания предоставляет услуги по доставке модульных домов в любую точку России.
           .delivery__shipping-text
             p Способ и стоимость доставки выбирается строго индивидуально, потому они зависят от многих факторов: расстояние, вид используемой спецтехники, наличие и качество подъезда к месту разгрузки, вес, размеры модулей, сложность маршрута.
             p Как правило, в зависимости от объема груза доставка производится с помощью низкорамного трала, либо манипулятором. Для разгрузки-погрузки модульных систем используется кран.
-        .delivery__payment
+        .delivery__payment.animated-appearance
           h2.delivery__payment-title В стандартном варианте процесс оплаты стоимости модульного дома делится на 3 этапа:
           ol.delivery__payment-list
             each step in paymentSteps
-              li.delivery__payment-item(class=`${step.length <= 1 ? "delivery__payment-item--short" : ""}`)
+              li.delivery__payment-item.animated-appearance(class=`${step.length <= 1 ? "delivery__payment-item--short" : ""}`)
                 each paragraph in step
                   p.delivery__payment-text= paragraph
-          p.delivery__payment-remark Другие варианты оплаты могут быть обсуждены в индивидуальном порядке с каждым клиентом.
+          p.delivery__payment-remark.animated-appearance Другие варианты оплаты могут быть обсуждены в индивидуальном порядке с каждым клиентом.
 
