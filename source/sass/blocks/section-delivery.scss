@@ -2,25 +2,26 @@
   background-color: $palette-back;
   background-image: url("../img/land1.svg");
   background-repeat: no-repeat;
-  background-position: top 11px right 44.2%;
+  background-position: top 81px right 44.2%;
   background-size: 197%;
+  background-attachment: fixed;
   color: $palette-darkcontrast;
   padding: 35px 0 40px;
 
   @media (min-width: $tablet-width) {
-    background-position: top 40px right 70%;
+    background-position: top 110px right 70%;
     background-size: 145%;
   }
 
   @media (min-width: $small-desktop-width) {
     padding: 100px 0;
-    background-position: top 40px right 70%;
+    background-position: top 130px right 70%;
     background-size: 120%;
   }
 
   @media (min-width: $desktop-width) {
     padding: 140px 0 150px;
-    background-position: top 63px right 48%;
+    background-position: top 153px right 48%;
     background-size: 119%;
   }
 }
