@@ -12,6 +12,7 @@ block main
         .house-promo__text
           h1.house-promo__title= houseData["header"][0]
           .house-promo__title-descr= houseData["header"][1]
+          p.house-promo__price= `${houseData["price"]} ₽`
           p.house-promo__status Проект в разработке
           p.house-promo__soon-block Уже скоро!
         ul.house-promo__images-list

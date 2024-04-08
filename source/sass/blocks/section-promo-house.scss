@@ -30,7 +30,7 @@
   height: 289px;
   background: transparent url("../img/bigbrun-pending-m.svg") no-repeat center;
   left: 0;
-  bottom: 70px;
+  bottom: 120px;
   z-index: 2;
 
   @media (min-width: $small-desktop-width) {
@@ -38,7 +38,7 @@
     width: 318px;
     height: 386px;
     left: 0;
-    bottom: 0;
+    bottom: 75px;
   }
 
   @media (min-width: $desktop-width) {
@@ -207,6 +207,20 @@
   }
 }
 
+.house-promo--pending .house-promo__price {
+  padding-bottom: 0;
+  color: $palette-brightcontrast;
+
+  @media (min-width: $small-desktop-width) {
+    padding: 0 0 10px;
+    border-top: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 5px;
+  }
+}
+
 .house-promo__soon-block {
   display: none;
 
@@ -222,14 +236,14 @@
 
 .house-promo__status {
   margin: 0;
-  padding: 50px 0 10px;
+  padding: 40px 0 10px;
   width: 100%;
   text-transform: uppercase;
 
-  @include font-title-small($size: 18px);
+  @include font-title-small($size: 18px, $color: $palette-dim);
 
   @media (min-width: $small-desktop-width) {
-    border-top: 1px solid $palette-brightcontrast;
+    border-top: 1px solid $palette-dim;
     font-size: 18px;
   }
 }
