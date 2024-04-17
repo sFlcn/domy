@@ -8,7 +8,7 @@ import gulppug from 'gulp-pug';
 import postcss from 'gulp-postcss';
 import csso from 'postcss-csso';
 import autoprefixer from 'autoprefixer';
-import dartSass from 'sass';
+import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import sharpResponsive from 'gulp-sharp-responsive';
 import webpack from 'webpack-stream';
