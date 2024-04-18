@@ -60,7 +60,19 @@ footer.footer
     ul.footer__socials.socials__list
       each item in SOCIAL_LINKS
         +socialLinkItem(item)
-    .footer__copyrights
-      p Дизайн: <a href="http://lisinica-port.tilda.ws/" rel="noopener">Lisinica</a>
-      p Веб-разработка: Pavel Sokolovskii
-      p 2023
+    .footer__legal
+      .footer__details
+        p.footer__details-title Общество с ограниченной ответственностью «Доми»
+        p= "Юридический / фактический адрес: "
+          |
+          <br>
+          each item in CONTACTS[0]["data"]["text"]
+            span= item
+        .footer__details-info
+          p ОГРН: 1235000164013
+          p ИНН: 5042163856
+          p КПП: 504201001
+      .footer__copyrights
+        p Дизайн: <a href="http://lisinica-port.tilda.ws/" rel="noopener">Lisinica</a>
+        p Веб-разработка: Pavel Sokolovskii
+        p 2023
