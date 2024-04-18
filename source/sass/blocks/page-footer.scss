@@ -41,6 +41,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    margin-bottom: 32px;
     flex-basis: 82.8125%;
   }
 }
@@ -112,12 +113,16 @@
   @include font-primary($weight: 800, $line-height: 29px, $color: $palette-brightcontrast);
 
   @media (min-width: $small-desktop-width) {
+    display: flex;
+    flex-direction: column;
+    min-height: 230px;
     flex-basis: 31.55%;
     padding: 7px 0;
     text-align: start;
   }
 
   @media (min-width: $desktop-width) {
+    min-height: unset;
     padding: 0;
     flex-basis: 37.736%;
   }
@@ -133,14 +138,13 @@
 
   @media (min-width: $small-desktop-width) {
     align-items: normal;
-    margin: 0 0 21px;
+    margin: 0;
   }
 
   @media (min-width: $desktop-width) {
     flex-flow: row wrap;
     align-items: normal;
     gap: 48px;
-    margin: 0 0 51px;
   }
 }
 
@@ -172,6 +176,11 @@
   border-bottom: 1px solid;
   transition: color 0.55s;
   font-size: 16px;
+
+  @media (min-width: $small-desktop-width) {
+    margin: auto 0 13px;
+    align-self: flex-start;
+  }
 
   &:hover {
     color: $palette-accent;
@@ -298,7 +307,7 @@
 
   @media (min-width: $small-desktop-width) {
     position: relative;
-    top: -58px;
+    top: -72px;
     margin-left: auto;
     padding: 0;
     flex-basis: 31.55%;
