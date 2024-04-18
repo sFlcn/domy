@@ -31,6 +31,8 @@ block main
             li.contacts__item
               +contactsItemTitle(itemObj)
               +contactsItemText(itemObj)
+              if itemObj.addon
+                p.contacts__item-text= itemObj.addon
         .contacts__map.map
           h2.map__title.visuallyhidden Карта расположения офиса
           .map__container
