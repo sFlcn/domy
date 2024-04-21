@@ -34,18 +34,18 @@ block prepend variables
         imagesAmt: 2,
         imagesName: "complprjcts-shiryaika",
       },
-      {
-        descr: "30 м. кв",
-        location: "с. Фаустово, Воскресенский район",
-        date: ["октябрь 2023", "2023-10"],
-        imagesAmt: 1,
-        imagesName: "complprjcts-faustovo",
-      },
+      //- {
+      //-   descr: "30 м. кв",
+      //-   location: "с. Фаустово, Воскресенский район",
+      //-   date: ["октябрь 2023", "2023-10"],
+      //-   imagesAmt: 1,
+      //-   imagesName: "complprjcts-faustovo",
+      //- },
       {
         descr: "70 м. кв",
         location: "д. Ивановское, Ступинский район",
         date: ["июнь 2023", "2023-06"],
-        imagesAmt: 1,
+        imagesAmt: 2,
         imagesName: "complprjcts-ivanovskoye",
       },
     ]
@@ -54,8 +54,7 @@ block main
   main.main
     section.completed-prj
       .wrapper
-        h1.completed-prj__title Реализованные проекты
-      //- - const item = completedData[0];
+        h1.completed-prj__title Некоторые из наших проектов
       .wrapper--ext
         each item in completedData
           figure.completed(class=`${item.imagesAmt > 1 ? "" : "completed--sph"}`)

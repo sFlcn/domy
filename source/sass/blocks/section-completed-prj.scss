@@ -61,7 +61,6 @@
 
   &--sph {
     @media (min-width: $small-desktop-width) {
-      // width: 49%;
       grid-column: span 1;
     }
   }
@@ -76,7 +75,9 @@
 }
 
 .completed:nth-of-type(odd).completed--sph {
-  grid-column: span 2;
+  @media (min-width: $desktop-width) {
+    grid-column: span 2;
+  }
 }
 
 .completed__photos-container {
