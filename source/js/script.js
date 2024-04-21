@@ -1,5 +1,5 @@
 import {
-  makePromoSwiper, makeAuxSwiper, makeQuizSwiper, makeCoverflowSwiper,
+  makePromoSwiper, makeAuxSwiper, makeQuizSwiper, makeCoverflowSwiper, makeSimpleSwiper,
 } from './swipers';
 import addTelInputMasks from './tel-input-mask';
 import animateAppearance from './animate-appearance';
@@ -14,6 +14,8 @@ const promoSliderEl = document.querySelector('.slider-img');
 const auxTextSliderEl = document.querySelector('.slider-txt');
 const quizSliderEl = document.querySelector('.slider-quiz');
 const technologySliderEl = document.querySelector('.technology__photo-slider .slider-coverflow');
+const completedProjectsSliderEls = document.querySelectorAll('.completed__photo-slider .swiper');
+const completedProjectsSliderAltCssClass = 'slider--v';
 let promoSwiper;
 let auxSwiper;
 let quizSwiper;
@@ -76,6 +78,15 @@ if (quizSliderEl) {
   document.querySelectorAll('.quiz__container').forEach((el) => {
     buttonEnabling(el, 'swiper-quiz-next', () => { quizSwiper.slideNext(); });
   });
+}
+
+if (completedProjectsSliderEls.length > 0) {
+  for (let i = 0; i < completedProjectsSliderEls.length; i += 1) {
+    const element = completedProjectsSliderEls[i];
+    const slidesPerView = element.classList.contains(completedProjectsSliderAltCssClass) ? 2 : 1;
+    // eslint-disable-next-line no-unused-vars
+    coverflowSwiper = makeSimpleSwiper(element, slidesPerView);
+  }
 }
 
 // forms handling

@@ -107,3 +107,17 @@ export function makeCoverflowSwiper(el) {
     },
   );
 }
+
+export function makeSimpleSwiper(el, slidesPerView = 1) {
+  return new Swiper(
+    el,
+    {
+      modules: [Navigation, Pagination, Controller, EffectCoverflow, Autoplay],
+      grabCursor: true,
+      slidesPerView,
+      spaceBetween: 20,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    },
+  );
+}
