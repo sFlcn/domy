@@ -1,39 +1,40 @@
 -
   const servicesArray = [
     {
-      offerName: "Дома в наличии",
-      offerDescr: "У нас всегда есть в наличии самые популярные проекты. Наличие и количество уточняйте в отделе продаж",
-      offerCss: "houses",
-    },
-    {
       offerName: "Модульные дома любой сложности",
       offerCss: "difficulty",
     },
     {
-      offerName: "Сопровождение строительства",
-      offerDescr: "Наши специалисты помогут подобрать подрядчика на установку септика, бурение скважины, монтаж забора, выполнение работ по благоустройству",
-      offerCss: "escort",
-    },
-    {
-      offerName: "Собственное производство",
+      offerName: "На собственном производстве",
       offerCss: "prod",
     },
     {
-      offerName: "Архитектурное бюро",
+      offerName: "С гарантией 10 лет",
+      offerCss: "guarantee",
+    },
+    {
+      offerName: "Полное сопровождение строительства",
+      //- offerDescr: "Наши специалисты помогут подобрать подрядчика на установку септика, бурение скважины, монтаж забора, выполнение работ по благоустройству",
+      offerCss: "escort",
+    },
+    {
+      offerName: "Помощь в разработке архитектурного проекта",
       offerCss: "arch",
     },
     {
-      offerName: "Гарантия 10 лет",
-      offerCss: "guarantee",
+      offerName: "Доставку по России",
+      //- offerDescr: "У нас всегда есть в наличии самые популярные проекты. Наличие и количество уточняйте в отделе продаж",
+      offerCss: "deliver",
     },
   ]
 
 section.offer
   .wrapper
     h2.offer__title.animated-appearance Мы предлагаем вам
-    .offer__list
+    ul.offer__list
       each item in servicesArray
-        dl(class= ("offer__item animated-appearance offer__item--" + item.offerCss))
+        li(class= ("offer__item animated-appearance offer__item--" + item.offerCss))
           .offer__container
-            dt.offer__name= item.offerName
-            dd.offer__descr= item.offerDescr
+            .offer__name= item.offerName
+            //- dt.offer__name= item.offerName
+            //- dd.offer__descr= item.offerDescr

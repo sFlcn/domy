@@ -34,6 +34,8 @@
   justify-content: space-between;
   gap: 1.5%;
 
+  @include list;
+
   @media (min-width: $small-tablet-width) {
     justify-content: space-around;
     gap: 7%;
@@ -116,6 +118,15 @@
   background-image: url("../img/domy-icons-guarantee.svg");
 }
 
+.offer__item--deliver {
+  background-image: url("../img/domy-icons-90finished.svg");
+  background-size: 90px;
+
+  @media (min-width: $small-desktop-width) {
+    background-size: 124px;
+  }
+}
+
 .offer__container {
   padding: 0 2px;
 
@@ -178,6 +189,7 @@
 }
 
 .offer__item--houses .offer__name,
+.offer__item--escort .offer__name,
 .offer__item--arch .offer__name,
 .offer__item--guarantee .offer__name {
   padding: 0 5px;
@@ -192,7 +204,6 @@
 }
 
 .offer__item--difficulty .offer__name,
-.offer__item--escort .offer__name,
 .offer__item--prod .offer__name {
   padding: 0;
 
