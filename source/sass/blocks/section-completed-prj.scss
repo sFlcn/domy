@@ -128,6 +128,18 @@
     width: 500px;
   }
 
+  &--tri {
+    @media (min-width: $small-desktop-width) {
+      width: 347px;
+      height: 259px;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 500px;
+      height: 375px;
+    }
+  }
+
   &--v {
     @media (min-width: $small-desktop-width) {
       width: 347px;

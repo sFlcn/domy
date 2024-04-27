@@ -48,6 +48,13 @@ block prepend variables
         imagesAmt: 2,
         imagesName: "complprjcts-ivanovskoye",
       },
+      {
+        descr: "55 м. кв",
+        location: "д. Пушкино, ГО Электросталь",
+        date: ["апрель 2024", "2023-04"],
+        imagesAmt: 3,
+        imagesName: "complprjcts-pushkino",
+      },
     ]
 
 block main
@@ -58,16 +65,22 @@ block main
       .wrapper--ext
         each item in completedData
           figure.completed(class=`${item.imagesAmt > 1 ? "" : "completed--sph"}`)
+
+            //- фото (отображаются только на десктопе)
             .completed__photos-container
-              - const photoWidthM = item.imagesIsVertical ? 160 : 360
-              - const photoHeightM = item.imagesIsVertical ? 231 : 218
-              //- фото (отображаются только на десктопе)
+              -
+                const photoWidthM = item.imagesIsVertical ? 160 : 360;
+                const photoHeightM = item.imagesIsVertical ? 231 : 218;
+                let cssClass = "completed__photo";
+                if (item.imagesIsVertical) { cssClass += " completed__photo--v"; }
+                if ((item.imagesAmt % 3 === 0) && (!item.imagesIsVertical)) { cssClass += " completed__photo--tri"; }
               - let imagesCount = 1
               while imagesCount <= item.imagesAmt
                 .completed__photoframe
-                  +pictureJpgWebpM(`${item.imagesName}-${imagesCount}`, photoWidthM, photoHeightM, `Реализованный проект ${item.location}.`, `completed__photo ${item.imagesIsVertical ? "completed__photo--v" : ""}`, "lazy", [660, 1700])
+                  +pictureJpgWebpM(`${item.imagesName}-${imagesCount}`, photoWidthM, photoHeightM, `Реализованный проект ${item.location}.`, cssClass, "lazy", [660, 1700])
                 - imagesCount++
-              //- Слайдер (отображается только в мобильной версии)
+
+            //- слайдер (отображается только в мобильной версии)
             .completed__photo-slider
               .swiper(class= `${item.imagesIsVertical ? "slider--v" : ""}`)
                 ul.completed__slider-list.swiper-wrapper
@@ -83,6 +96,7 @@ block main
                     span.visuallyhidden предыдущий слайд
                   .swiper-button-next
                     span.visuallyhidden следующий слайд
+
             figcaption
               p.completed__descr= item.descr
               p.completed__location= item.location
