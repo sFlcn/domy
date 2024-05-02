@@ -1,27 +1,33 @@
-- const equipmentData = isBath === true ? bathEquipmentData : houseEquipmentData
+//- - const equipmentData = isBath === true ? bathEquipmentData : houseEquipmentData
 
-mixin equipmentAccordionItem(buttonValue, contentValue)
-  li.basequipment__item
-    button.button.accordion-button.basequipment__item-name(type="button")= buttonValue
+mixin equipmentAccordionItem(buttonValue, contentValue, subContent)
+  .basequipment__item
+    dt
+      button.button.accordion-button.basequipment__item-name(type="button")= buttonValue
     .basequipment__item-content.accordion-content
       p= contentValue
+      if subContent
+        each subItem in subContent
+          p.basequipment__term= subItem.name
+          p.basequipment__details= subItem.content
 
 section.basequipment
   .wrapper
-    h2.basequipment__title.animated-appearance Что входит в базовую комплектацию
-    ul.basequipment__categories-roster
-      each dataItem in equipmentData
-        if (Array.isArray(dataItem))
-          .basequipment__category-container
-            each subItem in dataItem
-              li(class=`basequipment__category basequipment__category--${subItem.iconName}`)
-                .basequipment__category-titlebox.animated-appearance
-                  h3.basequipment__category-title= subItem.title
-                ul.basequipment__category-list.animated-appearance
-                  each item in subItem.parts
-                    +equipmentAccordionItem(item.name, item.content)
-
-        else
+    if isBath !== true
+      h2.basequipment__title.animated-appearance Что входит в базовую комплектацию
+      p.basequipment__remark.animated-appearance Стоимость фундамента, террасы (закрытого и открытого типа) и доставки рассчитываются индивидуально
+      ul.basequipment__categories-roster
+        each dataItem in houseEquipmentData
+          li(class=`basequipment__category basequipment__category--${dataItem.iconName}`)
+            .basequipment__category-titlebox.animated-appearance
+              h3.basequipment__category-title= dataItem.title
+            dl.basequipment__category-list.animated-appearance
+              each item in dataItem.parts
+                +equipmentAccordionItem(item.name, item.content, item.sub)
+    else
+      h2.basequipment__title.basequipment__title--single.animated-appearance Что входит в базовую комплектацию
+      ul.basequipment__categories-roster
+        each dataItem in bathEquipmentData
           li(class=`basequipment__category basequipment__category--${dataItem.iconName}`)
             .basequipment__category-titlebox.animated-appearance
               h3.basequipment__category-title= dataItem.title
