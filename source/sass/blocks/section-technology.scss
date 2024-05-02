@@ -1,4 +1,4 @@
-.technology {
+.technology__intro {
   padding: 35px 0 0;
   background-color: $palette-secondary;
 
@@ -44,15 +44,15 @@
 
   @include list;
 
-  margin: 0 0 35px;
+  padding: 0 0 35px;
 
   @media (min-width: $small-desktop-width) {
     justify-content: space-between;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
   }
 
   @media (min-width: $desktop-width) {
-    margin-bottom: 150px;
+    padding-bottom: 150px;
   }
 }
 
@@ -265,6 +265,7 @@
 
 .technology__outro {
   padding: 35px 0;
+  background-color: $palette-secondary;
 
   @media (min-width: $small-desktop-width) {
     padding: 90px 0;
