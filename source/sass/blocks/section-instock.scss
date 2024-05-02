@@ -1,7 +1,7 @@
 .instock {
   background-color: $palette-brightcontrast;
   color: $palette-darkcontrast;
-  padding: 39px 0 150px;
+  padding: 39px 0 40px;
   text-align: center;
 
   @media (min-width: $small-desktop-width) {
@@ -12,10 +12,6 @@
   @media (min-width: $desktop-width) {
     padding: 150px 0;
     text-align: start;
-  }
-
-  .index-main & {
-    padding-bottom: 0;
   }
 }
 
