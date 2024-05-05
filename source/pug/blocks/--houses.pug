@@ -78,7 +78,7 @@ block main
               each item in houseData["dataExt2"]
                 +specificationsItem(item)
           .house-characteristics__scheme.animated-appearance
-            a(href=`./img/${houseData["schemeFile"]["name"]}@2x.png`, target="_blank")
+            a(href=`./img/${houseData["schemeFile2"]["name"]}@2x.png`, target="_blank")
               +picturePngWebp(houseData["schemeFile2"]["name"], houseData["schemeFile2"]["dimensions"][0], houseData["schemeFile2"]["dimensions"][1], `Схема ${descrRu}`, "house-characteristics__img")
 
     include section-basequipment.pug
