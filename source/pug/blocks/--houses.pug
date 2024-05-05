@@ -6,7 +6,9 @@ block prepend variables
 mixin specificationsItem(dataObj)
   -
     let cssClass= "";
+    if (dataObj.prehead === true) {cssClass += "description__box--prehead "}
     if (dataObj.head === true) {cssClass += "description__box--head "}
+    if (dataObj.inserted === true) {cssClass += "description__box--inserted "}
     if (dataObj.underline === true) {cssClass += "description__box--indented "}
     if (dataObj.devider === true) {cssClass += "description__box--centered "}
     if (dataObj.summary === true) {cssClass += "description__box--summary "}

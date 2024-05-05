@@ -47,4 +47,12 @@
   justify-content: center;
   margin-bottom: 30px;
   transition-delay: 0.25s;
+
+  @media (min-width: $small-desktop-width) {
+    max-width: 700px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 1050px;
+  }
 }
