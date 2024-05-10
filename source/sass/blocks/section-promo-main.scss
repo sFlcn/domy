@@ -130,6 +130,7 @@
 
   @media (min-width: $desktop-width) {
     width: 60%;
+    max-width: calc(50% + 250px);
   }
 }
 
