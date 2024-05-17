@@ -1,9 +1,24 @@
 -
-  const promoTableData70 = HOUSES_DATA["70m"];
-  const promoTableData30 = HOUSES_DATA["30m"];
+  const promoData = [
+    {
+      name: "30",
+      info: HOUSES_DATA["30m"],
+    },
+    {
+      name: "105",
+      info: HOUSES_DATA["105m"],
+    },
+  ];
   //- достаём поля заголовка для элемента about ↓
-  const aboutFileds70 = promoTableData70["data"].filter(field => {return field.head === true})[0];
-  const aboutFileds30 = promoTableData30["data"].filter(field => {return field.head === true})[0];
+  promoData.forEach((item) => { item.about = item.info.data.filter(field => {return field.head === true})[0]; });
+
+mixin descriptionTitle(name, short)
+  if short
+    span= name
+  else
+    span= name
+    span= " "
+    span м²
 
 section.main-promo
   .main-promo__wrapper
@@ -30,49 +45,34 @@ section.main-promo
       h2.visuallyhidden Мы строим модульные дома
       .slider-txt.swiper
         ul.main-promo__descr-list.swiper-wrapper
-          li.main-promo__descr-item.swiper-slide
-            .description__container
-              .description__header-block
+          each promoItem in promoData
+            li.main-promo__descr-item.swiper-slide
+              //- текстовый блок для десктопа
+              .description__container
+                .description__header-block
+                  h3.description__title
+                    +descriptionTitle(promoItem.name, promoItem.isShortName)
+                  p.description__about= promoItem.about.name
+                    span.description__about-more= promoItem.about.value
+                dl.description__specifications.description__specifications--small
+                  each item in promoItem.info.data
+                    //- переносим все поля, кроме заголовка, в таблицу ↓
+                    if item["head"] !== true
+                      -
+                        let cssClass = "";
+                        if (item.underline === true) {cssClass += "description__box--indented "}
+                        if (item.summary === true) {cssClass += "description__box--summary "}
+                        if (item.inserted === true) {cssClass += "description__box--inserted "}
+                        if (item.optional === true) {cssClass += "description__box--rem "}
+                      .description__box(class= cssClass)
+                        dt.description__parameter= item.name
+                        dd.description__value= item.value
+                a.promo-description__link.description__link.button(href= promoItem.info.href + ".html") Cмотреть планировку
+              //- текстовый блок для мобильного вида
+              .description__smallcontainer
                 h3.description__title
-                  span 70
-                  span= " "
-                  span м²
-                p.description__about= aboutFileds70["name"]
-                  span.description__about-more= aboutFileds70["value"]
-              dl.description__specifications.description__specifications--small
-                each item in promoTableData70.data
-                  //- переносим все поля, кроме заголовка, в таблицу ↓
-                  if item["head"] !== true
-                    .description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
-                      dt.description__parameter= item.name
-                      dd.description__value= item.value
-              a.promo-description__link.description__link.button(href= promoTableData70.href + ".html") Cмотреть планировку
-            .description__smallcontainer
-              h3.description__title
-                a.description__title-link(href= promoTableData70.href + ".html")
-                  span 70
-                  span= " "
-                  span м²
-              ul.description__shortlist
-                each item in promoTableData70.shortData
-                  li.description__feature= item
-          li.main-promo__descr-item.swiper-slide
-            .description__container
-              .description__header-block
-                h3.description__title 30 м²
-                p.description__about= aboutFileds30["name"]
-                  span.description__about-more= aboutFileds30["value"]
-              dl.description__specifications.description__specifications--small
-                each item in promoTableData30.data
-                  //- переносим все поля, кроме заголовка, в таблицу ↓
-                  if item["head"] !== true
-                    .description__box(class= (item.underline === true) ? "description__box--indented" : (item.summary === true) ? "description__box--summary" : "")
-                      dt.description__parameter= item.name
-                      dd.description__value= item.value
-              a.promo-description__link.description__link.button(href= promoTableData30.href + ".html") Cмотреть планировку
-            .description__smallcontainer
-              h3.description__title
-                a.description__title-link(href= promoTableData30.href + ".html") 30 м²
-              ul.description__shortlist
-                each item in promoTableData30.shortData
-                  li.description__feature= item
+                  a.description__title-link(href= promoItem.info.href + ".html")
+                    +descriptionTitle(promoItem.name, promoItem.isShortName)
+                ul.description__shortlist
+                  each item in promoItem.info.shortData
+                    li.description__feature(class=`${item[1] ? "description__feature--wide" : ""}`)= item[0]
