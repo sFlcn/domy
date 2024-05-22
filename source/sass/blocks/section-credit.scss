@@ -25,13 +25,17 @@
   }
 }
 
-.credit .wrapper {
+.credit__container {
   display: flex;
   flex-direction: column;
 
   @media (min-width: $small-desktop-width) {
     flex-flow: row wrap;
-    justify-content: space-between;
+    column-gap: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    column-gap: 50px;
   }
 }
 
@@ -196,6 +200,7 @@
 
   @media (min-width: $desktop-width) {
     flex-basis: 361px;
+    margin-right: 138px;
   }
 }
 

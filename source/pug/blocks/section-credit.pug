@@ -18,23 +18,6 @@
     },
   ]
 
-  const banks = [
-    {
-      name: "Сбербанк",
-      href: "http://www.sberbank.ru/ru/person/credits/homenew",
-      imgFileName: "sber-logo",
-      imgWidth: 273,
-      imgHeight: 46,
-    },
-    {
-      name: "Почта Банк",
-      href: "https://www.pochtabank.ru/service/bistr_doma",
-      imgFileName: "pochtabank-logo",
-      imgWidth: 167,
-      imgHeight: 81,
-    },
-  ]
-
   const creditSpecialistTxt ={
     header: "Наши специалисты предоставят всю необходимую информацию по интересующей вас программе банковской поддержки, проконсультируют и помогут сделать правильный выбор.",
     text: "В оформлении заявки вам поможет персональный менеджер, который курирует ваш проект. При необходимости мы также привлекаем узких специалистов в области банковского финансирования, чтобы учесть все тонкости и нюансы, максимально быстро подобрать полный пакет документов, использовать льготы, сократить срок рассмотрения заявления и повысить вероятность одобрения.",
@@ -42,11 +25,11 @@
 
   const creditPartnersTxt ={
     header: "Банки-партнеры",
-    text: "Мы сотрудничаем с надёжными банками, которые предоставляют услуги ипотечного и потребительского кредитования – СберБанком и Почта Банком.",
+    text: "Мы сотрудничаем с надёжными банками, которые предоставляют услуги ипотечного и потребительского кредитования.",
   }
 
 section.credit
-  .wrapper
+  .wrapper.credit__container
     if creditPage
       h1.credit__title Предлагаем приобрести дом в кредит или ипотеку без первоначального взноса
     else
@@ -64,9 +47,3 @@ section.credit
       h3= creditPartnersTxt.header
       p= creditPartnersTxt.text
       a.credit__request.button.callback-button(href="#callbackwidget") Оставить заявку
-    .credit__banks.animated-appearance
-      .banks
-        each item in banks
-          a.banks__link(href= item.href, target="_blank", rel="noopener")
-            span.visuallyhidden= item.name
-            img(src= `./img/${item.imgFileName}.svg`, width= item.imgWidth, height= item.imgHeight, alt= `логотип ${item.name}`)
