@@ -6,14 +6,14 @@ block prepend variables
   -
     const completedData = [
       {
-        descr: "60 м. кв",
+        descr: "60 м²",
         location: "д. Аревское, Дмитровский район",
         date: ["январь 2024", "2024-01"],
         imagesAmt: 2,
         imagesName: "complprjcts-arevskoe",
       },
       {
-        descr: "баня 20 м. кв",
+        descr: ["баня", " 20 м²"],
         location: "мыс Кюренниеми, Ленинградская область",
         date: ["февраль 2024", "2024-02"],
         imagesAmt: 3,
@@ -21,35 +21,28 @@ block prepend variables
         imagesIsVertical: true,
       },
       {
-        descr: "30 м. кв",
+        descr: "30 м²",
         location: "д. Протасово, ГО Мытищи",
         date: ["август 2023", "2023-08"],
         imagesAmt: 2,
         imagesName: "complprjcts-protasovo",
       },
       {
-        descr: "60 м. кв",
+        descr: "60 м²",
         location: "д. Ширяйка, Переславль-Залесский район, Ярославская область",
         date: ["сентябрь 2023", "2023-09"],
         imagesAmt: 2,
         imagesName: "complprjcts-shiryaika",
       },
-      //- {
-      //-   descr: "30 м. кв",
-      //-   location: "с. Фаустово, Воскресенский район",
-      //-   date: ["октябрь 2023", "2023-10"],
-      //-   imagesAmt: 1,
-      //-   imagesName: "complprjcts-faustovo",
-      //- },
       {
-        descr: "70 м. кв",
+        descr: "70 м²",
         location: "д. Ивановское, Ступинский район",
         date: ["июнь 2023", "2023-06"],
         imagesAmt: 2,
         imagesName: "complprjcts-ivanovskoye",
       },
       {
-        descr: "55 м. кв",
+        descr: "55 м²",
         location: "д. Пушкино, ГО Электросталь",
         date: ["апрель 2024", "2023-04"],
         imagesAmt: 3,
@@ -64,7 +57,7 @@ block main
         h1.completed-prj__title Некоторые из наших проектов
       .wrapper--ext
         each item in completedData
-          figure.completed(class=`${item.imagesAmt > 1 ? "" : "completed--sph"}`)
+          figure.completed.animated-appearance(class=`${item.imagesAmt > 1 ? "" : "completed--sph"}`)
 
             //- фото (отображаются только на десктопе)
             .completed__photos-container
@@ -98,7 +91,12 @@ block main
                     span.visuallyhidden следующий слайд
 
             figcaption
-              p.completed__descr= item.descr
+              if Array.isArray(item.descr)
+                p.completed__descr
+                  each record in item.descr
+                    span= record
+              else
+                p.completed__descr= item.descr
               p.completed__location= item.location
               p.completed__date
                 time(datetime= item.date[1])= item.date[0]

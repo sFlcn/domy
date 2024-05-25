@@ -194,4 +194,8 @@
   font-size: 18px;
   font-weight: 800;
   text-transform: uppercase;
+
+  & span:last-of-type {
+    text-transform: none;
+  }
 }
