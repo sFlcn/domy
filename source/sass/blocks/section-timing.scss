@@ -1,0 +1,184 @@
+@keyframes dotscale {
+  0% {transform: scale(0)}
+  100% {transform: scale(1)}
+}
+
+@keyframes linescaleh {
+  0% {transform: scaleX(5%)}
+  100% {transform: scaleX(100%)}
+}
+
+@keyframes linescalev {
+  0% {transform: scaleY(5%)}
+  100% {transform: scaleY(100%)}
+}
+
+@keyframes textup {
+  0% {
+    transform: translateY(-5px) scale(0.95);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+$line-animation-time-m: 1.2s;
+$line-animation-time-d: 1.5s;
+
+.timing {
+  margin-bottom: 100px;
+  font: {
+    family: "Gilroy", "Arial", sans-serif;
+    style: normal;
+    size: 10px;
+    weight: 300;
+  }
+
+  @media (min-width: $small-desktop-width) {
+    margin-bottom: 80px;
+    font-size: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 130px;
+  }
+}
+
+.timing__container {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  @media (min-width: $small-desktop-width) {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: $palette-darkcontrast;
+    left: calc(50% - 68px);
+    transform-origin: top;
+    animation: linescalev $line-animation-time-m ease-out;
+
+    @media (min-width: $small-desktop-width) {
+      width: 100%;
+      height: 1px;
+      top: 104px;
+      left: 0;
+      transform-origin: left;
+      animation: linescaleh $line-animation-time-d ease-out;
+    }
+  }
+}
+
+.timing__fraction {
+  position: relative;
+  width: 140px;
+  margin: 0 0 30px 44px;
+  padding: 0 20px 20px;
+
+  @media (min-width: $small-desktop-width) {
+    margin: 0;
+    padding: 20px;
+    width: 255px;
+    border: none;
+  }
+
+  & + & {
+    @media (min-width: $small-desktop-width) {
+      margin-left: 123px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -4px;
+    left: -4px;
+    border-radius: 50%;
+    background-color: $palette-darkcontrast;
+    transform: scale(0);
+    animation: dotscale 0.5s ease-out ($line-animation-time-m * 0.7) forwards;
+
+    @media (min-width: $small-desktop-width) {
+      top: 100px;
+      left: 20px;
+      animation-delay: ($line-animation-time-d * 0.75);
+    }
+  }
+}
+
+.timing__heading {
+  position: relative;
+  top: -10px;
+  margin: 0;
+  font-size: 35px;
+  line-height: 1;
+  font-weight: 800;
+  cursor: default;
+  opacity: 0;
+  animation: textup ($line-animation-time-m * 1.1) ease-out ($line-animation-time-m * 0.7) forwards;
+
+  @media (min-width: $small-desktop-width) {
+    position: static;
+    margin: 0 0 40px;
+    font-size: 64px;
+    animation-duration: ($line-animation-time-d * 0.9);
+    animation-delay: ($line-animation-time-d * 0.75);
+  }
+}
+
+.timing__events {
+  margin: 0;
+  opacity: 0;
+  animation: textup ($line-animation-time-m * 1.1) ease-out ($line-animation-time-m * 0.7) forwards;
+
+  @media (min-width: $small-desktop-width) {
+    animation-duration: ($line-animation-time-d * 0.9);
+    animation-delay: ($line-animation-time-d * 0.75);
+  }
+}
+
+.timing__fraction:nth-child(1) .timing__heading,
+.timing__fraction:nth-child(1) .timing__events,
+.timing__fraction:nth-child(1)::before {
+  animation-delay: 0s;
+
+  @media (min-width: $small-desktop-width) {
+    animation-delay: ($line-animation-time-d * 0.25);
+  }
+}
+
+.timing__fraction:nth-child(2) .timing__heading,
+.timing__fraction:nth-child(2) .timing__events,
+.timing__fraction:nth-child(2)::before {
+  animation-delay: ($line-animation-time-m * 0.35);
+
+  @media (min-width: $small-desktop-width) {
+    animation-delay: ($line-animation-time-d * 0.5);
+  }
+}
+
+.timing__span--mb {
+  @media (min-width: $small-desktop-width) {
+    display: none;
+  }
+}
+
+.timing__span--dt {
+  @media (max-width: ($small-desktop-width - 1)) {
+    display: none;
+  }
+}
