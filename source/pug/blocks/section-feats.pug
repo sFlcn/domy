@@ -1,0 +1,34 @@
+-
+  const featsList = [
+    {
+      intro: ">20",
+      txt: "домов мы строим каждый месяц",
+    },
+    {
+      intro: "30–150 м²",
+      txt: "площадь домов",
+    },
+    {
+      intro: "10 лет",
+      txt: "гарантии",
+    },
+    {
+      intro: "2-5 дней",
+      mobileTxt: "в среднем ",
+      txt: "занимает монтаж дома",
+      desktopTxt: " в зависимости от удаленности объекта и сложности установки фундамента",
+    },
+  ];
+
+section.feats
+  .wrapper
+    h2.visuallyhidden.feats__title В нашей компании
+    ul.feats__list
+      each item in featsList
+        li.feats__item
+          strong.feats__intro= item.intro + " "
+          if item.mobileTxt
+            span.feats__m-txt= item.mobileTxt
+          span.feats__txt= item.txt
+          if item.desktopTxt
+            span.feats__d-txt= item.desktopTxt

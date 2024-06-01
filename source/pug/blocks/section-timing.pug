@@ -1,0 +1,56 @@
+-
+  const events = [
+    {
+      heading: 2014,
+      doings: [
+        {
+          text: "компания Domy начала",
+          br: true,
+        },
+        {
+          text: "строить каменные",
+          br: true,
+        },
+        {
+          text: "и каркасные дома",
+        },
+      ],
+    },
+    {
+      heading: 2020,
+      doings: [
+        {
+          text: "мы пересмотрели приоритеты развития и стали создавать модульные дома",
+          type: "mobile",
+        },
+        {
+          text: "мы пересмотрели приоритеты развития и стали создавать модульные дома, которые отвечают главным требованиям человека XXI века: быстрота изготовления, доступность, качество и надежность",
+          type: "desktop",
+        },
+      ],
+    },
+    {
+      heading: 2024,
+      doings: [
+        {
+          text: "расширяем линейку проектов, сотрудничаем с базами отдыха, глэмпингами и надёжными банками",
+          type: "mobile",
+        },
+        {
+          text: "расширяем линейку проектов в соответствии с трендами, сотрудничаем с базами отдыха и глэмпингами, надёжными банками (СберБанк и Почта Банк) по вопросам ипотечного и потребительского кредитования",
+          type: "desktop",
+        },
+      ],
+    },
+  ];
+
+section.timing
+  .timing__container
+    each item in events
+      .timing__fraction
+        h2.timing__heading= item.heading
+        p.timing__events
+          each fraction in item.doings
+            span(class=`${fraction.type === "desktop" ? "timing__span--dt" : fraction.type === "mobile" ? "timing__span--mb" : ""}`)= fraction.text
+            if fraction.br
+              br

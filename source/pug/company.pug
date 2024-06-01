@@ -1,0 +1,74 @@
+extends blocks/-page-layout.pug
+
+block prepend variables
+  -
+    const currentPage = PAGES["company"].pageHref;
+    const pageTitle = "О компании";
+    const aboutCompanySlider = [
+      { altText: "" },
+      { altText: "" },
+      { altText: "" },
+      { altText: "" },
+      { altText: "" },
+      { altText: "" },
+      { altText: "" },
+      { altText: "" },
+      { altText: "" },
+    ]
+
+block main
+  main.main.company
+    .wrapper
+      h1.company__title Мы строим теплые модульные дома для постоянного, временного проживания и бизнеса
+
+    include blocks/section-timing.pug
+
+    //- Слайдер
+    .wrapper--ext
+      .technology__photo-slider
+        .slider-coverflow.swiper
+          ul.technology__slider-list.swiper-wrapper
+            each item, index in aboutCompanySlider
+              li.swiper-slide
+                .technology__slider-item
+                  +pictureJpgWebpM(`company-slider-${index}`, 360, 218, `${item.altText}`, "technology__slider-img", lazy = null, [660, 1700])
+          .technology__slider-control
+            .swiper-pagination
+            .swiper-button-prev
+              span.visuallyhidden предыдущий слайд
+            .swiper-button-next
+              span.visuallyhidden следующий слайд
+
+    include blocks/section-advantages.pug
+
+    section.technology__features
+      .wrapper
+        article.technology__article.animated-appearance
+          h2.technology__feature-title Удобная локация и логистика
+          p.technology__feature-text Наше производство располагается в городе Хотьково Московской области недалеко от ЦКАД, что позволяет организовать удобную логистику по всей России.
+          .technology__feature-photo.technology__feature-photo--big.animated-appearance
+            +pictureJpgWebpM("tech-logistic", 340, 207, "Погрузка модульного дома.", "", null, [660, 1700])
+        article.technology__article.technology__article--double-image.animated-appearance
+          h2.technology__feature-title Мы используем только современные, высококачественные материалы
+          p.technology__feature-text Все детали конструкции модульного дома проходят тщательный контроль качества на всех этапах производства.
+          .technology__feature-photo.animated-appearance
+            +pictureJpgWebpM("tech-workshop1", 160, 152, "Доски и каркас дома в цеху.", "", "lazy", [660, 1700])
+          .technology__feature-photo.animated-appearance
+            +pictureJpgWebpM("tech-workshop2", 160, 124, "Дом на стадии сборки.", "", "lazy", [660, 1700])
+        article.technology__article.technology__article--shipment.animated-appearance
+          h2.technology__feature-title Дом собирается на 90% в цехе и привозится на участок заказчика готовым — целым модулем
+          p.technology__feature-text Остается лишь установить дом на фундамент и подключить к коммуникациям.
+          .technology__feature-photo.technology__feature-photo--big.animated-appearance
+            +pictureJpgWebpM("tech-shipment", 360, 218, "Грузовик перевозит готовый дом.", "", "lazy", [660, 1700])
+        article.technology__article.technology__article--double-image.animated-appearance
+          h2.technology__feature-title Благодаря фабричному производству и нашим технологиям исключается попадание влаги на дерево
+          p.technology__feature-text Таким образом дерево остается сухим и исключается появление плесени и грибка, что гарантирует экологичность и долгий срок службы дома.
+          .technology__feature-photo.animated-appearance
+            +pictureJpgWebpM("tech-planks", 160, 180, "Деревянный материал крупным планом в цеху.", "", "lazy", [660, 1700])
+          .technology__feature-photo.animated-appearance
+            +pictureJpgWebpM("tech-inhouse", 160, 180, "Фото интерьера дома в цеху на завершающей стадии работы.", "", "lazy", [660, 1700])
+
+    include blocks/section-also.pug
+    include blocks/section-feats.pug
+    include blocks/section-easy.pug
+    include blocks/section-suppliers.pug

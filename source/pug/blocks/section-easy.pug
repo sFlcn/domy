@@ -1,0 +1,30 @@
+-
+  const easyList = [
+    {
+      intro: "поможем создать с нуля",
+      txt: "проект, отвечающий вашим потребностям и желаниям",
+    },
+    {
+      intro: "бесплатно окажем помощь",
+      txt: "в проверке юридической чистоты приобретаемого земельного участка",
+      desktopTxt: " и оформлении документов",
+    },
+    {
+      intro: "подберем участок",
+      txt: "проанализируем затраты и найдем надежных подрядчиков",
+      desktopTxt: " для выполнения таких строительных задач, как монтаж колодцев, бурение скважин на воду, установка септика и забора",
+    },
+  ];
+
+section.easy
+  .wrapper
+    h2.easy__title Приобретение дома — это легко!
+    ul.easy__list
+      each item in easyList
+        li.easy__item
+          strong.easy__intro= item.intro + " "
+          if item.mobileTxt
+            span.easy__m-txt= item.mobileTxt
+          span.easy__txt= item.txt
+          if item.desktopTxt
+            span.easy__d-txt= item.desktopTxt
