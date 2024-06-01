@@ -25,14 +25,14 @@ block main
 
     //- Слайдер
     .wrapper--ext
-      .technology__photo-slider
+      .company__photo-slider
         .slider-coverflow.swiper
-          ul.technology__slider-list.swiper-wrapper
+          ul.company__slider-list.swiper-wrapper
             each item, index in aboutCompanySlider
               li.swiper-slide
-                .technology__slider-item
-                  +pictureJpgWebpM(`company-slider-${index}`, 360, 218, `${item.altText}`, "technology__slider-img", lazy = null, [660, 1700])
-          .technology__slider-control
+                .company__slider-item
+                  +pictureJpgWebpM(`company-slider-${index + 1}`, 360, 218, `${item.altText}`, "company__slider-img", lazy = null, [660, 1700])
+          .company__slider-control
             .swiper-pagination
             .swiper-button-prev
               span.visuallyhidden предыдущий слайд

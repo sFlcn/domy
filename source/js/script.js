@@ -14,6 +14,7 @@ const promoSliderEl = document.querySelector('.slider-img');
 const auxTextSliderEl = document.querySelector('.slider-txt');
 const quizSliderEl = document.querySelector('.slider-quiz');
 const technologySliderEl = document.querySelector('.technology__photo-slider .slider-coverflow');
+const companySliderEl = document.querySelector('.company__photo-slider .slider-coverflow');
 const completedProjectsSliderEls = document.querySelectorAll('.completed__photo-slider .swiper');
 const completedProjectsSliderAltCssClass = 'slider--v';
 let promoSwiper;
@@ -71,6 +72,11 @@ if (technologySliderEl) {
 
   // eslint-disable-next-line no-unused-vars
   coverflowSwiper = makeCoverflowSwiper(technologySliderEl);
+}
+
+if (companySliderEl) {
+  // eslint-disable-next-line no-unused-vars
+  coverflowSwiper = makeCoverflowSwiper(companySliderEl);
 }
 
 if (quizSliderEl) {
