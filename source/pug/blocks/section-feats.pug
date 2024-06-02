@@ -1,22 +1,31 @@
 -
   const featsList = [
     {
-      intro: ">20",
-      txt: "домов мы строим каждый месяц",
+      intro: [">20", "домов"],
+      shiftedIntro: "shiftleft",
+      texts: [
+        {txt: "домов ", mod: "dt"},
+        {txt: "мы строим каждый месяц"},
+      ],
+      thinText: true,
     },
     {
-      intro: "30–150 м²",
-      txt: "площадь домов",
+      intro: ["30–150 м²"],
+      texts: [{ txt: "площадь домов" }],
     },
     {
-      intro: "10 лет",
-      txt: "гарантии",
+      intro: ["10 лет"],
+      texts: [{ txt: "гарантии" }],
+      cssMod: "r1",
     },
     {
-      intro: "2-5 дней",
-      mobileTxt: "в среднем ",
-      txt: "занимает монтаж дома",
-      desktopTxt: " в зависимости от удаленности объекта и сложности установки фундамента",
+      intro: ["2-5 дней"],
+      texts: [
+        {txt: "в среднем ", mod: "mb"},
+        {txt: "занимает монтаж дома"},
+        {txt: " в зависимости от удаленности объекта и сложности установки фундамента", mod: "dt"},
+      ],
+      cssMod: "r2",
     },
   ];
 
@@ -25,10 +34,12 @@ section.feats
     h2.visuallyhidden.feats__title В нашей компании
     ul.feats__list
       each item in featsList
-        li.feats__item
-          strong.feats__intro= item.intro + " "
-          if item.mobileTxt
-            span.feats__m-txt= item.mobileTxt
-          span.feats__txt= item.txt
-          if item.desktopTxt
-            span.feats__d-txt= item.desktopTxt
+        li.feats__item.animated-appearance(class= `${item.cssMod ? "feats__item--" + item.cssMod : ""}`)
+          each introPart, index in item.intro
+            strong.feats__intro(class= `${index > 0 ? "feats__intro--mb" : item.shiftedIntro ? `feats__intro--${item.shiftedIntro}` : ""}`)= introPart + " "
+          span.feats__txt(class= `${item.thinText ? "feats__txt--thin" : ""}`)
+            each fragment in item.texts
+              -
+                let cssMod = "";
+                if (fragment.mod) cssMod += `feats__txt--${fragment.mod}`
+              span(class= cssMod)= fragment.txt
