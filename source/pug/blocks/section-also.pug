@@ -1,11 +1,11 @@
 -
   const alsoData = [
     {
-      start: "В наших домах можно комфортно жить круглый год",
+      start: ["В наших домах можно", "комфортно жить круглый год"],
       ext: "даже в северных регионах России"
     },
     {
-      start: "Мы значительно сократили сроки строительства",
+      start: ["Мы значительно сократили", "сроки строительства"],
       ext: "за счет высокоточного оборудования и поддерживаем высокий уровень качества изготавливаемых деталей"
     },
     {
@@ -19,6 +19,12 @@ section.also
     h2.also__title А еще...
     ul.also__list
       each item in alsoData
-        li.also__item
-          strong.also__point-start= item.start + " "
+        li.also__item.animation
+          if Array.isArray(item.start)
+            strong.also__point-start
+              each fragment in item.start
+                span= fragment + " "
+                br.also__item-br
+          else
+            strong.also__point-start= item.start + " "
           span.also__point-ext= item.ext
