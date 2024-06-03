@@ -121,25 +121,18 @@
 }
 
 .company__feature-title {
-  margin: 0 5px;
+  margin: 0 5px 35px;
+  grid-column: span 2;
   text-align: center;
 
   @include font-title-middle;
 
   @media (min-width: $small-desktop-width) {
-    text-align: start;
-    margin: 0;
-  }
-}
-
-.company__feature-title {
-  margin-bottom: 35px;
-  grid-column: span 2;
-
-  @media (min-width: $small-desktop-width) {
+    margin: 0 0 35px;
     grid-column: unset;
     grid-row: 1 / 2;
     grid-column-start: 1;
+    text-align: start;
   }
 }
 
@@ -188,6 +181,12 @@
 
     @media (min-width: $tablet-width) {
       width: 100%;
+      max-width: 70%;
+      margin: 0 auto;
+    }
+
+    @media (min-width: $small-desktop-width) {
+      max-width: unset;
     }
   }
 }

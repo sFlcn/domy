@@ -5,52 +5,46 @@ block prepend variables
     const currentPage = PAGES["company"].pageHref;
     const pageTitle = "О компании";
     const aboutCompanySlider = [
-      { altText: "" },
-      { altText: "" },
-      { altText: "" },
-      { altText: "" },
-      { altText: "" },
-      { altText: "" },
-      { altText: "" },
-      { altText: "" },
-      { altText: "" },
+      { altText: "Готовый модульный дом на участке среди елей." },
+      { altText: "Кухня внутри модульного дома." },
+      { altText: "Вход на террасу внутри модульного дома." },
+      { altText: "Отделка внутри модульного дома." },
+      { altText: "Готовый модульный дом на участке." },
+      { altText: "Готовый модульный дом на участке вечером." },
+      { altText: "Сборка модульного дома на производстве." },
+      { altText: "Собранный модульный дом на производстве." },
+      { altText: "Модульный дом в цеху." },
     ];
     const companyFeaturesData = [
       {
         title: "Удобная локация и логистика",
         text: "Наше производство располагается в городе Хотьково Московской области недалеко от ЦКАД, что позволяет организовать удобную логистику по всей России.",
-        image_fileName: "company-a-logistic",
-        image_mobileSizes: [340, 207],
-        image_altText: "Погрузка модульного дома.",
-        imageBig: true,
+        pics: [{
+          fileName: "company-a-logistic", mobSizes: [340, 207], altText: "Погрузка модульного дома.", imageBig: true,
+          }],
       },
       {
         title: "Мы используем только современные, высококачественные материалы",
         text: "Все детали конструкции модульного дома проходят тщательный контроль качества на всех этапах производства.",
-        image_fileName: "company-a-workshop1",
-        image2_fileName: "company-a-workshop2",
-        image_mobileSizes: [160, 152],
-        image2_mobileSizes: [160, 124],
-        image_altText: "Доски и каркас дома в цеху.",
-        image2_altText: "Дом на стадии сборки.",
+        pics: [
+          { fileName: "company-a-workshop1", mobSizes: [160, 152], altText: "Доски и каркас дома в цеху.", },
+          { fileName: "company-a-workshop2", mobSizes: [160, 124], altText: "Модульный  дом на стадии сборки.", },
+        ],
       },
       {
         title: "Дом собирается на 90% в цехе и привозится на участок заказчика готовым — целым модулем",
         text: "Остается лишь установить дом на фундамент и подключить к коммуникациям.",
-        image_fileName: "company-a-shipment",
-        image_mobileSizes: [360, 218],
-        image_altText: "Грузовик перевозит готовый модульный дом.",
-        imageBig: true,
+        pics: [{
+          fileName: "company-a-shipment", mobSizes: [360, 218], altText: "Грузовик перевозит готовый модульный дом", imageBig: true,
+          }],
       },
       {
         title: "Благодаря фабричному производству и нашим технологиям исключается попадание влаги на дерево",
         text: "Таким образом дерево остается сухим и исключается появление плесени и грибка, что гарантирует экологичность и долгий срок службы дома.",
-        image_fileName: "company-a-planks",
-        image2_fileName: "company-a-inhouse",
-        image_mobileSizes: [160, 180],
-        image2_mobileSizes: [160, 180],
-        image_altText: "Деревянный материал крупным планом в цеху.",
-        image2_altText: "Интерьер дома в цеху на завершающей стадии работы.",
+        pics: [
+          { fileName: "company-a-planks", mobSizes: [160, 180], altText: "Деревянный материал крупным планом в цеху.", },
+          { fileName: "company-a-inhouse", mobSizes: [160, 180], altText: "Интерьер дома в цеху на завершающей стадии работы.", },
+        ],
       },
     ];
 
@@ -82,14 +76,12 @@ block main
     section.company__features
       .wrapper
         each articleItem in companyFeaturesData
-          article.company__article.animated-appearance
+          article.company__article.animated-appearance(class=`${articleItem.pics.length > 1 ? "company__article--double-image" : ""}`)
             h2.company__feature-title= articleItem.title
             p.company__feature-text= articleItem.text
-            .company__feature-photo.animated-appearance(class=`${articleItem.imageBig ? "company__feature-photo--big" : ""}`)
-              +pictureJpgWebpM(articleItem.image_fileName, articleItem.image_mobileSizes[0], articleItem.image_mobileSizes[1], articleItem.image_altText, "", "lazy", [660, 1700])
-            if (articleItem.image2_fileName)
-              .company__feature-photo.animated-appearance(class=`${articleItem.imageBig ? "company__feature-photo--big" : ""}`)
-                +pictureJpgWebpM(articleItem.image2_fileName, articleItem.image2_mobileSizes[0], articleItem.image2_mobileSizes[1], articleItem.image2_altText, "", "lazy", [660, 1700])
+            each pic in articleItem.pics
+              .company__feature-photo.animated-appearance(class=`${pic.imageBig ? "company__feature-photo--big" : ""}`)
+                +pictureJpgWebpM(pic.fileName, pic.mobSizes[0], pic.mobSizes[1], pic.altText, "", "lazy", [660, 1700])
 
     include blocks/section-also.pug
     include blocks/section-feats.pug
