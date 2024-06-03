@@ -1,30 +1,43 @@
 -
   const easyList = [
     {
-      intro: "поможем создать с нуля",
+      intro: [{ text:"поможем создать с нуля" }],
       txt: "проект, отвечающий вашим потребностям и желаниям",
     },
     {
-      intro: "бесплатно окажем помощь",
-      txt: "в проверке юридической чистоты приобретаемого земельного участка",
-      desktopTxt: " и оформлении документов",
+      intro: [{ text:"бесплатно окажем помощь" }],
+      txt: "в проверке юридической чистоты",
+      desktopTxt: " приобретаемого земельного участка и оформлении документов",
     },
     {
-      intro: "подберем участок",
+      intro: [
+        { text:"подберем" },
+        { text:"для вас", mobile: true },
+        { text:"участок" },
+      ],
       txt: "проанализируем затраты и найдем надежных подрядчиков",
-      desktopTxt: " для выполнения таких строительных задач, как монтаж колодцев, бурение скважин на воду, установка септика и забора",
+      desktopTxt: " для выполнения строительных задач (монтаж колодцев, бурение скважин на воду, установка септика и забора)",
     },
   ];
 
 section.easy
   .wrapper
-    h2.easy__title Приобретение дома — это легко!
+    h2.easy__title
+      | Приобретение дома —
+      br
+      |
+      | это легко!
     ul.easy__list
-      each item in easyList
-        li.easy__item
-          strong.easy__intro= item.intro + " "
-          if item.mobileTxt
-            span.easy__m-txt= item.mobileTxt
-          span.easy__txt= item.txt
-          if item.desktopTxt
-            span.easy__d-txt= item.desktopTxt
+      each item, index in easyList
+        li.easy__item.animated-appearance(data-number= `${index + 1}`)
+          strong.easy__intro
+            each fragment in item.intro
+              span(class= `${fragment.mobile ? "easy__intro--m" : ""}`)= fragment.text
+              |
+              |
+          span.easy__descr
+            if item.mobileTxt
+              span.easy__m-txt= item.mobileTxt
+            span.easy__txt= item.txt
+            if item.desktopTxt
+              span.easy__d-txt= item.desktopTxt
