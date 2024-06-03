@@ -1,15 +1,15 @@
 .easy {
   margin: 0 auto;
-  padding: 0 0 40px;
+  padding: 0 0 20px;
   background-color: $palette-brightcontrast;
 
   @media (min-width: $small-desktop-width) {
     margin: 0;
-    padding: 0 0 100px;
+    padding: 0 0 80px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 0 0 150px;
+    padding: 0 0 130px;
   }
 }
 
