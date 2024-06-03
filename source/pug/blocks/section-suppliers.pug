@@ -1,36 +1,9 @@
--
-  const suppliersList = [
-    {
-      name: "Технониколь",
-      svgFile: "tn-logo",
-      size: [160, 27],
-    },
-    {
-      name: "Juta",
-      svgFile: "juta-logo",
-      size: [108, 26],
-    },
-    {
-      name: "Rehau",
-      svgFile: "rehau-logo",
-      size: [78, 26],
-    },
-    {
-      name: "Roto",
-      svgFile: "roto-logo",
-      size: [81, 33],
-    },
-    {
-      name: "Neomid",
-      svgFile: "neomid-logo",
-      size: [41, 41],
-    },
-  ];
-
 section.suppliers
-  .wrapper
-    h2.suppliers__title Мы работаем с проверенными поставщиками
-    ul.suppliers__list
-      each item in suppliersList
-        li.suppliers__item
-          img.suppliers__logo(src=`./img/${item.svgFile}.svg`, alt=`${item.name}`, width=item.size[0], height=item.size[1])
+  .suppliers__box.wrapper
+    h2.suppliers__title
+      | Мы работаем
+      br
+      | с проверенными
+      br
+      | поставщиками
+    img.suppliers__logotypes(src="./img/domy-suppliers.svg", alt="Технониколь, Juta, Rehau, Roto, Neomid", width=340, height=53)
