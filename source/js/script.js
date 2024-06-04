@@ -35,7 +35,6 @@ if (noJsEl) {
 
 window.addEventListener('DOMContentLoaded', addTelInputMasks);
 animateAppearance('animated-appearance', 250);
-animateAppearance('animation', 250);
 
 // headset widget
 const widgetEl = document.querySelector('.widget-headset');
