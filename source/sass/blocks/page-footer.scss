@@ -124,7 +124,7 @@
   @media (min-width: $desktop-width) {
     min-height: unset;
     padding: 0;
-    flex-basis: 37.736%;
+    flex-basis: 48%;
   }
 }
 
@@ -149,15 +149,14 @@
 }
 
 .footer__adress > p {
-  margin: 0 0 27px;
+  margin: 0 0 12px;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 28px;
+    margin: 0;
   }
 
   @media (min-width: $desktop-width) {
     width: 45%;
-    margin: 0;
   }
 
   & span {
@@ -171,15 +170,19 @@
   @include font-primary($weight: 800, $line-height: 29px, $color: $palette-brightcontrast);
 
   display: inline-block;
-  margin: 0;
+  margin: 15px 0 0;
   padding: 5px 0 0;
   border-bottom: 1px solid;
   transition: color 0.55s;
   font-size: 16px;
 
   @media (min-width: $small-desktop-width) {
-    margin: auto 0 13px;
+    margin: 28px 0 13px;
     align-self: flex-start;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: auto 0 13px;
   }
 
   &:hover {
