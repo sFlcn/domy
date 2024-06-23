@@ -27,15 +27,16 @@
     imageName: "https://domycompany.ru/img/domy-og.jpg",
   }
 
+  // номер WhatsApp идёт и в соцсети ниже
+  const WIDGET_TEL = "https://wa.me/74951828188";
+
   // данные для ссылок на соцсети 🔗
   const SOCIAL_LINKS = [
     { name: "Вконтакте", lClass: "vk", href: "https://vk.com/domycompany" },
     { name: "Telegram", lClass: "tg", href: "https://t.me/domycompany" },
-    { name: "WhatsApp", lClass: "wa", href: "https://wa.me/79361898498" },
+    { name: "WhatsApp", lClass: "wa", href: WIDGET_TEL }, //- <-- тот же номер, что и в виджете выше
     //- { name: "Youtube", lClass: "ytb", },
   ];
-
-  const WIDGET_TEL = "+74951828188";
 
   const CONTACTS = [
     {type: "office-fabrication", data: {

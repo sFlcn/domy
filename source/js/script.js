@@ -37,8 +37,14 @@ window.addEventListener('DOMContentLoaded', addTelInputMasks);
 animateAppearance('animated-appearance', 250);
 
 // headset widget
-const widgetEl = document.querySelector('.widget-headset');
-headsetStick({ targetEl: widgetEl, cssClass: 'widget-headset--sticky', scrollDistance: 70 });
+headsetStick({
+  targetEl: document.querySelector('.widget-headset'),
+  scrollDistance: 70,
+  bottomEl: document.querySelector('.footer'),
+  bottomOffset: 100,
+  cssClassSticked: 'widget-headset--sticky',
+  cssClassHidden: 'widget-headset--hidden',
+});
 
 // popupAnimate({
 //   popupElement: document.querySelector('.popup-form'),

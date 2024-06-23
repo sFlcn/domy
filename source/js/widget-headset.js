@@ -1,11 +1,24 @@
-export default function headsetStick({ targetEl, cssClass, scrollDistance }) {
+export default function headsetStick({
+  targetEl,
+  bottomEl,
+  cssClassSticked,
+  cssClassHidden,
+  scrollDistance,
+  bottomOffset,
+}) {
   const el = targetEl;
   if (el) {
     window.onscroll = function handeleStick() {
+      const bottomElTop = bottomEl.getBoundingClientRect().top;
       if (window.scrollY >= scrollDistance) {
-        el.classList.add(cssClass);
+        el.classList.add(cssClassSticked);
       } else {
-        el.classList.remove(cssClass);
+        el.classList.remove(cssClassSticked);
+      }
+      if (bottomElTop + bottomOffset <= document.documentElement.clientHeight) {
+        el.classList.add(cssClassHidden);
+      } else {
+        el.classList.remove(cssClassHidden);
       }
     };
   }

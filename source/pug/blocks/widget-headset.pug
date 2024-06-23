@@ -1,3 +1,5 @@
-.widget-headset
-  a(href=`tel:${WIDGET_TEL}`)
-    img(src="./img/handset-ico.svg", alt=`Позвоните нам ${WIDGET_TEL}`, width="46", height="46")
+- const widgetText = "Узнать цену в WhatsApp";
+
+.widget-headset(title=widgetText)
+  a(href=WIDGET_TEL)
+    img(src="./img/widget-whatsapp.svg", alt=widgetText, width="46", height="46")
