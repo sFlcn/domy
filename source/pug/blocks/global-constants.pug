@@ -39,28 +39,28 @@
   ];
 
   const CONTACTS = [
-    {type: "office-fabrication", data: {
-      title: "Офис и производство",
-      //- text: ["г. Москва, ул. Войкова, 4с1"],
-      text: [
-        "141371, Московская область, ",
-        "г. о. Сергиево-Посадский, ",
-        "г. Хотьково, ул. Заводская, д. 1"
-        ],
-      addon: "Ежедневно с 9:00 до 21:00",
+    {type: "office-main", data: {
+      title: "Москва",
+      content: [
+        { type: "text", text: [
+          "141371, Московская область, г. о. Сергиево‑Посадский, ",
+          "г. Хотьково, ул. Заводская, д. 1",
+          "Ежедневно с 9:00 до 21:00",
+        ]},
+        { type: "bigPhone", text: "+7 (495) 182 81 88", value: "+74951828188", },
+        { type: "email", text:"domycompany@ya.ru", },
+      ],
     }},
-    {type: "phoneAndEmail", data: {
-      title: "+7 (495) 182 81 88",
-      titleType: "tel",
-      titleValue: "+74951828188",
-      text: ["domycompany@ya.ru"],
-      textType: "email",
-      textValue: "domycompany@ya.ru",
+    {type: "office-stavropol", data: {
+      title: "Ставрополь",
+      content: [
+        { type: "text", text: [
+          "г. Ставрополь, ул. Коломийцева, 62/1 ",
+          "+7 (8652) 97-61-09",
+        ]},
+        { type: "email", text:"yug@domycompany.ru", },
+      ],
     }},
-    //- {type: "fabrication", data: {
-    //-   title: "Производство",
-    //-   text: ["г. Хотьково, ул. Заводская, д. 1 ", "Ежедневно с 9:00 до 21:00"],
-    //- }},
   ]
 
   // данные с характеристиками для страница о домах

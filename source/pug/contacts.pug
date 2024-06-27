@@ -12,12 +12,16 @@ mixin contactsItemTitle(contactData)
       h2.contacts__item-title= contactData["title"]
 
 mixin contactsItemText(contactData)
-    if contactData["textType"] === "email"
-      each item in contactData["text"]
-        a.contacts__item-text.contacts__item-text--link(href=`mailto:${contactData["textValue"]}`)= item
-    else
-      each item in contactData["text"]
-        p.contacts__item-text= item
+    each item in contactData.content
+      if item.type === "text"
+        p.contacts__item-text
+          each text in item.text
+            span= text
+            br
+      if item.type === "bigPhone"
+        a.contacts__item-bigphone(href=`tel:${item.value}`)= item.text
+      if item.type === "email"
+        a.contacts__item-text.contacts__item-text--link(href=`mailto:${item.value ? item.value : item.text}`)= item.text
 
 block main
   main.main

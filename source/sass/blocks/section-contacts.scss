@@ -5,6 +5,7 @@
 
   @media (min-width: $small-desktop-width) {
     padding: 52px 0;
+    align-items: stretch;
   }
 
   @media (min-width: $desktop-width) {
@@ -30,13 +31,12 @@
   }
 
   @media (min-width: $small-desktop-width) {
-    height: 525px;
+    height: unset;
     flex-basis: 51.18%;
   }
 
   @media (min-width: $desktop-width) {
-    height: 559px;
-    flex-basis: 67.625%;
+    flex-basis: 65.625%;
   }
 }
 
@@ -45,7 +45,7 @@
 
   @include list;
 
-  margin-bottom: 27px;
+  margin-bottom: 40px;
 
   @media (min-width: $small-desktop-width) {
     flex-basis: 45.73%;
@@ -60,22 +60,23 @@
 .contacts__item {
   display: flex;
   flex-direction: column;
-  margin: 0 0 17px;
+  margin: 0 0 30px;
   padding: 0 3px 5px;
   border-bottom: 1px solid transparent;
 
   @media (min-width: $small-desktop-width) {
     margin: 0 0 52px;
-    padding: 0 3px 28px;
+    padding: 0 3px 30px;
     border-color: $palette-darkcontrast;
   }
 
   @media (min-width: $desktop-width) {
-    margin: 0 0 56px;
+    margin: 0 0 30px;
   }
 
   &:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
     border-color: transparent;
   }
 }
@@ -83,11 +84,11 @@
 .contacts__item-title {
   @include font-title-main;
 
-  margin: 0 0 11px;
+  margin: 0 0 10px;
   text-align: center;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 22px;
+    margin: 0 0 25px;
     font-size: 50px;
     line-height: 55px;
     text-align: start;
@@ -95,6 +96,22 @@
 
   @media (min-width: $desktop-width) {
     margin: 0 0 18px;
+  }
+}
+
+.contacts__item-bigphone {
+  @include font-title-main;
+
+  margin: 0 0 25px;
+  text-align: center;
+  text-decoration: none;
+
+  @media (min-width: $small-desktop-width) {
+    margin: 5px 0 20px;
+    transform: translateX(-31px);
+    font-size: 50px;
+    line-height: 55px;
+    text-align: start;
   }
 }
 
@@ -111,32 +128,27 @@
 .contacts__item-text {
   @include font-primary;
 
-  margin: 0;
+  margin: 0 0 25px;
   padding: 0;
   border-bottom: 1px solid transparent;
   font-size: 16px;
   text-align: center;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 0 6.5px;
     padding: 5px 0;
     font-size: 16px;
     text-align: start;
-  }
-
-  @media (min-width: $desktop-width) {
-    margin: 0 0 6px;
   }
 }
 
 .contacts__item-text--link {
   margin: 0 auto;
-  padding: 10px 0 6px;
+  padding: 0 0 6px;
   border-bottom: 1px solid $palette-darkcontrast;
   text-decoration: none;
 
   @media (min-width: $small-desktop-width) {
-    margin: 0 auto 15px 0;
-    padding: 5px 0 6px;
+    margin: 0 auto 20px 0;
+    padding: 1px 0 6px;
   }
 }
