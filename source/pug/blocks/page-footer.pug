@@ -21,7 +21,7 @@ mixin logoLinkFooter(logoHref)
 
 mixin socialLinkItem({ name, lClass, href })
   li.socials__item
-    a(class=`socials__link socials__link--${lClass} ${ href ? "" : "socials__link--disabled" }`, href= ( href ? href : "#" ), target="_blank", rel="noopener", onclick = ( href ? null : "return false" ))
+    a(class=`socials__link socials__link--${lClass} ${ href ? "" : "socials__link--disabled" }`, id=`${lClass}-link`, href= ( href ? href : "#" ), target="_blank", rel="noopener", onclick = ( href ? null : "return false" ))
       span.visuallyhidden= name
 
 mixin footerNavItem({ name, pageHref })
@@ -40,7 +40,7 @@ footer.footer
       +logoLinkFooter(logoHref)
         img.domy-logo(src="./img/domy-logo.svg", width="86", height="26", alt="логотип DOMY.")
     .footer__tel-box
-      a.footer__tel(href="tel:+74951828188") +7 (495) 182 81 88
+      a.footer__tel#tel-footer(href="tel:+74951828188") +7 (495) 182 81 88
     .footer__container
       .footer__about
         address.footer__adress
@@ -54,7 +54,7 @@ footer.footer
             br
             span г. Ставрополь, ул. Коломийцева, 62/1
             span +7 (8652) 97-61-09
-        a.footer__email(href="mailto:domycompany@ya.ru") domycompany@ya.ru
+        a.footer__email#email-footer(href="mailto:domycompany@ya.ru") domycompany@ya.ru
       ul.footer__nav.footer-nav
         each item in footerNav
           +footerNavItem(item)
