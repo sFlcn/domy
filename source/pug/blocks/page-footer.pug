@@ -43,17 +43,20 @@ footer.footer
       a.footer__tel#tel-footer(href="tel:+74951828188") +7 (495) 182 81 88
     .footer__container
       .footer__about
-        address.footer__adress
+        address.footer__addresses
           //- p.footer__office-adress Офис:
           //-   span г.&nbsp;Москва, ул.&nbsp;Войкова, д.&nbsp;4 с1
           //- p.footer__manufacturing-adress Производство:
-          p.footer__manufacturing-adress Офис и производство:
-            span г. Хотьково, ул. Заводская, д. 1
-            span Ежедневно с 9:00 до 21:00
-          p.footer__manufacturing-adress
-            br
-            span г. Ставрополь, ул. Коломийцева, 62/1
-            span +7 (8652) 97-61-09
+          .footer__address-item Офис и производство:
+            p г. Хотьково, ул. Заводская, д. 1
+            p Ежедневно с 9:00 до 21:00
+          .footer__address-item
+            p г. Ставрополь, ул. Коломийцева, 62/1
+            p +7 (8652) 97-61-09
+          .footer__address-item Офис и выставочный центр:
+            p Выставка коттеджей в Озерках пос. Парголово, Выборгское ш., 212, уч. 36
+            p Ежедневно с 10:00 до 19:00
+            p +7 (812) 999-35-45
         a.footer__email#email-footer(href="mailto:domycompany@ya.ru") domycompany@ya.ru
       ul.footer__nav.footer-nav
         each item in footerNav
