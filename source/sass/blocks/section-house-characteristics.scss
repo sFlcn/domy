@@ -41,18 +41,22 @@
   }
 }
 
-.house-characteristics__scheme {
+.house-characteristics__schemes {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 30px;
+  align-items: center;
   transition-delay: 0.25s;
 
   @media (min-width: $small-desktop-width) {
-    max-width: 700px;
+    width: 700px;
   }
 
   @media (min-width: $desktop-width) {
-    max-width: 1050px;
+    width: 1050px;
   }
+}
+
+.house-characteristics__scheme-link {
+  margin-bottom: 30px;
 }

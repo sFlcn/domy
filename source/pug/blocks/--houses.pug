@@ -71,16 +71,16 @@ block main
             dl.description__specifications.animated-appearance
               each item in houseData["dataExt"]
                 +specificationsItem(item)
-        .house-characteristics__scheme.animated-appearance
-          a(href=`./img/${houseData["schemeFile"]["name"]}@2x.png`, target="_blank")
+        .house-characteristics__schemes.animated-appearance
+          a.house-characteristics__scheme-link(href=`./img/${houseData["schemeFile"]["name"]}@2x.png`, target="_blank")
             +picturePngWebp(houseData["schemeFile"]["name"], houseData["schemeFile"]["dimensions"][0], houseData["schemeFile"]["dimensions"][1], `Схема ${descrRu}`, "house-characteristics__img")
         if (houseData["dataExt2"]) && (houseData["schemeFile2"])
           .house-characteristics__description.animated-appearance
             dl.description__specifications
               each item in houseData["dataExt2"]
                 +specificationsItem(item)
-          .house-characteristics__scheme.animated-appearance
-            a(href=`./img/${houseData["schemeFile2"]["name"]}@2x.png`, target="_blank")
+          .house-characteristics__schemes.animated-appearance
+            a.house-characteristics__scheme-link(href=`./img/${houseData["schemeFile2"]["name"]}@2x.png`, target="_blank")
               +picturePngWebp(houseData["schemeFile2"]["name"], houseData["schemeFile2"]["dimensions"][0], houseData["schemeFile2"]["dimensions"][1], `Схема ${descrRu}`, "house-characteristics__img")
 
     include section-basequipment.pug
