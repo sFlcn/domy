@@ -59,6 +59,9 @@ const paths = {
     envyboxTrueTemplate: 'source/pug/addons/envybox-true.pug',
     envyboxNullTemplate: 'source/pug/addons/envybox-null.pug',
     envyboxTarget: 'envybox.pug',
+    mailruTrueTemplate: 'source/pug/addons/mailrucounter-true.pug',
+    mailruNullTemplate: 'source/pug/addons/mailrucounter-null.pug',
+    mailruTarget: 'mailrucounter.pug',
     targetPosition: 'source/pug/addons/',
   },
   favicons: {
@@ -130,6 +133,9 @@ const embedLayoutAddons = (done) => {
   gulp.src(paths.layoutAddons.envyboxTrueTemplate)
     .pipe(rename(paths.layoutAddons.envyboxTarget))
     .pipe(gulp.dest(paths.layoutAddons.targetPosition));
+  gulp.src(paths.layoutAddons.mailruTrueTemplate)
+    .pipe(rename(paths.layoutAddons.mailruTarget))
+    .pipe(gulp.dest(paths.layoutAddons.targetPosition));
   done();
 };
 
@@ -139,6 +145,9 @@ const withoutLayoutAddons = (done) => {
     .pipe(gulp.dest(paths.layoutAddons.targetPosition));
   gulp.src(paths.layoutAddons.envyboxNullTemplate)
     .pipe(rename(paths.layoutAddons.envyboxTarget))
+    .pipe(gulp.dest(paths.layoutAddons.targetPosition));
+  gulp.src(paths.layoutAddons.mailruNullTemplate)
+    .pipe(rename(paths.layoutAddons.mailruTarget))
     .pipe(gulp.dest(paths.layoutAddons.targetPosition));
   done();
 };

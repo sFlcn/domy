@@ -6,6 +6,8 @@ yandexmetrica.pug
 yandexmetrica-true.pug
 envybox.pug
 envybox-true.pug
+mailrucounter.pug
+mailrucounter-true.pug
 .DS_Store
 ._*
 .idea
