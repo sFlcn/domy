@@ -65,23 +65,25 @@ block main
         h2.house-characteristics__title Характеристики и планировка
         .house-characteristics__description
           dl.description__specifications.animated-appearance
-            each item in houseData["data"]
+            each item in houseData.data
               +specificationsItem(item)
-          if houseData["dataExt"]
+          if houseData.dataExt
             dl.description__specifications.animated-appearance
-              each item in houseData["dataExt"]
+              each item in houseData.dataExt
                 +specificationsItem(item)
         .house-characteristics__schemes.animated-appearance
-          a.house-characteristics__scheme-link(href=`./img/${houseData["schemeFile"]["name"]}@2x.png`, target="_blank")
-            +picturePngWebp(houseData["schemeFile"]["name"], houseData["schemeFile"]["dimensions"][0], houseData["schemeFile"]["dimensions"][1], `Схема ${descrRu}`, "house-characteristics__img")
-        if (houseData["dataExt2"]) && (houseData["schemeFile2"])
+          each schemeItem in houseData.schemeFiles
+            a.house-characteristics__scheme-link(href=`./img/${schemeItem.name}@2x.png`, target="_blank")
+              +picturePngWebp(schemeItem.name, schemeItem.dimensions[0], schemeItem.dimensions[1], `Схема ${descrRu}`, "house-characteristics__img")
+        if (houseData.dataExt2) && (houseData.schemeFiles2)
           .house-characteristics__description.animated-appearance
             dl.description__specifications
-              each item in houseData["dataExt2"]
+              each item in houseData.dataExt2
                 +specificationsItem(item)
           .house-characteristics__schemes.animated-appearance
-            a.house-characteristics__scheme-link(href=`./img/${houseData["schemeFile2"]["name"]}@2x.png`, target="_blank")
-              +picturePngWebp(houseData["schemeFile2"]["name"], houseData["schemeFile2"]["dimensions"][0], houseData["schemeFile2"]["dimensions"][1], `Схема ${descrRu}`, "house-characteristics__img")
+            each schemeItem in houseData.schemeFiles2
+              a.house-characteristics__scheme-link(href=`./img/${schemeItem.name}@2x.png`, target="_blank")
+                +picturePngWebp(schemeItem.name, schemeItem.dimensions[0], schemeItem.dimensions[1], `Схема ${descrRu}`, "house-characteristics__img")
 
     include section-basequipment.pug
     if isBath !== true
