@@ -315,13 +315,14 @@
   @media (min-width: $small-desktop-width) {
     max-width: 690px;
     display: flex;
-    flex-flow: row wrap;
-    gap: 20px 65px;
+    flex-flow: column;
+    gap: 0;
   }
 
   @media (min-width: $desktop-width) {
-    flex-flow: column;
-    gap: 0;
+    max-width: 825px;
+    flex-flow: row wrap;
+    gap: 20px 80px;
   }
 }
 
