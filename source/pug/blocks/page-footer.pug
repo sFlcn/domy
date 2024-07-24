@@ -50,6 +50,7 @@ footer.footer
           .footer__address-item Офис и производство:
             p г. Хотьково, ул. Заводская, д. 1
             p Ежедневно с 9:00 до 21:00
+            a.footer__email#email-footer(href="mailto:domycompany@ya.ru") domycompany@ya.ru
           .footer__address-item
             p г. Ставрополь, ул. Коломийцева, 62/1
             p +7 (8652) 97-61-09
@@ -57,7 +58,7 @@ footer.footer
             p г. Санкт-Петербург, Выставка коттеджей в Озерках пос. Парголово, Выборгское ш., 212, уч. 36
             p Ежедневно с 10:00 до 19:00
             p +7 (812) 999-35-45
-        a.footer__email#email-footer(href="mailto:domycompany@ya.ru") domycompany@ya.ru
+            a.footer__email#email-footer--spb(href="mailto:domycompanyspb@mail.ru") domycompanyspb@mail.ru
       ul.footer__nav.footer-nav
         each item in footerNav
           +footerNavItem(item)
