@@ -35,7 +35,7 @@
 
   @media (min-width: $small-desktop-width) {
     max-width: 400px;
-    margin: 147px 0 20px;
+    margin: 97px 0 20px;
     padding: 5px 8px;
     font-size: 64px;
     line-height: 68px;
@@ -199,14 +199,15 @@
   }
 
   @media (min-width: $small-desktop-width) {
-    top: 155px;
-    left: 50%;
+    top: 105px;
+    left: 51%;
     width: 409px;
     transform: translate(-43%, 0);
   }
 
   @media (min-width: $desktop-width) {
     top: 100px;
+    left: 50%;
     width: 498px;
     transform:translate(-57%, 0);
   }
