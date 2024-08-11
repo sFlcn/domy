@@ -15,12 +15,14 @@ const auxTextSliderEl = document.querySelector('.slider-txt');
 const quizSliderEl = document.querySelector('.slider-quiz');
 const technologySliderEl = document.querySelector('.technology__photo-slider .slider-coverflow');
 const companySliderEl = document.querySelector('.company__photo-slider .slider-coverflow');
+const ourProjectsSliderEl = document.querySelector('.our-projects-slider .slider-coverflow');
 const completedProjectsSliderEls = document.querySelectorAll('.completed__photo-slider .swiper');
 const completedProjectsSliderAltCssClass = 'slider--v';
 let promoSwiper;
 let auxSwiper;
 let quizSwiper;
 let coverflowSwiper;
+let ourProjectsSwiper;
 
 const pageWindow = {
   width: window.innerWidth,
@@ -83,6 +85,11 @@ if (technologySliderEl) {
 if (companySliderEl) {
   // eslint-disable-next-line no-unused-vars
   coverflowSwiper = makeCoverflowSwiper(companySliderEl);
+}
+
+if (ourProjectsSliderEl) {
+  // eslint-disable-next-line no-unused-vars
+  ourProjectsSwiper = makeCoverflowSwiper(ourProjectsSliderEl, false);
 }
 
 if (quizSliderEl) {

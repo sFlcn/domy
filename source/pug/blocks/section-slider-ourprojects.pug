@@ -1,0 +1,80 @@
+-
+  const ourProjectsSlider1 = [
+    { altText: "Дом 30 м²." },
+    { altText: "Дом 45 м²." },
+    { altText: "Дом 60 м²." },
+    { altText: "Дом 80 м²." },
+    { altText: "Дом 105 м²." },
+    { altText: "Дом 144 м²." },
+    { altText: "Баня." },
+  ];
+  const ourProjectsSlider = [
+    {
+      name: "30 м²",
+      href: PAGES["30m"]["pageHref"],
+      price: `${HOUSES_DATA["30m"]["price"]} ₽`,
+      alt: "Модульный дом 30 м².",
+    },
+    {
+      name: "45 м²",
+      href: PAGES["45m"]["pageHref"],
+      price: `${HOUSES_DATA["45m"]["price"]} ₽`,
+      alt: "Модульный дом 45 м².",
+    },
+    {
+      name: "60 м²",
+      href: PAGES["60m"]["pageHref"],
+      price: `${HOUSES_DATA["60m"]["price"]} ₽`,
+      alt: "Модульный дом 60 м².",
+    },
+    {
+      name: "80 м²",
+      href: PAGES["80m"]["pageHref"],
+      price: `${HOUSES_DATA["80m"]["price"]} ₽`,
+      alt: "Модульный дом 80 м².",
+    },
+    {
+      name: "105 м²",
+      href: PAGES["105m"]["pageHref"],
+      price: `${HOUSES_DATA["105m"]["price"]} ₽`,
+      alt: "Модульный дом 105 м².",
+    },
+    {
+      name: "144 м²",
+      href: PAGES["144m"]["pageHref"],
+      price: `${HOUSES_DATA["144m"]["price"]} ₽`,
+      alt: "Модульный дом 144 м².",
+    },
+    {
+      name: "Баня",
+      href: PAGES["bath"]["pageHref"],
+      price: `${HOUSES_DATA["bath"]["price"]} ₽`,
+      alt: "Модульная баня.",
+    },
+  ]
+
+.our-projects-slider
+  .wrapper--ext
+    h2.our-projects-slider__title.animated-appearance Наши проекты
+    .our-projects-slider__slider
+      .slider-coverflow.swiper
+        ul.our-projects-slider__list.swiper-wrapper
+          each item, index in ourProjectsSlider
+            li.our-projects-slider__item.swiper-slide
+              .our-projects-slider__item-box.image-scalecontainer
+                a.our-projects-slider__item-link(href=`${item.href}.html`)
+                  span.visuallyhidden Подробнее
+                .our-projects-slider__image-container.image-scalebox
+                  +pictureJpgWebpM(`projects-slider-${index + 1}`, 360, 218, `${item.alt}`, "our-projects-slider__img", lazy = null, [660, 1700])
+                .our-projects-slider__item-captions
+                  h3.our-projects-slider__item-name= item.name
+                  .our-projects-slider__item-under
+                    .our-projects-slider__item-underline
+                    p.our-projects-slider__item-price= item.price
+                    .our-projects-slider__item-underline
+        .our-projects-slider__control
+          .swiper-pagination
+          .swiper-button-prev
+            span.visuallyhidden предыдущий слайд
+          .swiper-button-next
+            span.visuallyhidden следующий слайд
