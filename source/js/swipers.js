@@ -6,6 +6,7 @@ import Swiper, {
   EffectCreative,
   EffectCoverflow,
   Autoplay,
+  Mousewheel,
 } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 
@@ -76,22 +77,23 @@ export function makeQuizSwiper(el) {
   );
 }
 
-export function makeCoverflowSwiper(el) {
+export function makeCoverflowSwiper(el, grabCursor = true) {
   return new Swiper(
     el,
     {
-      modules: [Navigation, Pagination, Controller, EffectCoverflow, Autoplay],
+      modules: [Navigation, Pagination, Controller, EffectCoverflow, Autoplay, Mousewheel],
       loop: true,
       speed: 2000,
       autoplay: { delay: 750 },
-      grabCursor: true,
+      mousewheel: true,
+      grabCursor,
       centeredSlides: true,
       slidesPerView: 1,
       breakpoints: {
         660: {
-          speed: 3000,
+          speed: 1500,
           slidesPerView: 2,
-          autoplay: { delay: 1750 },
+          autoplay: { delay: 2000 },
         },
       },
       effect: 'coverflow',
