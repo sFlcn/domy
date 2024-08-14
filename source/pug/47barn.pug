@@ -1,0 +1,9 @@
+extends blocks/--houses.pug
+
+block houseVariables
+  - const currentPage = PAGES["47barn"].pageHref;
+  - const houseData = HOUSES_DATA["47barn"]
+  - const pageTitle = houseData.title;
+  - const pageDescription = houseData.description;
+  - const classModifier = "--47barn";
+  - const descrRu = "барнхаус 47 м²";
