@@ -1,7 +1,7 @@
 .widget-headset {
   position: fixed;
-  top: 432px;
-  right: 30px;
+  top: 540px;
+  right: 10px;
   z-index: 90;
   filter: drop-shadow(1px 2px 2px $palette-prime);
   transition-property: transform, top, bottom, left, right, opacity;
@@ -10,13 +10,13 @@
   @media (min-width: $small-desktop-width) {
     width: 64px;
     height: 64px;
-    top: 745px;
-    right: 4%;
+    top: 100px;
+    right: 2%;
     filter: drop-shadow(2px 3px 4px $palette-prime);
   }
 
   @media (min-width: $desktop-width) {
-    top: 704px;
+    top: 110px;
     right: 2.5%;
   }
 

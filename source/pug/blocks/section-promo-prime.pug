@@ -1,0 +1,45 @@
+-
+  const mainSliderDataList = [
+    HOUSES_DATA["105m"],
+    HOUSES_DATA["30barn"],
+  ];
+
+  const mainSliderButtonHref = "#quiz";
+
+section.promoprime
+  .wrapper
+    .promoprime__head
+      h1.promoprime__title Модульные дома для жизни и бизнеса
+      ul.promoprime__features-list.promo-feats__list
+        li.promo-feats__item.promo-feats__item--year-round для круглогодичного проживания
+        li.promo-feats__item.promo-feats__item--turnkey «под ключ» с отделкой и коммуникациями
+        li.promo-feats__item.promo-feats__item--guarantee с гарантией 10 лет
+      a.button.promoprime__button.callback-button(href=mainSliderButtonHref) Получить расчет
+  .promoprime__slider
+    .slider-img.swiper
+      ul.promoprime__slider-list.swiper-wrapper
+        each item, index in mainSliderDataList
+          li.promoprime__slider-item.swiper-slide
+            +pictureJpg(`mainslider-${index + 1}`, '600', '230', 'Модульный дом 70 м².', "promoprime__slider-image", "", [660, 1700])
+      .promoprime__slider-controls
+        .swiper-button-prev.promoprime__slider-button
+          span.visuallyhidden предыдущий слайд
+        .swiper-button-next.promoprime__slider-button
+          span.visuallyhidden следующий слайд
+  .promoprime__info-area
+    .promoprime__info-slider
+      h2.visuallyhidden Мы строим модульные дома
+      .slider-txt.swiper
+        ul.promoprime__info-list.promo-info__list.swiper-wrapper
+          each item in mainSliderDataList
+            li.promo-info__item.swiper-slide
+              .promo-info__container
+                h3.promo-info__title
+                  each textItem in item.shortDataForMainSlider.title
+                    span= textItem
+                ul.promo-info__specs-list
+                  each listItem in item.shortDataForMainSlider.data
+                    li.promo-info__spec(class=`promo-info__spec--${listItem.type}`)= listItem.value
+                a.button.promo-info__more(href= item.href + ".html") Планировка и подробности
+  .wrapper.promoprime__mobile-only
+    a.button.promoprime__button.callback-button(href=mainSliderButtonHref) Получить расчет

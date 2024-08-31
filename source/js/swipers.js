@@ -14,10 +14,9 @@ export function makePromoSwiper(el) {
   return new Swiper(
     el,
     {
-      modules: [Navigation, Pagination, Controller, FreeMode, EffectCreative, Autoplay],
+      modules: [Navigation, Pagination, Controller, EffectCreative, Autoplay],
       loop: true,
       speed: 1750,
-      grabCursor: true,
       pagination: { el: '.swiper-pagination', clickable: true },
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
       autoplay: {
@@ -46,8 +45,7 @@ export function makeAuxSwiper(el) {
       modules: [Controller],
       allowTouchMove: false,
       loop: true,
-      speed: 1100,
-      spaceBetween: 300,
+      spaceBetween: 750,
     },
   );
 }
