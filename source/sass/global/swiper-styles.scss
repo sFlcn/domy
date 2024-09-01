@@ -21,18 +21,30 @@
 
 .swiper-button-prev {
   left: 20px;
+  transition: transform 0.7s;
 
   @media (min-width: $small-desktop-width) {
     left: 0;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
   }
 }
 
 .swiper-button-next {
   right: 20px;
   transform: rotate(180deg);
+  transition: transform 0.7s;
 
   @media (min-width: $small-desktop-width) {
     right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    transform: rotate(180deg) scale(0.9);
   }
 }
 
