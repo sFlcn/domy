@@ -6,13 +6,8 @@
 
   @media (min-width: $small-desktop-width) {
     padding: 0;
-    height: 650px;
     background-color: $palette-brightcontrast;
     color: $palette-darkcontrast;
-  }
-
-  @media (min-width: $desktop-width) {
-    height: 768px;
   }
 }
 
@@ -124,7 +119,7 @@
   }
 
   @media (min-width: $small-desktop-width) {
-    height: 650px;
+    height: 600px;
   }
 
   @media (min-width: $desktop-width) {
@@ -140,7 +135,7 @@
     position: absolute;
     width: 200px;
     height: 86px;
-    bottom: 25px;
+    bottom: 55px;
     left: calc(50% - 100px);
   }
 
@@ -176,7 +171,7 @@
     width: 431px;
     top: unset;
     left: unset;
-    bottom: 25px;
+    bottom: 55px;
     right: 0;
   }
 
