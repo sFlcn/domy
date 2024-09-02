@@ -89,7 +89,10 @@ if (companySliderEl) {
 
 if (ourProjectsSliderEl) {
   // eslint-disable-next-line no-unused-vars
-  ourProjectsSwiper = makeCoverflowSwiper(ourProjectsSliderEl, false);
+  ourProjectsSwiper = makeCoverflowSwiper(
+    ourProjectsSliderEl,
+    { grabCursor: false, pauseOnMouseEnter: true },
+  );
 }
 
 if (quizSliderEl) {

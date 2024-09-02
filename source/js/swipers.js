@@ -75,14 +75,17 @@ export function makeQuizSwiper(el) {
   );
 }
 
-export function makeCoverflowSwiper(el, grabCursor = true) {
+export function makeCoverflowSwiper(el, { grabCursor = true, pauseOnMouseEnter = false }) {
   return new Swiper(
     el,
     {
       modules: [Navigation, Pagination, Controller, EffectCoverflow, Autoplay, Mousewheel],
       loop: true,
       speed: 2000,
-      autoplay: { delay: 750 },
+      autoplay: {
+        delay: 750,
+        pauseOnMouseEnter,
+      },
       mousewheel: true,
       grabCursor,
       centeredSlides: true,
@@ -91,7 +94,10 @@ export function makeCoverflowSwiper(el, grabCursor = true) {
         660: {
           speed: 1500,
           slidesPerView: 2,
-          autoplay: { delay: 2000 },
+          autoplay: {
+            delay: 2000,
+            pauseOnMouseEnter,
+          },
         },
       },
       effect: 'coverflow',
