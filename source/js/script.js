@@ -79,12 +79,12 @@ if (technologySliderEl) {
   if (pageWindow.width >= 1200) technologySliderEl.querySelector('.swiper-slide:first-child').remove();
 
   // eslint-disable-next-line no-unused-vars
-  coverflowSwiper = makeCoverflowSwiper(technologySliderEl);
+  coverflowSwiper = makeCoverflowSwiper(technologySliderEl, {});
 }
 
 if (companySliderEl) {
   // eslint-disable-next-line no-unused-vars
-  coverflowSwiper = makeCoverflowSwiper(companySliderEl);
+  coverflowSwiper = makeCoverflowSwiper(companySliderEl, {});
 }
 
 if (ourProjectsSliderEl) {
